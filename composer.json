@@ -1,0 +1,11 @@
+{
+    "name": "neobazaar/public-application",
+    "description": "Frontend Application for Neobazaar",
+    "license": "",
+    "keywords": [
+        "neobazaar"
+    ],
+    "homepage": "http://www.neobazaar.com/",
+    "require": {
+    }
+}
