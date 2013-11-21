@@ -1,0 +1,186 @@
+<div class="row">
+	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+			
+		<div class="panel panel-primary searchlist">
+		  	
+		  	<div class="panel-heading">
+				<ul class="breadcrumb">
+				    <li>
+				        <a href="#/">Home</a>
+				        <span class="divider"></span>
+				    </li>
+				    <li>
+				        <a href="#/profile">Dati anagrafici</a>
+				        <span class="divider"></span>
+				    </li>
+				</ul>
+		  	</div>
+		  	
+		  	<div class="panel-body">
+		  	
+		  		<account-menu></account-menu>
+
+		  		<hr />
+		  		<div class="spinner" ng-hide="user">
+					<div class="progress progress-striped active">
+						<div class="progress-bar"  role="progressbar" 
+							aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+							<span class="sr-only"></span>
+						</div>
+					</div>
+				</div>
+				
+				<form name="userprofile" action="/user/rest/{{params.hashId}}" id="user" ng-show="user" 
+					validation data-validationsuccess='successfull' data-validationerror='successfull'
+					data-validationmodel="params" data-validationmodelinit="reset" 
+					data-validationmethod="PUT" data-validationrequestadata="prepareRequestParams" >
+					
+					<fieldset>
+						<div class="row">
+							<div class="form-group col-lg-12">
+					          	<p>Sei registrato con il seguente indirizzo email: {{user.data.email}}</p>
+								<div class="alert alert-{{response.status}}" ng-show="response && response.message">
+									<p>{{response.message}}</p>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+					
+					<fieldset>
+						<div class="row">
+							<div class="form-group col-lg-4">
+					          	<label for="name">Nome</label>	            	
+					          	<input type="text" class="form-control" name="name" ng-model="params.name">
+								<div class="text-warning" 
+									ng-show="userprofile.name.$dirty && userprofile.name.$invalid">
+								    <p ng-repeat="item in userprofile.name.messages">
+										{{item}}
+									</p>
+								</div>	
+							</div>
+							
+							<div class="form-group col-lg-4">
+					          	<label for="surname">Cognome</label>	            	
+					          	<input type="text" class="form-control" 
+					          		name="surname" ng-model="params.surname">
+								<div class="text-warning" 
+									ng-show="userprofile.surname.$dirty && userprofile.surname.$invalid">
+								    <p ng-repeat="item in userprofile.surname.messages">
+										{{item}}
+									</p>
+								</div>
+							</div>
+
+							<div class="form-group col-lg-4">
+					          	<label for="nicename">Nickname</label>	            	
+					          	<input type="text" class="form-control" 
+					          		name="nicename" ng-model="params.nicename">
+								<div class="text-warning" 
+									ng-show="userprofile.nicename.$dirty && userprofile.nicename.$invalid">
+								    <p ng-repeat="item in userprofile.nicename.messages">
+										{{item}}
+									</p>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+					
+					<fieldset>
+						<div class="row">
+							<div class="form-group col-lg-4">
+					          	<label for="gender">Sesso</label>	
+					          	<br />     
+								<div class="radio-inline">
+									<input type="radio" name="gender" value="m" ng-model="params.gender">
+									M
+								</div>
+								<div class="radio-inline">
+									<input type="radio" name="gender" value="f" ng-model="params.gender">
+									F
+								</div>
+							</div>
+							
+							<div class="form-group col-lg-4">
+					          	<label for="dateborn">Data di nascita</label>	            	
+					          	<input type="text" class="form-control" 
+					          		datepicker select="updateMyText(date)" 
+					          		name="dateborn" ng-model="$parent.params.dateBorn">
+							</div>
+
+							<div class="form-group col-lg-4">
+					          	<label for="mobile">Telefono</label>	            	
+					          	<input type="text" class="form-control" 
+					          		name="mobile" ng-model="params.mobile">
+							</div>
+						</div>
+					</fieldset>
+					
+					<fieldset>
+						<div class="row">
+							<div class="form-group col-lg-12">
+								<span>Completa questa sezione solo se vuoi modificare la password</span>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-lg-4">
+					          	<label for="password">Scegli una password:</label>	            	
+					          	<input type="password" class="form-control" 
+					          		name="password" ng-model="params.password">
+								<div class="text-warning" 
+									ng-show="userprofile.password.$dirty && userprofile.password.$invalid">
+								    <p ng-repeat="item in userprofile.password.messages">
+										{{item}}
+									</p>
+								</div>
+							</div>
+							
+							<div class="form-group col-lg-4">
+					          	<label for="repassword">Conferma password</label>	            	
+					          	<input type="password" class="form-control" 
+					          		name="repassword" ng-model="params.repassword">
+								<div class="text-warning" 
+									ng-show="userprofile.repassword.$dirty && userprofile.repassword.$invalid">
+								    <p ng-repeat="item in userprofile.repassword.messages">
+										{{item}}
+									</p>
+								</div>
+							</div>
+							
+							<div class="form-group col-lg-4">
+					          	<label for="currentpassword">Password attuale</label>	            	
+					          	<input type="password" class="form-control" 
+					          		name="currentpassword" ng-model="params.currentpassword">
+								<div class="text-warning" 
+									ng-show="userprofile.currentpassword.$dirty && userprofile.currentpassword.$invalid">
+								    <p ng-repeat="item in userprofile.currentpassword.messages">
+										{{item}}
+									</p>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+					
+					<fieldset>
+						<div class="row">
+							<div class="form-group col-lg-8 col-md-8 col-sd-8 col-xs-4">
+					          	&nbsp;	
+							</div>
+							<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-4"> 
+								<input type="reset" name="reset" value="Reset" class="btn btn-primary btn-block" 
+									ng-click="reset()"/>
+					        </div>
+							<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-4"> 
+								<input type="hidden" name="userid" ng-model="params.hashid" />
+								<input type="submit" name="submit" value="Invia" class="btn btn-primary btn-block" /> 
+					        </div>
+						</div>
+					</fieldset>
+				</form>
+			</div>
+  		</div>
+	</div>
+					
+	<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
+		<banner></banner>
+	</div>
+</div>

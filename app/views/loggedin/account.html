@@ -1,0 +1,120 @@
+<div class="row">
+	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+			
+		<div class="panel panel-primary searchlist">
+		  	
+		  	<div class="panel-heading">
+				<ul class="breadcrumb">
+				    <li>
+				        <a href="#/">Home</a>
+				        <span class="divider"></span>
+				    </li>
+				    <li>
+				        <a href="#/account">I miei annunci</a>
+				        <span class="divider"></span>
+				    </li>
+				</ul>
+		  	</div>
+		  	
+		  	<div class="panel-body">
+		  	
+		  		<account-menu></account-menu>
+
+		  		<hr />
+		  		<div class="spinner" ng-hide="resource">
+					<div class="progress progress-striped active">
+						<div class="progress-bar"  role="progressbar" 
+							aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+							<span class="sr-only"></span>
+						</div>
+					</div>
+				</div>
+				
+		  		<div class="spinner" ng-show="resource">
+					<div class="alert alert-danger" ng-hide="resource.data">
+						Non hai nessun annuncio.
+					</div>
+		  		</div>
+				
+				<div class="row {{item.cssClass}}" ng-repeat='item in resource.data'>
+					<!-- visible  xs here -->
+					<div class="col-xs-12 visible-xs">
+						<h4 class="media-heading">&nbsp;<a ng-href='{{item.address}}'>{{item.title}}</a></h4>
+					</div>
+					
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+						<a ng-href='{{item.editaddress}}' class="thumbnail"><img 
+							class="{{item.image.class}}" 
+							alt="{{item.image.alt}}" 
+							ng-src="{{item.image.src}}" 
+							/></a>
+					</div>
+					
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+		  				{{item.date}}
+		  				<p class="visible-xs">{{item.visited}} visite</p>
+					</div>
+					
+					<!--  hidden xs here -->
+					<div class="col-lg-5 col-md-5 col-sm-5 hidden-xs">
+						<h4 class="media-heading">
+						<a ng-href='{{item.editaddress}}'>{{item.title}}</a></h4>
+						{{item.visited}} visite <br />
+						<span ng-show="item.isDeactive">Questo annuncio non è attivo</span>
+						<br ng-show="item.isExpired && item.isDeactive" />
+						<span ng-show="item.isExpired">Questo annuncio è scaduto</span>
+					</div>
+					
+					
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5">
+						<div class="btn-group btn-group-justified ng-scope">
+							<a ng-click="touch(item)" class="btn btn-primary" title="Riporta l'annuncio in cima!">
+								<span class="glyphicon glyphicon-arrow-up"></span>
+							</a>
+							<a ng-href="{{item.editaddress}}" class="btn btn-success" title="Modifica">
+								<span class="glyphicon glyphicon-edit"></span>
+							</a>
+							<a ng-click="disableEnable(item)" class="btn btn-warning" title="L'annuncio è attivo, clicca per disattivare" ng-show="item.isActive">
+								<span class="glyphicon glyphicon-pause"></span>
+							</a>
+							<a ng-click="disableEnable(item)" class="btn btn-primary" title="L'annuncio è disattivo, clicca per attivare" ng-show="item.isDeactive">
+								<span class="glyphicon glyphicon-play"></span>
+							</a>
+							<a ng-click="delete(item)" class="btn btn-danger delete-classified" title="Elimina">
+								<span class="glyphicon glyphicon-remove-sign"></span>
+							</a>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+  		</div>
+	</div>
+					
+	<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
+		<banner></banner>
+	</div>
+</div>
+
+<ul class="pagination pagination-lg" ng-show="resource.data">
+	<li><span>{{resource.paginationData.message}}</span></li>
+	<li class="{{resource.paginationData.previous.class}}">
+		<a 
+			ng-href="{{resource.paginationData.previous.link}}" 
+			ng-click="{{resource.paginationData.previous.onclick}}">
+			{{resource.paginationData.previous.label}}
+		</a>
+	</li>
+	
+	<li class="{{page.class}}" ng-repeat='page in resource.paginationData.pages'>
+		<a ng-href="{{page.link}}">{{page.label}}</a>
+	</li>
+	
+	<li class="{{resource.paginationData.next.class}}">
+		<a 
+			ng-href="{{resource.paginationData.next.link}}" 
+			ng-click="{{resource.paginationData.next.onclick}}">
+			{{resource.paginationData.next.label}}
+		</a>
+	</li>
+</ul>

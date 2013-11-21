@@ -1,0 +1,97 @@
+<div class="panel panel-primary">
+	<div class="panel-body" ng-hide="resource">
+  		<div class="spinner">
+			<div class="progress progress-striped active">
+				<div class="progress-bar"  role="progressbar" 
+					aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+					<span class="sr-only"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="panel-body" ng-show="resource">
+		<div class="row">
+			<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+				<h3>Entra nella tua Area Riservata</h3>
+				<p>Potrai gestire con facilità e rapidità i tuoi annunci!</p>
+				
+				<form class="form-horizontal" action="/user/login" 
+					name="loginform" validation data-validationsuccess='success' 
+					data-validationmodel="params" data-validationmodelinit="reset" 
+					data-validationerror='error' >
+
+					<div class="form-group" ng-show="(loginform.csrf.$dirty && loginform.csrf.$invalid) || (response && response.message)">
+				        <div class="col-lg-12">
+							<div class="alert alert-{{response.status}}" ng-show="response && response.message">
+								<p>{{response.message}}</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="col-lg-2 control-label" for="identity">Email</label>
+				        <div class="col-lg-10">
+							<input type="text" placeholder="Il tuo username o email" name="identity"
+								id="identity" class="form-control" 
+								ng-model="params.identity" required>
+							<div class="text-warning" 
+								ng-show="loginform.identity.$dirty && loginform.identity.$invalid">
+							    <p ng-repeat="item in loginform.identity.messages">
+									{{item}}
+								</p>
+							</div>
+				        </div>
+					</div>
+					
+					<div class="form-group">
+						<label class="col-lg-2 control-label" for="credential">Password</label>
+				        <div class="col-lg-10">
+							<input type="password" placeholder="La tua password" name="credential"
+								id="credential" class="form-control" 
+								ng-model="params.credential" required>
+							<div class="text-warning" 
+								ng-show="loginform.credential.$dirty && loginform.credential.$invalid">
+							    <p ng-repeat="item in loginform.credential.messages">
+									{{item}}
+								</p>
+							</div>
+				        </div>
+					</div>
+					
+					<!-- <div class="form-group">
+						<div class="checkbox col-lg-offset-2">
+							<label>
+								<input type="checkbox" name="keeplogged" ng-model="classified.keeplogged" 
+									ng-true-value="1" ng-false-value="0">
+								Ricorda l'accesso per un mese
+							</label>
+							<div class="text-warning" 
+								ng-show="loginform.keeplogged.$dirty && loginform.keeplogged.$invalid">
+							    <p ng-repeat="item in loginform.keeplogged.messages">
+									{{item}}
+								</p>
+							</div>
+						</div>
+					</div> -->
+					
+					<div class="form-group">
+						<div class="checkbox col-lg-offset-2">
+							<a href="/#/register">Non sei registrato?</a>
+							<a href="/#/user/password-recovery">Non ricordi la password?</a>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-lg-offset-2 col-lg-4 col-md-4 col-sd-4 col-xs-6">
+							<input type="hidden" name="csrf" ng-model="params.csrf" />
+							<button class="btn btn-default" type="submit" 
+								data-trigger-change="#identity,#credential">Invia</button>
+						</div>
+					</div>
+					
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

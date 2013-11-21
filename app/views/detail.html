@@ -1,0 +1,153 @@
+<div class="panel panel-primary" ng-hide="resource.data">
+  	<div class="panel-body">
+		<div class="spinner">
+			<div class="progress progress-striped active">
+				<div class="progress-bar"  role="progressbar" 
+					aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+					<span class="sr-only"></span>
+				</div>
+			</div>
+		</div>
+  	</div>
+</div>
+
+<div class="panel panel-primary searchitem" ng-show="resource.data">
+	<div class="panel-heading">
+		<!-- <button ng-click="back();" 
+			class="btn btn-default">
+			<span class="glyphicon glyphicon-search"></span>
+			&nbsp;Alla ricerca
+		</button>&nbsp;&nbsp; -->
+		<span class="breadcrumbs" ng-bind-html-unsafe="resource.data.breadcrumbs"></span>
+  	</div>
+  	<div class="panel-body">
+  		<div class="row">
+
+  			<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+				<h2>{{resource.data.title}}</h2>
+				<hr />
+				<p>E' un tuo annuncio?
+					<a href="#/edit-classified/{{resource.data.hashId}}" 
+						class="btn btn-default btn-xs">
+						<span class="glyphicon glyphicon-wrench"></span>
+						&nbsp;Modificalo
+					</a>
+					<a href="#/login" 
+						class="btn btn-default btn-xs">
+						<span class="glyphicon glyphicon-pause"></span>
+						&nbsp;Sospendilo</a>
+					<a href="#/login" 
+						class="btn btn-default btn-xs">
+						<span class="glyphicon glyphicon-remove-sign"></span>
+						&nbsp;Eliminalo</a></p>
+				<hr />
+				
+				<p>Inserito {{resource.data.insert}}, <strong>{{resource.data.visited}}</strong> visite</p>
+				
+				<hr />
+				
+				<div class="row gallery">
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4" ng-repeat='item in resource.data.images'>
+						<a ng-href="{{item.url}}?lightbox[width]=640&lightbox[height]=480" class="thumbnail" rel="group1" lightbox><img 
+							class="{{item.class}}" 
+							alt="{{item.alt}}" 
+							ng-src="{{item.thumbnailUrl}}" 
+						/></a>
+					</div>
+					<!-- <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+						<a ng-href="http://maps.google.com/maps?ie=UTF8&ll={{resource.data.latitude}},{{resource.data.longitude}}&z=15&lightbox[width]=640&lightbox[height]=480" 
+							rel="group1" class="thumbnail">
+							<img src="/app/img/gmap.jpg" />
+						</a>
+					</div> -->
+				</div>
+				
+				<hr />
+				
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+						<p ng-bind-html-unsafe="resource.data.nl2brContent"></p>
+					</div>
+					<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+						<ul class="list-group meta">
+							<li class="list-group-item">
+								<b>Prezzo</b> {{resource.data.priceFormatted}}
+							</li>
+							<li class="list-group-item" 
+								ng-repeat='item in resource.data.meta'>
+								<b>{{item.key}}</b> {{item.value}}
+							</li>
+				  		</ul>
+					</div>
+				</div>
+				
+				<hr />
+				
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div id="contact" style="display: none;">
+							<contact-form></contact-form>
+							<hr />
+						</div>
+						<div class="panel panel-default well">
+  							<div class="panel-body">
+								<div class="row">
+
+									<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+										<div class="btn-group btn-group-justified">
+											<a href="#contact" 
+												target="_blank"  
+												class="btn btn-success" slidefx>
+												<span class="glyphicon glyphicon-envelope"></span>
+												&nbsp;Contatta l'inserzionista</a>
+										</div>
+									</div>
+
+									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+										<div class="row">
+											<div class="col-lg-12 btn-group btn-group-justified">
+												<a ng-href="http://www.facebook.com/share.php?u=www.neobazaar.com/#{{path}}" 
+													target="_blank"  
+													class="btn btn-info">
+													<span class="glyphicon glyphicon-share"></span>
+													&nbsp;Condividi</a>
+											</div>
+										</div>
+									</div>
+									
+									<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+										<div class="row">
+											<div class="col-lg-12 btn-group btn-group-justified">
+												<a href="#/sospendi-annuncio-{{resource.data.hashId}}" 
+													class="btn btn-warning">
+													<span class="glyphicon glyphicon-star"></span>
+													&nbsp;Preferiti</a>
+											</div>
+										</div>
+									</div>
+  								</div>
+  							</div>
+  						</div>
+					</div>
+				</div>
+				
+				
+  			</div>
+  			
+  			<div class="col-lg-4 col-md-4 col-sm-4 hidden-xs">
+  				<div class="row">
+  					<div class="col-lg-2 col-md-2 col-sm-2">
+  						&nbsp;
+  					</div>
+  					<div class="col-lg-8 col-md-8 col-sm-8">
+						<h1>{{resource.data.priceFormatted}}</h1>
+  					</div>
+  					<div class="col-lg-2 col-md-2 col-sm-2">
+  						&nbsp;
+  					</div>
+  				</div>
+  				<detail-sidebar></detail-sidebar>
+  			</div>
+  		</div>
+	</div>
+</div>

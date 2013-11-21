@@ -1,0 +1,230 @@
+<fieldset>
+	<legend>Completa le seguenti informazioni aggiuntive per la categoria selezionata</legend>
+	
+	<div class="row">
+		<div class="form-group col-lg-4 col-md-4 col-sd-4 col-xs-6">
+			<div class="row">
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+		          	<label for="comuni">Comune *</label>	
+				</div>
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+					<select name="document[metadata][4][value]" class="form-control" 
+						ng-options="c.label for c in comune" ng-model="classified.comune" required>
+					   	<option value="">Seleziona il comune</option>
+					</select>
+					<div class="text-warning" 
+						ng-show="classifiedadd['document[metadata][4][value]'].$dirty && classifiedadd['document[metadata][4][value]'].$invalid">
+					    <p ng-repeat="item in classifiedadd['document[metadata][4][value]'].messages">
+							{{item}}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4 col-md-4 col-sd-4 col-xs-6">		
+			<div class="row">
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+		          	<label for="address">Indirizzo</label>	
+				</div>
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+		          	<input type="text" placeholder="Indirizzo" 
+		          		class="form-control" name="document[metadata][5][value]" ng-model="classified.address" />
+					<div class="text-warning" 
+						ng-show="classifiedadd['document[metadata][5][value]'].$dirty && classifiedadd['document[metadata][5][value]'].$invalid">
+					    <p ng-repeat="item in classifiedadd['document[metadata][5][value]'].messages">
+							{{item}}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4 col-md-4 col-sd-4 col-xs-6">	
+			<div class="row">
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+		          	<label for="civic">Numero Civico</label>	
+				</div>
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+		          	<input type="text" placeholder="Numero civico" 
+		          		class="form-control" name="document[metadata][6][value]" ng-model="classified.civic" />
+					<div class="text-warning" 
+						ng-show="classifiedadd['document[metadata][6][value]'].$dirty && classifiedadd['document[metadata][6][value]'].$invalid">
+					    <p ng-repeat="item in classifiedadd['document[metadata][6][value]'].messages">
+							{{item}}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="form-group col-lg-4 col-md-4 col-sd-4 col-xs-6">
+			<div class="row">
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+		          	<label for="garden">Giardino</label>	
+				</div>
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+					<select name="document[metadata][7][value]" class="form-control" 
+						ng-options="c.label for c in garden" ng-model="classified.garden" required>
+					   	<option value="">Non indicato</option>
+					</select>
+					<div class="text-warning" 
+						ng-show="classifiedadd['document[metadata][7][value]'].$dirty && classifiedadd['document[metadata][7][value]'].$invalid">
+					    <p ng-repeat="item in classifiedadd['document[metadata][7][value]'].messages">
+							{{item}}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4 col-md-4 col-sd-4 col-xs-6">		
+			<div class="row">
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+		          	<label for="room">Numero locali</label>	
+				</div>
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+					<select name="document[metadata][8][value]" class="form-control" 
+						ng-options="c.label for c in room" ng-model="classified.room">
+					   	<option value="">Non indicato</option>
+					</select>
+					<div class="text-warning" 
+						ng-show="classifiedadd['document[metadata][8][value]'].$dirty && classifiedadd['document[metadata][8][value]'].$invalid">
+					    <p ng-repeat="item in classifiedadd['document[metadata][8][value]'].messages">
+							{{item}}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4 col-md-4 col-sd-4 col-xs-6">
+			<div class="row">
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+		          	<label for="areasm">Superficie</label>	
+				</div>
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+		          	<input type="text" placeholder="Superficie in metri quadri" 
+		          		class="form-control" name="document[metadata][9][value]" ng-model="classified.areasm" />
+					<div class="text-warning" 
+						ng-show="classifiedadd['document[metadata][9][value]'].$dirty && classifiedadd['document[metadata][9][value]'].$invalid">
+					    <p ng-repeat="item in classifiedadd['document[metadata][9][value]'].messages">
+							{{item}}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="form-group col-lg-4 col-md-4 col-sd-4 col-xs-6">
+			<div class="row">
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+		          	<label for="bathroom">N° bagni</label>	
+				</div>
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+					<select name="document[metadata][10][value]" class="form-control" 
+						ng-options="c.label for c in bathroom" ng-model="classified.bathroom" required>
+					   	<option value="">Non indicato</option>
+					</select>
+					<div class="text-warning" 
+						ng-show="classifiedadd['document[metadata][10][value]'].$dirty && classifiedadd['document[metadata][10][value]'].$invalid">
+					    <p ng-repeat="item in classifiedadd['document[metadata][10][value]'].messages">
+							{{item}}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4 col-md-4 col-sd-4 col-xs-6">
+			<div class="row">
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+		          	<label for="floor">Piano</label>	
+				</div>
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+					<select name="document[metadata][11][value]" class="form-control" 
+						ng-options="c.label for c in floor" ng-model="classified.floor" required>
+					   	<option value="">Non indicato</option>
+					</select>
+					<div class="text-warning" 
+						ng-show="classifiedadd['document[metadata][11][value]'].$dirty && classifiedadd['document[metadata][11][value]'].$invalid">
+					    <p ng-repeat="item in classifiedadd['document[metadata][11][value]'].messages">
+							{{item}}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4 col-md-4 col-sd-4 col-xs-6">
+			<div class="row">
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+		          	<label for="reference">Riferimento</label>	
+				</div>
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+		          	<input type="text" placeholder="Riferimento" 
+		          		class="form-control" name="document[metadata][12][value]" ng-model="classified.reference" />
+					<div class="text-warning" 
+						ng-show="classifiedadd['document[metadata][12][value]'].$dirty && classifiedadd['document[metadata][12][value]'].$invalid">
+					    <p ng-repeat="item in classifiedadd['document[metadata][12][value]'].messages">
+							{{item}}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="form-group col-lg-4 col-md-4 col-sd-4 col-xs-6">
+			<div class="row">
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+	          		<label for="balcony">Balcone</label>	
+				</div>
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+					<div class="radio-inline">
+						<input type="radio" name="document[metadata][13][value]" value="YES" ng-model="classified.balcony">
+						Si
+					</div>
+					<div class="radio-inline">
+						<input type="radio" name="document[metadata][13][value]" value="NO" ng-model="classified.balcony">
+						No
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4 col-md-4 col-sd-4 col-xs-6">
+			<div class="row">
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+	          		<label for="terrace">Terrazzo</label>	
+				</div>
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+					<div class="radio-inline">
+						<input type="radio" name="document[metadata][14][value]" value="YES" ng-model="classified.terrace">
+						Si
+					</div>
+					<div class="radio-inline">
+						<input type="radio" name="document[metadata][14][value]" value="NO" ng-model="classified.terrace">
+						No
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4 col-md-4 col-sd-4 col-xs-6">
+			<div class="row">
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+	          		<label for="lift">Ascensore</label>	
+				</div>
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+					<div class="radio-inline">
+						<input type="radio" name="document[metadata][15][value]" value="YES" ng-model="classified.lift">
+						Si
+					</div>
+					<div class="radio-inline">
+						<input type="radio" name="document[metadata][15][value]" value="NO" ng-model="classified.lift">
+						No
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</fieldset>

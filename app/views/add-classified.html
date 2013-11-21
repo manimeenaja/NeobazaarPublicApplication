@@ -1,0 +1,404 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<span ng-hide="isEdit">Completa accuratamente il seguente form per inserire il tuo annuncio, i campi con * sono obbligatori.</span>
+		<span ng-show="isEdit">Modifica il tuo annuncio, i campi con * sono obbligatori.</span>
+	</div>
+	<div class="panel-body">
+  		<div class="spinner" ng-show="waiting">
+			<div class="progress progress-striped active">
+				<div class="progress-bar"  role="progressbar" 
+					aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+					<span class="sr-only"></span>
+				</div>
+			</div>
+		</div>
+				
+		<!--  ng-submit="doSubmit()" -->
+		<form name="classifiedadd" class="" action="/classified" ng-hide="waiting" 
+			id="classified"  
+			enctype="multipart/form-data" data-file-upload="options" 
+			data-ng-class="{'fileupload-processing': processing() || loadingFiles}" 
+			data-ng-app="Neobazaar" data-ng-controller="ImageUploadController" 
+			validation data-validationsuccess='successfull' data-validationmodel="classified" 
+			data-validationmodelinit="reset" data-validationrequestadata="prepareRequestParams" 
+			data-validationerror='error'>
+			
+			<div class="form-group" ng-show="(response && response.message)">
+		        <div class="col-lg-12">
+					<div class="alert alert-{{response.status}}" ng-show="response && response.message && classifiedadd.$valid">
+						<p>{{response.message}}</p>
+					</div>
+				</div>
+			</div>
+			
+			<div class="form-group" ng-show="isEdit && !classified.isActive">
+		        <div class="col-lg-12">
+					<div class="alert alert-danger" ng-hide="activated">
+						<p>Questo annuncio è attualmente disattivato e non sarà visibile tra i risultati di ricerca. <a ng-click="activate(classified)">Attiva adesso</a>!</p>
+					</div>
+					<div class="alert alert-info" ng-show="activated">
+						<p>Annuncio correttamente attivato.</p>
+					</div>
+				</div>
+			</div>
+
+			<fieldset id="user" ng-hide="isEdit || logged">
+				<legend>Inserisci qui il tuo nome e la tua email</legend>
+				<div class="row">
+					<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-2">
+			          	<label for="name" class="pull-right">Il tuo nome *</label>	
+					</div>
+					<div class="form-group col-lg-9 col-md-9 col-sd-9 col-xs-9">  	            	
+			          	<input type="text" placeholder="Inserisci qui il tuo nome" 
+							class="form-control" name="user[name]" ng-model="classified.user.name" 
+							required ng-pattern="/^[a-zA-Z ']{4,30}$/" />
+						<div class="text-warning" 
+							ng-show="classifiedadd['user[name]'].$dirty && classifiedadd['user[name]'].$invalid">
+						    <p ng-repeat="item in classifiedadd['user[name]'].messages">
+								{{item}}
+							</p>
+						</div>
+					</div>
+					<div class="form-group col-lg-1 col-md-1 col-sd-1 col-xs-1">
+						<span class="btn btn-success ok" ng-show="classifiedadd['user[name]'].$dirty && classifiedadd['user[name]'].$valid">☑</span>
+ 						<span class="btn btn-danger ko" ng-show="classifiedadd['user[name]'].$dirty && classifiedadd['user[name]'].$invalid">☒</span>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-2">
+			          	<label for="email" class="pull-right">La tua email *</label>	
+					</div>
+					<div class="form-group col-lg-9 col-md-9 col-sd-9 col-xs-9"> 	            	
+			          	<input type="text" placeholder="Usa un indirizzo valido, riceverai il link di attivazione. Le email usa e getta non sono valide." 
+			          		class="form-control" name="user[email]" ng-model="classified.user.email"
+			          		required />
+						<div class="text-warning" 
+							ng-show="classifiedadd['user[email]'].$dirty && classifiedadd['user[email]'].$invalid">
+						    <p ng-repeat="item in classifiedadd['user[email]'].messages">
+								{{item}}
+							</p>
+						</div>
+					</div>
+					<div class="form-group col-lg-1 col-md-1 col-sd-1 col-xs-1">
+						<span class="btn btn-success ok" ng-show="classifiedadd['user[email]'].$dirty && classifiedadd['user[email]'].$valid">☑</span>
+ 						<span class="btn btn-danger ko" ng-show="classifiedadd['user[email]'].$dirty && classifiedadd['user[email]'].$invalid">☒</span>
+					</div>
+				</div>
+			</fieldset>
+			
+			<br ng-hide="isEdit || logged" />
+			<br ng-hide="isEdit || logged" />
+			
+			<fieldset id="document">
+				<legend>Inserisci qui i dati del tuo annuncio</legend>
+				<div class="row" ng-hide="isEdit">
+					<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-2">
+			          	<label for="location">
+			          	Seleziona la provincia dove si trova il bene o il servizio *</label>	
+					</div>
+					<div class="form-group col-lg-9 col-md-9 col-sd-9 col-xs-9">           	
+			          	<select name="document[location]" class="form-control" 
+							ng-options="c.label group by c.group for c in locations" 
+						   	ng-model="classified.location" required>
+						   	<option value="">Seleziona una provincia</option>
+							</select>
+					</div>
+					<div class="form-group col-lg-1 col-md-1 col-sd-1 col-xs-1">
+						<span class="btn btn-success ok" ng-show="classifiedadd['document[location]'].$dirty && classifiedadd['document[location]'].$valid">☑</span>
+ 						<span class="btn btn-danger ko" ng-show="classifiedadd['document[location]'].$dirty && classifiedadd['document[location]'].$invalid">☒</span>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-2">
+			          	<label for="title" class="pull-right">Titolo annuncio *</label>	
+					</div>
+					<div class="form-group col-lg-9 col-md-9 col-sd-9 col-xs-9">  	            	
+			          	<input type="text" placeholder="Riassumi in max 10 parole il titolo dell'annuncio"
+			          			class="form-control" ng-model="classified.title" name="document[title]" ng-minlength="2" ng-maxlength="90" required>
+						<div class="text-warning" 
+							ng-show="classifiedadd['document[title]'].$dirty && classifiedadd['document[title]'].$invalid">
+						    <p ng-repeat="item in classifiedadd['document[title]'].messages">
+								{{item}}
+							</p>
+						</div>
+					</div>
+					<div class="form-group col-lg-1 col-md-1 col-sd-1 col-xs-1">
+						<span class="btn btn-success ok" ng-show="classifiedadd['document[title]'].$dirty && classifiedadd['document[title]'].$valid">☑</span>
+ 						<span class="btn btn-danger ko" ng-show="classifiedadd['document[title]'].$dirty && classifiedadd['document[title]'].$invalid">☒</span>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-2">
+			          	<label for="content">Testo dell'annuncio *</label>	
+					</div>
+					<div class="form-group col-lg-9 col-md-9 col-sd-9 col-xs-9"> 	            	
+			          	<textarea ng-minlength="10" ng-maxlength="2400" 
+			          		placeholder="Inserisci una descrizione chiara di quello che offri, utilizzando le parole con cui vorresti che il tuo annuncio sia trovato, usa sinonimi, cerca di non ripetere spesso la stessa parola"  
+			          		class="form-control" name="document[content]" ng-model="classified.content" 
+			          		required></textarea>
+						<div class="text-warning" 
+							ng-show="classifiedadd['document[content]'].$dirty && classifiedadd['document[content]'].$invalid">
+						    <p ng-repeat="item in classifiedadd['document[content]'].messages">
+								{{item}}
+							</p>
+						</div>
+					</div>
+					<div class="form-group col-lg-1 col-md-1 col-sd-1 col-xs-1">
+						<span class="btn btn-success ok" ng-show="classifiedadd['document[content]'].$dirty && classifiedadd['document[content]'].$valid">☑</span>
+ 						<span class="btn btn-danger ko" ng-show="classifiedadd['document[content]'].$dirty && classifiedadd['document[content]'].$invalid">☒</span>
+					</div>
+				</div>
+			</fieldset>
+			
+			<fieldset id="taxonomy" ng-disabled="locationNotReady()" ng-hide="isEdit">
+				<div class="row">
+					<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-2">
+			          	<label for="category">
+			          	Seleziona la categoria (attiva solo dopo aver selezionato una provincia) *</label>	
+					</div>
+					<div class="form-group col-lg-9 col-md-9 col-sd-9 col-xs-9">   
+						<select name="document[termTaxonomy][0][termTaxonomyId]" class="form-control" 
+							ng-options="c.label group by c.group for c in categories" 
+						   	ng-model="classified.category" required>
+						   	<option value="">Seleziona una categoria</option>
+						</select>
+						<div class="text-warning" 
+							ng-show="classifiedadd['document[termTaxonomy][0][termTaxonomyId]'].$dirty && classifiedadd['document[termTaxonomy][0][termTaxonomyId]'].$invalid">
+						    <p ng-repeat="item in classifiedadd['document[termTaxonomy][0][termTaxonomyId]'].messages">
+								{{item}}
+							</p>
+						</div>
+					</div>
+					<div class="form-group col-lg-1 col-md-1 col-sd-1 col-xs-1">
+						<span class="btn btn-success ok" ng-show="classifiedadd['document[termTaxonomy][0][termTaxonomyId]'].$dirty && classifiedadd['document[termTaxonomy][0][termTaxonomyId]'].$valid">☑</span>
+ 						<span class="btn btn-danger ko" ng-show="classifiedadd['document[termTaxonomy][0][termTaxonomyId]'].$dirty && classifiedadd['document[termTaxonomy][0][termTaxonomyId]'].$invalid">☒</span>
+					</div>
+				</div>
+			</fieldset>
+			
+			<add-sub-form></add-sub-form>
+			
+			<fieldset id="metadata">
+				<legend>Inserisci il tuo numero di telefono e specifica se offri o se stai cercando</legend>
+				<div class="row">
+					<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-2">
+			          	<label for="mobile">Numero di telefono</label>	
+					</div>
+					<div class="form-group col-lg-9 col-md-9 col-sd-9 col-xs-9">  	            	
+			          	<input type="text" placeholder="Il tuo numero di telefono" ng-minlength="3" ng-maxlength="20" ng-pattern="/[0-9\.\+ ]+$/" 
+			          		class="form-control" name="document[metadata][0][value]" ng-model="classified.mobile" />
+						<div class="text-warning" 
+							ng-show="classifiedadd['document[metadata][0][value]'].$dirty && classifiedadd['document[metadata][0][value]'].$invalid">
+						    <p ng-repeat="item in classifiedadd['document[metadata][0][value]'].messages">
+								{{item}}
+							</p>
+						</div>
+			          		
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" name="hidemobile" ng-model="classified.hidemobile" 
+									ng-true-value="YES" ng-false-value="NO">
+								Non mostrare il numero di telefono nell'annuncio 
+							</label>
+						</div>
+					</div>
+					<div class="form-group col-lg-1 col-md-1 col-sd-1 col-xs-1">
+						<span class="btn btn-success ok" ng-show="classifiedadd['document[metadata][0][value]'].$dirty && classifiedadd['document[metadata][0][value]'].$valid">☑</span>
+ 						<span class="btn btn-danger ko" ng-show="classifiedadd['document[metadata][0][value]'].$dirty && classifiedadd['document[metadata][0][value]'].$invalid">☒</span>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-2">
+			          	<label for="purpose">Vendi o cerchi?</label>	
+					</div>
+					<div class="form-group col-lg-9 col-md-9 col-sd-9 col-xs-9">  
+						<div class="radio-inline">
+							<input type="radio" name="purpose" value="vendita" ng-model="classified.purpose">
+							In vendita
+						</div>
+						
+						<div class="radio-inline">
+							<input type="radio" name="purpose" value="cercasi" ng-model="classified.purpose">
+							Cercasi
+						</div>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-2">
+			          	<label for="price">Prezzo</label>	
+					</div>
+					<div class="form-group col-lg-9 col-md-9 col-sd-9 col-xs-9"> 
+						<div class="input-group">
+	  						<span class="input-group-addon">€</span>	          	
+				          	<input type="text" class="form-control" 
+				          		name="document[metadata][3][value]" ng-pattern="/[0-9]+$/" 
+				          		ng-model="classified.price" placeholder="Inserisci un NUMERO o lascia vuoto se vuoi che gli utenti ti contattino per conoscerlo" />
+				          	<span class="input-group-addon">.00</span>
+						</div>
+						<div class="text-warning" 
+							ng-show="classifiedadd['document[metadata][3][value]'].$dirty && classifiedadd['document[metadata][3][value]'].$invalid">
+						    <p ng-repeat="item in classifiedadd['document[metadata][3][value]'].messages">
+								{{item}}
+							</p>
+						</div>
+					</div>
+					<div class="form-group col-lg-1 col-md-1 col-sd-1 col-xs-1">
+						<span class="btn btn-success ok" ng-show="classifiedadd['document[metadata][3][value]'].$dirty && classifiedadd['document[metadata][3][value]'].$valid">☑</span>
+ 						<span class="btn btn-danger ko" ng-show="classifiedadd['document[metadata][3][value]'].$dirty && classifiedadd['document[metadata][3][value]'].$invalid">☒</span>
+					</div>
+				</div>
+			</fieldset>
+			
+			<br />
+			<br />
+			
+			<fieldset id="images">
+				<legend>Aggiungi fino a 5 immagini per dare maggiore visibilità al tuo annuncio</legend>
+				
+				<div class="row" ng-show="maximages">
+					<div class="alert alert-info">
+  						Non puoi caricare altre immagini.
+					</div>
+				</div>
+				
+				<div class="row" ng-hide="maximages">
+					<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-2">
+						<span class="btn btn-success fileinput-button" ng-class="{disabled: disabled}">
+							<i class="glyphicon glyphicon-plus"></i>
+							<span>Aggiungi..</span>
+							<input type="file" name="files[]" multiple ng-disabled="disabled">
+							<!--  <input id="testUpload" type="file" fileupload name="files[]" 
+							data-url="/classified" multiple done="uploadFinished(e, data)"> -->
+       					</span>
+					</div>
+					
+					<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-2">
+						<button type="button" class="btn btn-primary start" data-ng-click="submit()">
+							<i class="glyphicon glyphicon-upload"></i>
+						    <span>Inizia upload</span>
+						</button>
+					</div>
+					
+					<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-2">
+						<button type="button" class="btn btn-warning cancel" data-ng-click="cancel()">
+						    <i class="glyphicon glyphicon-ban-circle"></i>
+						    <span>Cancella upload</span>
+						</button>
+					</div>
+					
+					<div class="form-group col-lg-3 col-md-3 col-sd-3 col-xs-3">
+       					<!-- The loading indicator is shown during file processing -->
+       					<div class="fileupload-loading"></div>
+					</div>
+					
+					<div class="form-group col-lg-3 col-md-3 col-sd-3 col-xs-3 fade" 
+						data-ng-class="{in: active()}">
+						
+						<!-- The global progress bar -->
+						<div class="progress progress-striped active" 
+							data-file-upload-progress="progress()">
+							<div class="progress-bar progress-bar-success" 
+								data-ng-style="{width: num + '%'}">
+							</div>
+						</div>
+						
+		          		<!-- The extended global progress information -->
+						<div class="progress-extended">&nbsp;</div>
+					</div>
+				</div>
+				
+				<div class="row files ng-cloak">
+					<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-2"
+						data-ng-repeat="file in queue">
+						
+			            <div data-ng-switch data-on="!!file.thumbnailUrl">
+			                <div class="preview" data-ng-switch-when="true">
+			                    <a data-ng-href="{{file.url}}" title="Clicca per scaricare" 
+			                    download="{{file.name}}" data-gallery>
+			                    <img data-ng-src="{{file.thumbnailUrl}}" alt=""></a>
+			                </div>
+			                <div class="preview" 
+			                	data-ng-switch-default data-file-upload-preview="file"></div>
+			            </div>
+			            
+						<div>
+		                	<p class="name" data-ng-switch data-on="!!file.url">
+		                    	<span data-ng-switch-when="true" 
+		                    		data-ng-switch data-on="!!file.thumbnailUrl">
+		                        	<!-- <a data-ng-switch-when="true" 
+		                        		data-ng-href="{{file.url}}" title="{{file.name}}" 
+		                        		download="{{file.name}}" data-gallery>{{file.name}}</a> -->
+		                        	<!-- <a data-ng-switch-default 
+		                        		data-ng-href="{{file.url}}" title="{{file.name}}" 
+		                        		download="{{file.name}}">{{file.name}}</a> -->
+		                    	</span>
+		                    	<!-- <span data-ng-switch-default>{{file.name}}</span> -->
+		                	</p>
+		                	<div data-ng-show="file.error">
+		                		<span class="label label-danger">Errore</span> 
+		                		Non è stato possibile caricare questa immagine, 
+		                		clicca "cancella" e prova con un'altra!
+		                		<!-- {{file.error}} -->
+		                	</div>
+						</div>
+						
+			            <div>
+			                <!-- <p class="size">{{file.size | formatFileSize}}</p> -->
+			                <div class="progress progress-striped active fade" 
+			                	data-ng-class="{pending: 'in'}[file.$state()]" 
+			                	data-file-upload-progress="file.$progress()">
+			                	<div class="progress-bar progress-bar-success" 
+			                		data-ng-style="{width: num + '%'}"></div>
+			                </div>
+			            </div>
+			            
+						<div>
+							<button type="button" class="btn btn-primary start" 
+								data-ng-click="file.$submit()" 
+								data-ng-hide="!file.$submit">
+						        	<i class="glyphicon glyphicon-upload"></i>
+						        	<span>Start</span>
+						    </button>
+						    <button type="button" class="btn btn-warning cancel" 
+						    	data-ng-click="file.$cancel()" 
+						    	data-ng-hide="!file.$cancel">
+						        	<i class="glyphicon glyphicon-ban-circle"></i>
+						        	<span>Cancella</span>
+						    </button>
+						    <button data-ng-controller="FileDestroyController" type="button" 
+						    	class="btn btn-danger destroy" data-ng-click="file.$destroy()" 
+						    	data-ng-hide="!file.$destroy">
+						        	<i class="glyphicon glyphicon-trash"></i>
+						        	<span>Elimina</span>
+						    </button>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+				
+			<fieldset>
+				<div class="row">
+					<div class="form-group col-lg-8 col-md-8 col-sd-8 col-xs-4">
+			          	&nbsp;	
+					</div>
+					<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-4"> 
+						<input type="reset" name="reset" value="Reset" class="btn btn-primary btn-block" 
+							 ng-click="reset()"/>
+			        </div>
+					<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-4"> 
+						<input type="hidden" name="classifiedid" ng-model="classified.id" />
+						<input type="hidden" name="userid" ng-model="classified.user.id" />
+						<input type="submit" name="submit" value="Invia" class="btn btn-primary btn-block" /> 
+							<!-- ng-disabled="classifiedadd.$invalid || isUnchanged(classified) || isInvalidCategory()" -->
+			        </div>
+				</div>
+			</fieldset>
+		</form>
+
+	</div>
+</div>

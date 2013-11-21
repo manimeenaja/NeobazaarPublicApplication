@@ -1,0 +1,39 @@
+<form name="search" class="" id="search" ng-submit="doSearch()">	
+
+	<fieldset>
+		<div class="row">
+			<div class="form-group col-lg-4">
+	          	<label for="query">Cosa cerchi?</label>	            	
+	          	<input type="text" class="form-control" placeholder="Ps3, appartamento, Lamborghini ..." 
+	          		name="query" ng-model="params.query">
+			</div>
+	        
+			<div class="form-group col-lg-3">
+	          	<label for="category">In quale categoria?</label>	   
+				<select class="form-control" name="category" 
+					ng-options="c.label group by c.group for c in categories" 
+				   	ng-model="params.category" ng-change="categoryChange(category)">
+				   	<option value="">Tutte le categorie</option>
+					</select>
+			</div>
+	        
+			<div class="form-group col-lg-3">
+	          	<label for="location">Dove?</label>	            	
+	          	<select class="form-control" name="location"
+					ng-options="c.label group by c.group for c in locations" 
+				   	ng-model="params.location">
+				   	<option value="">Tutta Italia</option>
+					</select>
+			</div>
+	        
+			<div class="form-group col-lg-2">
+	          	<label for="invia">&nbsp;</label>
+				<input type="submit" value="Invia" class="form-control btn btn-primary" 
+	          		name="invia" ng-click="doSearch()" />
+	        </div>
+		</div>
+	</fieldset>
+			
+	<neo-search-sub-form></neo-search-sub-form>
+</form>
+	

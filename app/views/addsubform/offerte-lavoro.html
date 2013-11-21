@@ -1,0 +1,63 @@
+<fieldset>
+	<legend>Completa le seguenti informazioni aggiuntive per la categoria selezionata</legend>
+	
+	<div class="row">
+		<div class="form-group col-lg-4 col-md-4 col-sd-4 col-xs-6">	
+			<div class="row">
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+		          	<label for="jobcontracttype">Contratto di lavoro</label>	
+				</div>
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+					<select name="document[metadata][4][value]" class="form-control" 
+						ng-options="c.label for c in jobcontracttype" ng-model="classified.jobcontracttype">
+					   	<option value="">Tutti</option>
+					</select>
+					<div class="text-warning" 
+						ng-show="classifiedadd['document[metadata][4][value]'].$dirty && classifiedadd['document[metadata][4][value]'].$invalid">
+					    <p ng-repeat="item in classifiedadd['document[metadata][4][value]'].messages">
+							{{item}}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4 col-md-4 col-sd-4 col-xs-6">	
+			<div class="row">
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+		          	<label for="workinghours">Orario di lavoro</label>	
+				</div>
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+					<select name="document[metadata][5][value]" class="form-control" 
+						ng-options="c.label for c in workinghours" ng-model="classified.workinghours">
+					   	<option value="">Tutti</option>
+					</select>
+					<div class="text-warning" 
+						ng-show="classifiedadd['document[metadata][5][value]'].$dirty && classifiedadd['document[metadata][5][value]'].$invalid">
+					    <p ng-repeat="item in classifiedadd['document[metadata][5][value]'].messages">
+							{{item}}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group col-lg-4 col-md-4 col-sd-4 col-xs-6">	
+			<div class="row">
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+		          	<label for="jobtype">Inquadramento</label>	
+				</div>
+				<div class=" col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+					<select name="document[metadata][6][value]" class="form-control" 
+						ng-options="c.label for c in jobtype" ng-model="classified.jobtype">
+					   	<option value="">Tutti</option>
+					</select>
+					<div class="text-warning" 
+						ng-show="classifiedadd['document[metadata][6][value]'].$dirty && classifiedadd['document[metadata][6][value]'].$invalid">
+					    <p ng-repeat="item in classifiedadd['document[metadata][6][value]'].messages">
+							{{item}}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</fieldset>

@@ -1,2 +1,2 @@
-Neobazaar Public Application
+Neobazaar Frontend Application
 =======================

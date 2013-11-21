@@ -1,0 +1,70 @@
+<form class="form-horizontal" action="/classified-answer" 
+	name="classifiedanswer" novalidate validation data-validationsuccess='success' 
+	data-validationmodel="params" data-validationmodelinit="reset" id="classifiedanswer" 
+	data-validationrequestadata="prepareRequestParams" data-validationerror='error' >
+					
+	<div class="form-group" ng-show="(response && response.message)">
+	       <div class="col-lg-12">
+			<div class="alert alert-{{response.status}}" ng-show="response && response.message">
+				<p>{{response.message}}</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-lg-2 control-label" for="inputEmail1">Email</label>
+        <div class="col-lg-10">
+			<input type="text" placeholder="Email" name="email"
+				id="email" class="form-control" 
+				ng-model="params.email" required>
+			<div class="text-warning" 
+				ng-show="classifiedanswer.email.$dirty && classifiedanswer.email.$invalid">
+			    <p ng-repeat="item in classifiedanswer.email.messages">
+					{{item}}
+				</p>
+			</div>
+        </div>
+	</div>
+       
+	<div class="form-group">
+		<label class="col-lg-2 control-label" for="testo">Testo</label>
+		<div class="col-lg-10">
+			<textarea name="content" class="form-control" 
+				rows="3" ng-model="params.content" required></textarea>
+			<div class="text-warning" 
+				ng-show="classifiedanswer.content.$dirty && classifiedanswer.content.$invalid">
+			    <p ng-repeat="item in classifiedanswer.content.messages">
+					{{item}}
+				</p>
+			</div>
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-lg-2 control-label" for="inputEmail1">Captcha</label>
+        <div class="col-lg-10">
+        	<img width="250" height="100" alt="" ng-src="/captcha/{{params.captcha.id}}.png">
+        	<input name="captchaid" type="hidden" ng-model="params.captcha.id">
+			<input type="text" placeholder="Inserisci il codice dell'immagine" name="captcha"
+				id="captcha" class="form-control" 
+				ng-model="params.captcha.input" required>
+			<div class="text-warning" 
+				ng-show="classifiedanswer.captcha.$dirty && classifiedanswer.captcha.$invalid">
+			    <p ng-repeat="item in classifiedanswer.captcha.messages">
+					{{item}}
+				</p>
+			</div>
+        </div>
+	</div>
+
+	<div class="form-group">
+		<div class="col-lg-offset-2 col-lg-2 col-md-2 col-sd-2 col-xs-4">
+			<input type="hidden" name="id" ng-model="params.id" />
+			<button class="btn btn-default" type="submit">Invia</button>
+		</div>
+		<div class="col-lg-2 col-md-2 col-sd-2 col-xs-4"> 
+			<input type="reset" name="reset" value="Reset" class="btn btn-primary btn-block" 
+				ng-click="reset()"/>
+        </div>
+	</div>
+</form>

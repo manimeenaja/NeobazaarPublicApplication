@@ -1,0 +1,105 @@
+<div class="row">
+	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+			
+		<div class="panel panel-primary searchlist">
+		  	
+		  	<div class="panel-heading">
+				<ul class="breadcrumb">
+				    <li>
+				        <a href="#/">Home</a>
+				        <span class="divider"></span>
+				    </li>
+				    <li>
+				        <a href="#/support">Supporto</a>
+				        <span class="divider"></span>
+				    </li>
+				</ul>
+		  	</div>
+		  	
+		  	<div class="panel-body">
+		  	
+		  		<account-menu></account-menu>
+
+		  		<hr />
+		  		<div class="spinner" ng-hide="resource">
+					<div class="progress progress-striped active">
+						<div class="progress-bar"  role="progressbar" 
+							aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+							<span class="sr-only"></span>
+						</div>
+					</div>
+				</div>
+				
+				<form name="support" action="/contact-request" id="support" ng-show="resource" 
+					novalidate validation data-validationmodelinit="reset" data-validationmodel="params" 
+					data-validationsuccess='success' data-validationrequestadata="prepareRequestParams" 
+					data-validationerror='error' >
+					
+					<div class="form-group" ng-show="(response && response.message)">
+				        <div class="col-lg-12">
+							<div class="alert alert-{{response.status}}" ng-show="response && response.message">
+								<p>{{response.message}}</p>
+							</div>
+						</div>
+					</div>
+					
+					<fieldset>
+						<div class="form-group">
+							<label class="col-lg-2 control-label" for="testo">Testo</label>
+							<div class="col-lg-10">
+								<textarea name="content" class="form-control" 
+									rows="3" ng-model="params.content" required></textarea>
+								<div class="text-warning" 
+									ng-show="support.content.$dirty && support.content.$invalid">
+								    <p ng-repeat="item in support.content.messages">
+										{{item}}
+									</p>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+						
+					<fieldset>
+						<div class="form-group">
+							<label class="col-lg-2 control-label" for="inputEmail1">Captcha</label>
+					        <div class="col-lg-10">
+					        	<img width="250" height="100" alt="" ng-src="/captcha/{{params.captcha.id}}.png">
+					        	<input name="captchaid" type="hidden" ng-model="params.captcha.id">
+								<input type="text" placeholder="Inserisci il codice dell'immagine" name="captcha"
+									id="captcha" class="form-control" 
+									ng-model="params.captcha.input" required>
+								<div class="text-warning" 
+									ng-show="support.captcha.$dirty && support.captcha.$invalid">
+								    <p ng-repeat="item in support.captcha.messages">
+										{{item}}
+									</p>
+								</div>
+					        </div>
+						</div>
+					</fieldset>
+					
+					<fieldset>
+						<div class="row">
+							<div class="form-group col-lg-8 col-md-8 col-sd-8 col-xs-4">
+					          	&nbsp;	
+							</div>
+							<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-4"> 
+								<input type="reset" name="reset" value="Reset" class="btn btn-primary btn-block" 
+									ng-click="reset()"/>
+					        </div>
+							<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-4"> 
+								<input type="hidden" name="userid" ng-model="params.hashid" />
+								<input type="submit" name="submit" value="Invia" class="btn btn-primary btn-block" /> 
+					        </div>
+						</div>
+					</fieldset>
+				</form>
+				
+			</div>
+  		</div>
+	</div>
+					
+	<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
+		<banner></banner>
+	</div>
+</div>
