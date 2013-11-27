@@ -170,7 +170,8 @@ angular.module('Neobazaar')
 		  $scope.response = false; // reset response
 		  $scope.response = 'message' in data ? data : {
 			  status: 'danger',
-			  message: 'Errore di sistema, riprovare più tardi o contattare l\'assistenza'
+			  message: 'Errore di sistema, FORSE non hai cliccato il tasto per effettuare' + 
+			  	+ 'l\'upload delle immagini. Se il problema persiste contatta l\'assistenza'
 		  };
 		  $("html, body").animate({ scrollTop: 0 }, "slow");
 		  $('#classified').unblock();
