@@ -2,15 +2,10 @@
 
 angular.module('Neobazaar')
   .controller('AccountController', function ($scope, $routeParams, $route, $rootScope, $location, $timeout, Classified, ClassifiedsLoader) {
-//	  if(!$rootScope.logged) {
-//		  $scope.getTemplateUrl =  function() {
-//			  return '/app/views/loggedout/account.html';
-//		  }
-//		  $timeout(function() {
-//			  $location.path('/login');
-//		  }, $rootScope.redirectionDelay);
-//		  return;
-//	  }
+	  if(!$rootScope.logged) {
+		  $location.path('/login');
+		  return;
+	  }
 	  
 	  $scope.disableEnable = function(item) {
 		  Classified.disableEnable({'id':item.hashId}, function(data) {
