@@ -119,7 +119,7 @@ body {
 }
 
 #mapIta {
-    background: url("http://www.nimg.local/img/italia.gif") no-repeat scroll 0 0 transparent;
+    background: url("/app/img/italia.gif") no-repeat scroll 0 0 transparent;
     height: 400px;
     width: 310px;
 }

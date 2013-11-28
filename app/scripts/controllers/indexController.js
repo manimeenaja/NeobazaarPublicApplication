@@ -3,7 +3,7 @@
 angular.module('Neobazaar')
   .controller('IndexController', function ($scope) {
 	  
-	  $scope.cdn = 'http://www.nimg.local/';
+	  $scope.cdn = '/app/';
 	  
 	  $scope.changeImage = function( idRegione, showRegion ) {
 	        var objMappa = document.getElementById('mapReg');
