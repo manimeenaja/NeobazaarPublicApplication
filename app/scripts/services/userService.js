@@ -8,7 +8,8 @@ services.factory('User', ['$resource', '$route',
         		{ id: '@id'},
         		{ 
         			activate: {method:'PUT', params:{'action':'activation'}, isArray:false}, 
-        			passwordRecovered: {method:'PUT', params:{'action':'passwordRecovered'}, isArray:false}
+        			passwordRecovered: {method:'PUT', params:{'action':'passwordRecovered'}, isArray:false},
+        			disableEnable: {method:'PUT', params:{'action': 'disableEnable'}, isArray:false}
         		}
        );
     }]);
