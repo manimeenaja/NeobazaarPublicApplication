@@ -18,11 +18,11 @@ angular.module('Neobazaar')
 	  $scope.delete = function(item) {
 		  console.log('delete');
 		  console.log(item);
-//		  User.remove({'id':item.hashId}, function(data) {
-//			  $route.reload();
-//		  }, function(data) {
-//			  
-//		  });
+		  User.remove({'id':item.hashId}, function(data) {
+			  $route.reload();
+		  }, function(data) {
+			  
+		  });
 	  }
 		
 	  $scope.resource = new UsersLoader($routeParams);
