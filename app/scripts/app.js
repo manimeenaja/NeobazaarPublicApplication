@@ -137,7 +137,7 @@ app.config(['$routeProvider', function ($routeProvider, $route) {
 	        controller: 'IndexController'
 		});
   }])
-  .run(['$rootScope', 'LoggedInLoader', 'CategoriesLoader', 'LocationsLoader', 
+  .run(['$rootScope', 'LoggedInLoader', 'CategoriesLoader', 'LocationsLoader', '$timeout', 
       function($rootScope, LoggedInLoader, CategoriesLoader, LocationsLoader, $timeout) {
 	  // All GLOBAL here
 	  $rootScope.redirectionDelay = 2500;
