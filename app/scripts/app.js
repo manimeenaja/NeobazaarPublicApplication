@@ -138,7 +138,7 @@ app.config(['$routeProvider', function ($routeProvider, $route) {
 		});
   }])
   .run(['$rootScope', 'LoggedInLoader', 'CategoriesLoader', 'LocationsLoader', 
-      function($rootScope, LoggedInLoader, CategoriesLoader, LocationsLoader) {
+      function($rootScope, LoggedInLoader, CategoriesLoader, LocationsLoader, $timeout) {
 	  // All GLOBAL here
 	  $rootScope.redirectionDelay = 2500;
 	  $rootScope.checkedLogged = false;
@@ -181,7 +181,9 @@ app.config(['$routeProvider', function ($routeProvider, $route) {
 			  $rootScope.categories = data.data;
 		  }); 
 	  }
-	  $rootScope.loadCategories();
+	  $timeout(function() {
+		  $rootScope.loadCategories();
+	  }, 1500);
 	  
 	  // Locations for add/edit form
 	  $rootScope.locations = [];
@@ -192,7 +194,9 @@ app.config(['$routeProvider', function ($routeProvider, $route) {
 			  $rootScope.locations = data.data;
 		  }); 
 	  }
-	  $rootScope.loadLocations();
+	  $timeout(function() {
+		  $rootScope.loadLocations();
+	  }, 2500);
 	  
 	  
 	  // Meta select 
