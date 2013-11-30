@@ -183,7 +183,7 @@ app.config(['$routeProvider', function ($routeProvider, $route) {
 	  }
 	  $timeout(function() {
 		  $rootScope.loadCategories();
-	  }, 1500);
+	  }, 1000);
 	  
 	  // Locations for add/edit form
 	  $rootScope.locations = [];
@@ -196,7 +196,7 @@ app.config(['$routeProvider', function ($routeProvider, $route) {
 	  }
 	  $timeout(function() {
 		  $rootScope.loadLocations();
-	  }, 2500);
+	  }, 1500);
 	  
 	  
 	  // Meta select 
