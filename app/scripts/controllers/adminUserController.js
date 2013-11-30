@@ -15,12 +15,22 @@ angular.module('Neobazaar')
 		  });
 	  }
 	  
-	  $scope.delete = function(item) {
-		  User.remove({'id':item.hashId}, function(data) {
+	  $scope.ban = function(item) {
+		  User.ban({'id':item.hashId}, function(data) {
 			  $route.reload();
 		  }, function(data) {
 			  
 		  });
+	  }
+	  
+	  $scope.delete = function(item) {
+		  if(confirm('Questo eliminerà utente, tutti i suoi annunci e le immagini associate, l\'azione è irreversibile, procedi?')) {
+			  User.remove({'id':item.hashId}, function(data) {
+				  $route.reload();
+			  }, function(data) {
+				  
+			  });
+		  }
 	  }
 		
 	  $scope.resource = new UsersLoader($routeParams);

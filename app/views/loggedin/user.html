@@ -61,7 +61,13 @@
 							<a ng-click="disableEnable(item)" class="btn btn-primary" title="L'utente è eliminato clicca per attivare" ng-show="item.isDeleted">
 								<span class="glyphicon glyphicon-play"></span>
 							</a>
-							<a ng-click="delete(item)" class="btn btn-danger delete-classified" title="Elimina utente">
+							<a ng-click="ban(item)" class="btn btn-danger" title="Banna utente" ng-show="item.isActive">
+								<span class="glyphicon glyphicon-thumbs-down"></span>
+							</a>
+							<a ng-click="ban(item)" class="btn btn-success" title="De-Banna utente" ng-show="item.isBanned">
+								<span class="glyphicon glyphicon-thumbs-up"></span>
+							</a>
+							<a ng-click="delete(item)" class="btn btn-danger" title="Elimina utente">
 								<span class="glyphicon glyphicon-remove-sign"></span>
 							</a>
 						</div>
