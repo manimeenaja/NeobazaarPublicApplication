@@ -9,7 +9,11 @@ angular.module('Neobazaar').controller(
       $scope.resource.then(function(response) {
         $window.document.title = response.data.title + " - "
             + $window.document.title;
-        $rootScope.title = $window.document.title;
+        $rootScope.fb = {
+            title: $window.document.title,
+            sitename: 'Neobazaar',
+            description: 'Neobazaar free classifieds'
+        };
       });
 
       $scope.back = function() {
