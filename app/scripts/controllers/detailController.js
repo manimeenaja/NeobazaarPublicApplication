@@ -5,10 +5,9 @@ angular.module('Neobazaar').controller('DetailController',
       $scope.resource = new ClassifiedLoader();
       $scope.path = $location.path();
       
-
-      $scope.resource.then(function(response) { 
-        console.log(response);
-        console.log($scope.resource);
+      $scope.resource.then(function(response) {
+        $window.document.title = response.data.title + " - "
+            + $window.document.title;
       });
 
       $scope.back = function() {
