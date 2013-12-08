@@ -8,7 +8,7 @@ angular.module('Neobazaar').controller(
 
       $scope.resource.then(function(response) {
         $window.document.title = response.data.title + " - "
-            + $window.document.title;
+            + " Neobazaar annunci gratuiti";
         $rootScope.fb = {
             title: $window.document.title,
             sitename: 'Neobazaar',
