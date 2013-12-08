@@ -140,6 +140,7 @@ app.config(['$routeProvider', function ($routeProvider, $route) {
   .run(['$rootScope', 'LoggedInLoader', 'CategoriesLoader', 'LocationsLoader', '$timeout', 
       function($rootScope, LoggedInLoader, CategoriesLoader, LocationsLoader, $timeout) {
 	  // All GLOBAL here
+    $rootScope.title = 'neo test title';
 	  $rootScope.redirectionDelay = 2500;
 	  $rootScope.checkedLogged = false;
 	  $rootScope.logged = false;
