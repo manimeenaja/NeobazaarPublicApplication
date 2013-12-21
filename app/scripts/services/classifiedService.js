@@ -2,7 +2,7 @@
 
 var services = angular.module('Neobazaar.services', [ 'ngResource' ]);
 
-services.factory('Classified', [ '$resource', 
+services.factory('Classified', [ '$resource',
     function($resource) {
       return $resource('/classified/:id', {
         id : '@id'
