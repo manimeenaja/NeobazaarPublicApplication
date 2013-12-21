@@ -2,7 +2,7 @@
 
 var services = angular.module('Neobazaar.services');
 
-services.factory('Categories', ['$resource', '$route', 
-    function ($resource, $route) {	
-        return $resource('/data/categories');
-    }]);
+services.factory('Categories', [ '$resource',
+    function($resource) {
+      return $resource('/data/categories');
+    } ]);
