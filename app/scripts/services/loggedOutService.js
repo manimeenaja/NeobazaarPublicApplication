@@ -2,7 +2,7 @@
 
 var services = angular.module('Neobazaar.services');
 
-services.factory('LoggedOut', [ '$resource', '$route',
-    function($resource, $route) {
+services.factory('LoggedOut', [ '$resource',
+    function($resource) {
       return $resource('/user/logout');
     } ]);
