@@ -2,7 +2,7 @@
 
 var services = angular.module('Neobazaar.services');
 
-services.factory('LoggedIn', ['$resource', '$route', 
-    function ($resource, $route) {	
-        return $resource('/user/check-logged-in');
-    }]);
+services.factory('LoggedIn', [ '$resource',
+    function($resource) {
+      return $resource('/user/check-logged-in');
+    } ]);
