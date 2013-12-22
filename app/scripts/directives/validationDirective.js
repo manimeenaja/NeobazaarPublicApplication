@@ -13,7 +13,7 @@ directives.directive('validation', function($http) {
       $scope.elementManager = function(element, data, status) {
         element.find('input, textarea, select').each(
             function(i, v) {
-              var el = angular.element(v); 
+              var el = angular.element(v);
               var name = el.attr('name');
 
               if (!name) {
