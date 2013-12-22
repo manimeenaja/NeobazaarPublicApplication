@@ -1,6 +1,6 @@
 'use strict';
 
-var directives = angular.module('Neobazaar.directives', []);
+var directives = angular.module('Neobazaar.directives');
 
 //directives.run(function($templateCache) {
 //	  $templateCache.put('helloTemplateCached.html', '/app/views/searchform.html');
