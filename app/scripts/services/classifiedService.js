@@ -1,6 +1,6 @@
 'use strict';
 
-var services = angular.module('Neobazaar.services', [ 'ngResource' ]);
+var services = angular.module('Neobazaar.services');
 
 services.factory('Classified', [ '$resource',
     function($resource) {
