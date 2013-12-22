@@ -8,35 +8,33 @@ angular.module('Neobazaar')
 	  }
 	  
 	  $scope.disableEnable = function(item) {
-		  User.disableEnable({'id':item.hashId}, function(data) {
+		  User.disableEnable({'id':item.hashId}, function() {
 			  $route.reload();
-		  }, function(data) {
-			  
+		  }, function() {
 		  });
-	  }
+	  };
 	  
 	  $scope.ban = function(item) {
-		  User.ban({'id':item.hashId}, function(data) {
+		  User.ban({'id':item.hashId}, function() {
 			  $route.reload();
-		  }, function(data) {
-			  
+		  }, function() {
 		  });
-	  }
+	  };
 	  
+	  /*jshint devel:true*/
 	  $scope.delete = function(item) {
 		  if(confirm('Questo eliminerà utente, tutti i suoi annunci e le immagini associate, l\'azione è irreversibile, procedi?')) {
-			  User.remove({'id':item.hashId}, function(data) {
+			  User.remove({'id':item.hashId}, function() {
 				  $route.reload();
-			  }, function(data) {
-				  
+			  }, function() {
 			  });
 		  }
-	  }
+	  };
 		
 	  $scope.resource = new UsersLoader($routeParams);
 	  $scope.pagination = $scope.resource.paginationData;
 
 	  $scope.getTemplateUrl =  function() {
 		  return '/app/views/loggedin/user.html';
-	  }
+	  };
   });
