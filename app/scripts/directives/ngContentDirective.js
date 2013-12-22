@@ -2,7 +2,7 @@
 
 var directives = angular.module('Neobazaar.directives');
 
-directives.directive('ngContent', function ($compile) {
+directives.directive('ngContent', function() {
   return {
     link : function($scope, $el, $attrs) {
       $scope.$watch($attrs.ngContent, function(value) {
