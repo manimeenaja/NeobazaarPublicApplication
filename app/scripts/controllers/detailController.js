@@ -7,17 +7,16 @@ angular.module('Neobazaar').controller(
       $scope.path = $location.path();
 
       $scope.resource.then(function(response) {
-        $window.document.title = response.data.title + " - "
-            + " Neobazaar annunci gratuiti";
+        $window.document.title = response.data.title + ' - ' +
+            ' Neobazaar annunci gratuiti';
         $rootScope.fb = {
-            title: $window.document.title,
-            sitename: 'Neobazaar',
-            description: 'Neobazaar free classifieds'
+          title : $window.document.title,
+          sitename : 'Neobazaar',
+          description : 'Neobazaar free classifieds'
         };
       });
 
       $scope.back = function() {
         $window.history.back();
-      }
-
+      };
     });
