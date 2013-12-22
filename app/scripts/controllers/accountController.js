@@ -8,30 +8,28 @@ angular.module('Neobazaar')
 	  }
 	  
 	  $scope.disableEnable = function(item) {
-		  Classified.disableEnable({'id':item.hashId}, function(data) {
+		  Classified.disableEnable({'id':item.hashId}, function() {
 			  $route.reload();
-		  }, function(data) {
-			  
+		  }, function() {
 		  });
-	  }
+	  };
 	  
 	  $scope.delete = function(item) {
+     /*jshint devel:true*/
 		  if(confirm('Questo eliminerà l\'annuncio e le immagini associate, l\'azione è irreversibile, procedi?')) {
-			  Classified.remove({'id':item.hashId}, function(data) {
+			  Classified.remove({'id':item.hashId}, function() {
 				  $route.reload();
-			  }, function(data) {
-				  
+			  }, function() {
 			  });
 		  }
-	  }
+	  };
 	  
 	  $scope.touch = function(item) {
-		  Classified.touch({'id':item.hashId}, function(data) {
+		  Classified.touch({'id':item.hashId}, function() {
 			  $route.reload();
-		  }, function(data) {
-			  
+		  }, function() {
 		  });
-	  }
+	  };
 		
 	  $routeParams.current = 1;
 	  $scope.resource = new ClassifiedsLoader($routeParams);
@@ -39,5 +37,5 @@ angular.module('Neobazaar')
 
 	  $scope.getTemplateUrl = function() {
 		  return '/app/views/loggedin/account.html';
-	  }
+	  };
   });
