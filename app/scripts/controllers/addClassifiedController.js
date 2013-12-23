@@ -181,12 +181,19 @@ angular
           $scope.response = false;
           $scope.error = function(data) {
             $scope.response = false; // reset response
-            $scope.response = 'message' in data ? data
-                : {
-              status : 'danger',
-              message : 'Errore di sistema, FORSE non hai cliccato il tasto per effettuare' +
-                      'l\'upload delle immagini. Se il problema persiste contatta l\'assistenza'
-            };
+            if(typeof data === 'string') {
+              $scope.response = {
+                  status : 'danger',
+                  message : data
+                };
+            } else {
+              $scope.response = typeof data === 'object' && 'message' in data ? data
+                  : {
+                status : 'danger',
+                message : 'Errore di sistema, FORSE non hai cliccato il tasto per effettuare' +
+                        'l\'upload delle immagini. Se il problema persiste contatta l\'assistenza'
+              };
+            }
             angular.element('html, body').animate({
               scrollTop : 0
             }, 'slow');

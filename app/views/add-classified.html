@@ -23,15 +23,15 @@
 			data-validationmodelinit="reset" data-validationrequestadata="prepareRequestParams" 
 			data-validationerror='error'>
 			
-			<div class="form-group" ng-show="(response && response.message)">
+			<div class="row form-group" ng-show="(response && response.message)">
 		        <div class="col-lg-12">
-					<div class="alert alert-{{response.status}}" ng-show="response && response.message && classifiedadd.$valid">
+					<div class="alert alert-{{response.status}}" ng-show="response && response.message">
 						<p>{{response.message}}</p>
 					</div>
 				</div>
 			</div>
 			
-			<div class="form-group" ng-show="isEdit && !classified.isActive">
+			<div ng-show="isEdit && !classified.isActive">
 		        <div class="col-lg-12">
 					<div class="alert alert-danger" ng-hide="activated">
 						<p>Questo annuncio è attualmente disattivato e non sarà visibile tra i risultati di ricerca. <a ng-click="activate(classified)">Attiva adesso</a>!</p>
@@ -42,7 +42,7 @@
 				</div>
 			</div>
 
-			<fieldset id="user" ng-hide="isEdit || logged">
+			<fieldset class="form-group" id="user" ng-hide="isEdit || logged">
 				<legend>Inserisci qui il tuo nome e la tua email</legend>
 				<div class="row">
 					<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-2">
