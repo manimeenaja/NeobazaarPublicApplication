@@ -4,7 +4,7 @@ angular.module('Neobazaar')
   .controller('AdminClassifiedController', function ($scope, $routeParams, $route, $rootScope, $location, $timeout, Classified, ClassifiedsLoader) {
 	  if(!$rootScope.logged) {
 		  $scope.getTemplateUrl =  function() {
-			  return '/app/views/loggedout/account.html';
+			  return '/views/loggedout/account.html';
 		  };
 		  $timeout(function() {
 			  $location.path('/login');
@@ -57,6 +57,6 @@ angular.module('Neobazaar')
 	  $scope.pagination = $scope.resource.paginationData;
 	  
 	  $scope.getTemplateUrl =  function() {
-		  return '/app/views/loggedin/classifieds.html';
+		  return '/views/loggedin/classifieds.html';
 	  };
   });

@@ -6,7 +6,7 @@ angular.module('Neobazaar').controller(
         UserLoader) {
       if (!$rootScope.logged) {
         $scope.getTemplateUrl = function() {
-          return '/app/views/loggedout/account.html';
+          return '/views/loggedout/account.html';
         };
         $timeout(function() {
           $location.path('/login');
@@ -56,6 +56,6 @@ angular.module('Neobazaar').controller(
       };
 
       $scope.getTemplateUrl = function() {
-        return '/app/views/loggedin/profile.html';
+        return '/views/loggedin/profile.html';
       };
     });

@@ -6,8 +6,8 @@ angular.module('Neobazaar').controller(
       $scope.params = $routeParams;
 
       $scope.getHeaderTemplateUrl = function() {
-        return 'location' in $routeParams ? '/app/views/search-panel.html'
-            : '/app/views/empty.html';
+        return 'location' in $routeParams ? '/views/search-panel.html'
+            : '/views/empty.html';
       };
 
       $scope.$watch('params.location.value', function() {

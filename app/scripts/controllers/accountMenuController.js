@@ -47,6 +47,6 @@ angular
           };
 
           $scope.getTemplateUrl = function() {
-            return '/app/views/account-menu.html';
+            return '/views/account-menu.html';
           };
         });

@@ -8,25 +8,34 @@ module.exports = function(config) {
 
     // testing framework to use (jasmine/mocha/qunit/...)
     frameworks: ['jasmine'],
+    
+    
 
     // list of files / patterns to load in the browser
     files: [
+      'app/bower_components/jquery/jquery.js',
       'app/bower_components/angular/angular.js',
+      'app/bower_components/bootstrap/dist/js/bootstrap.min.js',
       'app/bower_components/angular-mocks/angular-mocks.js',
+      'app/bower_components/angular-resource/angular-resource.js',
+      'app/bower_components/angular-sanitize/angular-sanitize.js',
+      'app/bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js',
+      'app/bower_components/blueimp-file-upload/js/jquery.iframe-transport.js',
+      'app/bower_components/blueimp-file-upload/js/jquery.fileupload.js',
+      'app/bower_components/blockui/jquery.blockUI.js',
+      'app/bower_components/blueimp-file-upload/js/jquery.fileupload-process.js',
+      'app/bower_components/blueimp-file-upload/js/jquery.fileupload-angular.js',
+      'app/bower_components/jquery-ui/ui/minified/jquery-ui.min.js',
+      'app/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-it.min.js',
+      'app/bower_components/blockui/jquery.blockUI.js',
+      'app/js/jquery.lightbox.min.js',
       'app/scripts/directives/directive.js',
-      'app/scripts/directives/service.js',
+      'app/scripts/services/service.js',
       'app/scripts/*.js',
       'app/scripts/**/*.js',
       'test/mock/**/*.js',
       'test/spec/**/*.js',
       
-      // Inserire qui tutto quello che serve all'app
-      'app/bower_components/angular-route/angular-route.js',
-      'app/bower_components/angular-cookies/angular-cookies.js',
-      'app/bower_components/angular-sanitize/angular-sanitize.js',
-      'app/bower_components/angular-resource/angular-resource.js',
-      'app/bower_components/angular-ui/build/angular-ui.js',
-      'app/bower_components/angular-local-storage/angular-local-storage.js'
     ],
 
     // list of files / patterns to exclude

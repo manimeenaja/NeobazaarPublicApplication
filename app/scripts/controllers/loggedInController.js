@@ -4,7 +4,7 @@ angular.module('Neobazaar').controller(
     'LoggedInController',
     function($scope, $rootScope) {
       $scope.getTemplateUrl = function() {
-        return $rootScope.logged ? '/app/views/loggedin/top-right-buttons.html'
-            : '/app/views/loggedout/top-right-buttons.html';
+        return $rootScope.logged ? '/views/loggedin/top-right-buttons.html'
+            : '/views/loggedout/top-right-buttons.html';
       };
     });

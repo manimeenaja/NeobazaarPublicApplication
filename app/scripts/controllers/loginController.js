@@ -7,7 +7,7 @@ angular.module('Neobazaar')
             CsrfLoader) {
           if ($rootScope.logged) {
             $scope.getTemplateUrl = function() {
-              return '/app/views/loggedin/login.html';
+              return '/views/loggedin/login.html';
             };
             $timeout(function() {
               $location.path('account');
@@ -19,7 +19,7 @@ angular.module('Neobazaar')
           $scope.$watch('logged', function() {
             if ($rootScope.logged) {
               $scope.getTemplateUrl = function() {
-                return '/app/views/loggedin/login.html';
+                return '/views/loggedin/login.html';
               };
               $timeout(function() {
                 $location.path('account');
@@ -31,7 +31,7 @@ angular.module('Neobazaar')
           $scope.success = function() {
             $rootScope.$emit('loggedIn');
             $scope.getTemplateUrl = function() {
-              return '/app/views/sent/login.html';
+              return '/views/sent/login.html';
             };
             $timeout(function() {
               $location.path('account');
@@ -56,6 +56,6 @@ angular.module('Neobazaar')
           });
 
           $scope.getTemplateUrl = function() {
-            return '/app/views/loggedout/login.html';
+            return '/views/loggedout/login.html';
           };
         });

@@ -1,33 +1,215 @@
-<!doctype html>
+<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app="Neobazaar"> <!--<![endif]-->
   <head>
-    <meta charset="utf-8">
+    <meta name="charset" content="utf8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <title>Neobazaar annunci gratuiti</title>
+    <meta name="description" content="Neobazaar annunci gratuiti">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-mobile-nav/mobile-nav.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css({.tmp,app}) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
 
-        <!-- build:css(.tmp) styles/main.css -->
-        <link rel="stylesheet" href="styles/bootstrap.css">
-        <link rel="stylesheet" href="styles/main.css">
-        <!-- endbuild -->
-</head>
-  <body ng-app="publicApp">
+	<script type="text/javascript">
+    //<!--
+    function ready() {};
+    //-->
+	</script>
+  </head>
+  <body>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    	<div ng-hide="checkedLogged">
+	    	<div class="container">
+    			Attendi un istante...
+		    </div>
+    	</div>
+    	<div ng-show="checkedLogged">
+    		<neo-header></neo-header>
+    	
+    		<neo-search-panel></neo-search-panel>
+    		
+	    	<div class="container">
+				<div ng-view ></div>
+		    </div>
+            
+	    	<div class="container" id="footer">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="footer_top">
+						<ul class="nav nav-pills">
+							<!-- <li><a href="/#/about">Chi siamo</a></li>  -->
+							<li><a href="/#/privacy">Privacy</a></li>
+							<!-- <li><a href="/#/advices">Consigli</a></li>  -->
+							<li><a href="/#/conditions">Condizioni</a></li>
+							<!-- <li><a href="/#/howitworks">Come Funziona</a></li>
+							<li><a target="_blank" href="http://www.facebook.com/pages/Neobazaar-annunci-gratuiti/143541933889">Pagina Facebook</a></li>
+							<li><a rel="nofollow" target="_blank" href="http://apps.facebook.com/annunci-gratuiti/">Applicazione Facebook</a></li>
+							<li><a rel="nofollow" class="hide" id="hp_bookmark" onclick="return Neobazaar.Utils.bookmark('http://www.neobazaar.com', 'Neobazaar.com - Vendi e compra di tutto in Italia');" href="#">Preferiti</a></li>
+							<li><a href="/#/credits">Credits</a></li>  -->
+							<li><a href="mailto:info@neobazaar.com">Contattaci</a></li>
+						</ul>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="footer_main">
+						<ul class="nav nav-pills">
+							<li><a href="#/annunci-milano/compravendita/usato">Annunci
+									Milano</a></li>
+							<li><a href="#/annunci-roma/compravendita/usato">Annunci
+									Roma</a></li>
+							<li><a href="#/annunci-torino/compravendita/usato">Annunci
+									Torino</a></li>
+							<li><a href="#/annunci-napoli/compravendita/usato">Annunci
+									Napoli</a></li>
+							<li><a href="#/annunci-bologna/compravendita/usato">Annunci
+									Bologna</a></li>
+							<!-- <li><a href="#/provincie.html">Altre Province</a>
+							</li> -->
+						</ul>
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="footer_bottom">
+						Il sito di annunci gratuiti in Tutta Italia di case, auto, offerte di
+						lavoro e tantissimo altro ancora. Consulta gli annunci gratuiti di
+						Neobazaar.com, potrai scegliere tra diverse categorie e trovare
+						annunci sempre nuovi di vendita o affitto case, annunci auto e moto
+						usate, offerte lavoro e anche annunci per il tuo tempo libero e lo
+						sport.
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-mobile-nav/mobile-nav.js"></script>
+    <script src="bower_components/angular-cordova/src/angular-cordova.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-angular.js"></script>
+    <script src="bower_components/blueimp-tmpl/js/tmpl.js"></script>
+    <script src="bower_components/blueimp-load-image/js/load-image.js"></script>
+    <script src="bower_components/blueimp-load-image/js/load-image-ios.js"></script>
+    <script src="bower_components/blueimp-load-image/js/load-image-orientation.js"></script>
+    <script src="bower_components/blueimp-load-image/js/load-image-meta.js"></script>
+    <script src="bower_components/blueimp-load-image/js/load-image-exif.js"></script>
+    <script src="bower_components/blueimp-load-image/js/load-image-exif-map.js"></script>
+    <script src="bower_components/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-audio.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-ui.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-validate.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-video.js"></script>
+    <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    
 
     <!--[if lt IE 9]>
-      <script src="bower_components/es5-shim/es5-shim.js"></script>
-      <script src="bower_components/json3/lib/json3.min.js"></script>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="container" ng-view=""></div>
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script type="text/javascript" src="scripts/app.js"></script>
+    
+    <script type="text/javascript" src="scripts/directives/directive.js"></script>
+    <script type="text/javascript" src="scripts/directives/searchFormDirective.js"></script>
+    <script type="text/javascript" src="scripts/directives/searchSubFormDirective.js"></script>
+    <script type="text/javascript" src="scripts/directives/breadcrumbsDirective.js"></script>
+    <script type="text/javascript" src="scripts/directives/headerDirective.js"></script>
+    <script type="text/javascript" src="scripts/directives/searchPanelDirective.js"></script>
+    <script type="text/javascript" src="scripts/directives/fileuploadDirective.js"></script>
+    <script type="text/javascript" src="scripts/directives/detailSidebarDirective.js"></script>
+    <script type="text/javascript" src="scripts/directives/lightboxDirective.js"></script>
+    <script type="text/javascript" src="scripts/directives/contactFormDirective.js"></script>
+    <script type="text/javascript" src="scripts/directives/slideFxDirective.js"></script>
+    <script type="text/javascript" src="scripts/directives/addSubFormDirective.js"></script>
+    <script type="text/javascript" src="scripts/directives/validationDirective.js"></script>
+    <script type="text/javascript" src="scripts/directives/loggedInDirective.js"></script>
+    <script type="text/javascript" src="scripts/directives/triggerChangeDirective.js"></script>
+    <script type="text/javascript" src="scripts/directives/accountMenuDirective.js"></script>
+    <script type="text/javascript" src="scripts/directives/datepickerDirective.js"></script>
+    <script type="text/javascript" src="scripts/directives/bannerDirective.js"></script>
+    <script type="text/javascript" src="scripts/directives/ngContentDirective.js"></script>
+
+    <script type="text/javascript" src="scripts/services/service.js"></script>
+    <script type="text/javascript" src="scripts/services/classifiedService.js"></script>
+    <script type="text/javascript" src="scripts/services/classifiedLoaderService.js"></script>
+    <script type="text/javascript" src="scripts/services/categoriesService.js"></script>
+    <script type="text/javascript" src="scripts/services/categoriesLoaderService.js"></script>
+    <script type="text/javascript" src="scripts/services/locationsService.js"></script>
+    <script type="text/javascript" src="scripts/services/locationsLoaderService.js"></script>
+    <script type="text/javascript" src="scripts/services/classifiedsLoaderService.js"></script>
+    <script type="text/javascript" src="scripts/services/formService.js"></script>
+    <script type="text/javascript" src="scripts/services/formLoaderService.js"></script>
+    <script type="text/javascript" src="scripts/services/captchaService.js"></script>
+    <script type="text/javascript" src="scripts/services/captchaLoaderService.js"></script>
+    <script type="text/javascript" src="scripts/services/csrfService.js"></script>
+    <script type="text/javascript" src="scripts/services/csrfLoaderService.js"></script>
+    <script type="text/javascript" src="scripts/services/loggedInService.js"></script>
+    <script type="text/javascript" src="scripts/services/loggedInLoaderService.js"></script>
+    <script type="text/javascript" src="scripts/services/loggedOutService.js"></script>
+    <script type="text/javascript" src="scripts/services/loggedOutLoaderService.js"></script>
+    <script type="text/javascript" src="scripts/services/userService.js"></script>
+    <script type="text/javascript" src="scripts/services/userLoaderService.js"></script>
+    <script type="text/javascript" src="scripts/services/usersLoaderService.js"></script>
+
+    <script type="text/javascript" src="scripts/controllers/breadcrumbsController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/detailController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/indexController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/serpController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/searchFormController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/searchSubFormController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/headerController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/addClassifiedController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/loginController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/registerController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/searchPanelController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/detailSidebarController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/contactFormController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/addSubFormController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/loggedInController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/accountController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/logoutController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/profileController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/supportController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/accountMenuController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/adminClassifiedController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/adminUserController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/activateClassifiedController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/accountDeletedController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/bannerController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/userActivationController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/infoController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/passwordRecoveryController.js"></script>
+    <script type="text/javascript" src="scripts/controllers/passwordRecoveredController.js"></script>
+
+    <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -36,36 +218,9 @@
        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-       ga('create', 'UA-XXXXX-X');
+       ga('create', 'UA-10089650-1', 'auto');
        ga('send', 'pageview');
     </script>
 
-    <script src="bower_components/jquery/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-
-        <!-- build:js scripts/plugins.js -->
-        <script src="bower_components/bootstrap-sass/js/bootstrap-affix.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-alert.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-dropdown.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-tooltip.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-modal.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-transition.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-button.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-popover.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-typeahead.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-carousel.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-scrollspy.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-collapse.js"></script>
-        <script src="bower_components/bootstrap-sass/js/bootstrap-tab.js"></script>
-        <!-- endbuild -->
-
-        <!-- build:js scripts/modules.js -->
-        <script src="bower_components/angular-resource/angular-resource.js"></script>
-        <!-- endbuild -->
-
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <!-- endbuild -->
-</body>
+  </body>
 </html>

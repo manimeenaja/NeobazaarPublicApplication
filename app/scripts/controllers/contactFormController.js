@@ -40,7 +40,7 @@ angular.module('Neobazaar').controller(
       };
 
       $scope.getTemplateUrl = function() {
-        return $scope.sent ? '/app/views/contact-form-sent.html'
-            : '/app/views/contact-form.html';
+        return $scope.sent ? '/views/contact-form-sent.html'
+            : '/views/contact-form.html';
       };
     });

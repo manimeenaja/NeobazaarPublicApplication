@@ -5,19 +5,19 @@ var app = angular.module('Neobazaar', [ 'Neobazaar.directives',
 
 app.config([ '$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {
-    templateUrl : '/app/views/index.html',
+    templateUrl : '/views/index.html',
     controller : 'IndexController'
   }).when('/annunci-:location/:purpose/:category/:page', {
-    templateUrl : '/app/views/serp.html',
+    templateUrl : '/views/serp.html',
     controller : 'SerpController'
   }).when('/annunci-:location/:purpose/:category', {
-    templateUrl : '/app/views/serp.html',
+    templateUrl : '/views/serp.html',
     controller : 'SerpController'
   }).when('/annunci-:location/:purpose', {
-    templateUrl : '/app/views/serp.html',
+    templateUrl : '/views/serp.html',
     controller : 'SerpController'
   }).when('/annunci-:location', {
-    templateUrl : '/app/views/serp.html',
+    templateUrl : '/views/serp.html',
     controller : 'SerpController',
   // resolve: {
   // classifieds: function(ClassifiedsLoader) {
@@ -25,7 +25,7 @@ app.config([ '$routeProvider', function($routeProvider) {
   // }
   // },
   }).when('/ads/:category/:slug/:id.html', {
-    templateUrl : '/app/views/detail.html',
+    templateUrl : '/views/detail.html',
     controller : 'DetailController',
   // resolve: {
   // classified: function(ClassifiedLoader) {
@@ -40,13 +40,13 @@ app.config([ '$routeProvider', function($routeProvider) {
     controller : 'RegisterController'
   }).when('/login', {
     template : '<div ng-include="getTemplateUrl()"></div>',
-    // templateUrl: '/app/views/login.html',
+    // templateUrl: '/views/login.html',
     controller : 'LoginController'
   }).when('/account', {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'AccountController'
   }).when('/account-deleted', {
-    templateUrl : '/app/views/account-deleted.html',
+    templateUrl : '/views/account-deleted.html',
     controller : 'AccountDeletedController'
   }).when('/account/:page', {
     template : '<div ng-include="getTemplateUrl()"></div>',
@@ -91,10 +91,10 @@ app.config([ '$routeProvider', function($routeProvider) {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'UserActivationController'
   }).when('/privacy', {
-    templateUrl : '/app/views/info.html',
+    templateUrl : '/views/info.html',
     controller : 'InfoController'
   }).when('/conditions', {
-    templateUrl : '/app/views/info.html',
+    templateUrl : '/views/info.html',
     controller : 'InfoController'
   }).when('/user/password-recovery', {
     template : '<div ng-include="getTemplateUrl()"></div>',
@@ -103,7 +103,7 @@ app.config([ '$routeProvider', function($routeProvider) {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'PasswordRecoveredController'
   }).when('/', {
-    templateUrl : '/app/views/index.html',
+    templateUrl : '/views/index.html',
     controller : 'IndexController'
   });
 } ]).run(
@@ -136,6 +136,9 @@ app.config([ '$routeProvider', function($routeProvider) {
                 $rootScope.logged = data.logged;
                 $rootScope.userData = data.data;
               }
+              $rootScope.checkedLogged = true;
+            }, function() {
+              $rootScope.logged = false;
               $rootScope.checkedLogged = true;
             });
           };

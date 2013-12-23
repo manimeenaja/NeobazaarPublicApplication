@@ -36,6 +36,6 @@ angular.module('Neobazaar')
 	  $scope.pagination = $scope.resource.paginationData;
 
 	  $scope.getTemplateUrl = function() {
-		  return '/app/views/loggedin/account.html';
+		  return '/views/loggedin/account.html';
 	  };
   });

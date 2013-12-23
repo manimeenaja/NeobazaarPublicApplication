@@ -22,6 +22,6 @@ angular.module('Neobazaar').controller(
       $scope.activate($routeParams.id);
 
       $scope.getTemplateUrl = function() {
-        return '/app/views/loggedout/user-activation.html';
+        return '/views/loggedout/user-activation.html';
       };
     });

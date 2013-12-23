@@ -41,7 +41,7 @@ angular.module('Neobazaar').controller(
       });
 
       $scope.getTemplateUrl = function() {
-        return $scope.sent ? '/app/views/loggedout/password-recovery-sent.html'
-            : '/app/views/loggedout/password-recovery.html';
+        return $scope.sent ? '/views/loggedout/password-recovery-sent.html'
+            : '/views/loggedout/password-recovery.html';
       };
     });

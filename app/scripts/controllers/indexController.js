@@ -4,7 +4,7 @@ angular.module('Neobazaar').controller(
     'IndexController',
     function($scope) {
 
-      $scope.cdn = '/app/';
+      $scope.cdn = '/';
 
       $scope.changeImage = function(idRegione, showRegion) {
         var objMappa = document.getElementById('mapReg');

@@ -7,7 +7,7 @@ angular.module('Neobazaar')
             CsrfLoader) {
           if ($rootScope.logged) {
             $scope.getTemplateUrl = function() {
-              return '/app/views/loggedin/register.html';
+              return '/views/loggedin/register.html';
             };
             $timeout(function() {
               $location.path('account');
@@ -47,7 +47,7 @@ angular.module('Neobazaar')
           };
 
           $scope.getTemplateUrl = function() {
-            return $scope.sent ? '/app/views/loggedout/register-sent.html'
-                : '/app/views/loggedout/register.html';
+            return $scope.sent ? '/views/loggedout/register-sent.html'
+                : '/views/loggedout/register.html';
           };
         });

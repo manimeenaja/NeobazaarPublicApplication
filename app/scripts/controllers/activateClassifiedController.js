@@ -20,6 +20,6 @@ angular.module('Neobazaar').controller('ActivateClassifiedController',
       $scope.activateClassified();
 
       $scope.getTemplateUrl = function() {
-        return '/app/views/loggedout/activate-classified.html';
+        return '/views/loggedout/activate-classified.html';
       };
     });

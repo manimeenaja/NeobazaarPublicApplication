@@ -6,7 +6,7 @@ angular.module('Neobazaar').controller(
     function($scope, $rootScope, $timeout, $http, $location, CaptchaLoader) {
       if (!$rootScope.logged) {
         $scope.getTemplateUrl = function() {
-          return '/app/views/loggedout/account.html';
+          return '/views/loggedout/account.html';
         };
         $timeout(function() {
           $location.path('/login');
@@ -53,7 +53,7 @@ angular.module('Neobazaar').controller(
       };
 
       $scope.getTemplateUrl = function() {
-        return $scope.sent ? '/app/views/loggedin/support-sent.html'
-            : '/app/views/loggedin/support.html';
+        return $scope.sent ? '/views/loggedin/support-sent.html'
+            : '/views/loggedin/support.html';
       };
     });

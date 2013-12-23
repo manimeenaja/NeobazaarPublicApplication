@@ -10,12 +10,12 @@ angular.module('Neobazaar').controller('SearchSubFormController',
         c = map[c];
         c = undefined === c ? 'empty' : c;
         $scope.getTemplateUrl = function() {
-          return '/app/views/searchsubform/' + c + '.html';
+          return '/views/searchsubform/' + c + '.html';
         };
       });
 
       $scope.getTemplateUrl = function() {
-        return '/app/views/searchsubform/empty.html';
+        return '/views/searchsubform/empty.html';
       };
 
     });

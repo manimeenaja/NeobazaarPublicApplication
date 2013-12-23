@@ -16,7 +16,7 @@ angular.module('Neobazaar').controller(
         c = map[c];
         c = undefined === c ? 'empty' : c;
         $scope.getTemplateUrl = function() {
-          return '/app/views/addsubform/' + c + '.html';
+          return '/views/addsubform/' + c + '.html';
         };
       });
 
@@ -37,6 +37,6 @@ angular.module('Neobazaar').controller(
       });
 
       $scope.getTemplateUrl = function() {
-        return '/app/views/empty.html';
+        return '/views/empty.html';
       };
     });

@@ -13,7 +13,8 @@
     "angular-cordova": "~0.1.1",
     "blueimp-file-upload": "~8.8.5",
     "jquery-ui": "~1.10.3",
-    "blockui": "*"
+    "blockui": "*",
+    "bootstrap": "~3.0.3"
   },
   "devDependencies": {
     "angular-mocks": "~1.0.7",

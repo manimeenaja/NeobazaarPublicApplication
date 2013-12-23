@@ -49,7 +49,7 @@ angular
             // not connected
             if (!$rootScope.logged) {
               $scope.getTemplateUrl = function() {
-                return '/app/views/loggedout/account.html';
+                return '/views/loggedout/account.html';
               };
               $timeout(function() {
                 $location.path('/login');
@@ -873,15 +873,15 @@ angular
           $scope.getTemplateUrl = function() {
             if ($scope.sent && $rootScope.logged) {
               if ($rootScope.isEdit) {
-                return '/app/views/loggedin/add-classified-sent-edit.html';
+                return '/views/loggedin/add-classified-sent-edit.html';
               } else {
-                return '/app/views/loggedin/add-classified-sent-insert.html';
+                return '/views/loggedin/add-classified-sent-insert.html';
               }
             }
             if ($scope.sent && !$rootScope.logged) {
-              return '/app/views/loggedout/add-classified-sent.html';
+              return '/views/loggedout/add-classified-sent.html';
             }
-            return '/app/views/add-classified.html';
+            return '/views/add-classified.html';
           };
 
           //	  $scope.uploadFinished = function(e, data) {

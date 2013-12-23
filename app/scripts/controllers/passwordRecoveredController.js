@@ -20,6 +20,6 @@ angular.module('Neobazaar').controller('PasswordRecoveredController',
       $scope.passwordRecovered($routeParams.id);
 
       $scope.getTemplateUrl = function() {
-        return '/app/views/loggedout/password-recovered.html';
+        return '/views/loggedout/password-recovered.html';
       };
     });

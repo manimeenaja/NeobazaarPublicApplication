@@ -7,9 +7,9 @@ angular.module('Neobazaar').controller('HeaderController',
       $scope.heading = 'Descrizione questa pagina';
 
       $scope.getHeaderTemplateUrl = function() {
-        return '/app/views/header-search.html';
+        return '/views/header-search.html';
         // return 'location' in $routeParams || 'id' in $routeParams ?
-        // '/app/views/header-search.html' : '/app/views/header-home.html';
+        // '/views/header-search.html' : '/views/header-home.html';
       };
 
       $scope.$watch('params.location.value', function() {
