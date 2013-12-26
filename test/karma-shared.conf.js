@@ -38,19 +38,18 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files : [
       //3rd Party Code
-      'app/bower_components/jquery/jquery.js',
       'app/bower_components/angular/angular.js',
-      'app/bower_components/bootstrap/dist/js/bootstrap.min.js',
-      'app/bower_components/angular-mocks/angular-mocks.js',
+      'app/bower_components/jquery/jquery.js',
       'app/bower_components/angular-resource/angular-resource.js',
       'app/bower_components/angular-sanitize/angular-sanitize.js',
+      'app/bower_components/bootstrap/dist/js/bootstrap.min.js',
       'app/bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js',
       'app/bower_components/blueimp-file-upload/js/jquery.iframe-transport.js',
       'app/bower_components/blueimp-file-upload/js/jquery.fileupload.js',
-      'app/bower_components/blockui/jquery.blockUI.js',
       'app/bower_components/blueimp-file-upload/js/jquery.fileupload-process.js',
       'app/bower_components/blueimp-file-upload/js/jquery.fileupload-angular.js',
       'app/bower_components/jquery-ui/ui/minified/jquery-ui.min.js',
+      'app/bower_components/blockui/jquery.blockUI.js',
       'app/bower_components/jquery-ui/ui/minified/i18n/jquery.ui.datepicker-it.min.js',
       'app/bower_components/blockui/jquery.blockUI.js',
       'app/js/jquery.lightbox.min.js',

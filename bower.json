@@ -1,23 +1,21 @@
 {
-  "name": "public",
-  "version": "0.0.0",
+  "name": "neobazaar-public-application",
+  "version": "1.0.0",
   "dependencies": {
-    "jquery": "~1.9.1",
-    "angular": "~1.0.7",
+    "angular": "1.2.5",
+    "json3": "~3.2.6",
+    "es5-shim": "2.2.0",
+    "jquery": "2.0.3",
     "bootstrap": "~3.0.3",
-    "bootstrap-sass": "~2.3.1",
-    "angular-resource": "~1.0.7",
-    "angular-sanitize": "~1.0.8",
+    "bootstrap-sass": "3.0.2",
+    "angular-resource": "1.2.5",
+    "angular-sanitize": "1.2.5",
     "jquery-ui": "~1.10.3",
     "blockui": "*",
-    "blueimp-file-upload": "~8.8.5",
-    "json3": "~3.2.4",
-    "es5-shim": "~2.0.8",
-    "angular-mobile-nav": "*",
-    "angular-cordova": "~0.1.1"
+    "blueimp-file-upload": "9.5.2"
   },
   "devDependencies": {
-    "angular-mocks": "~1.0.7",
-    "angular-scenario": "~1.0.7"
+    "angular-mocks": "1.2.5",
+    "angular-scenario": "1.2.5"
   }
 }

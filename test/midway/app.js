@@ -5,7 +5,7 @@ describe("Midway: Testing Modules", function() {
 
     var module;
     beforeEach(function() {
-      module = angular.module("yeomanApp");
+      module = angular.module("Neobazaar");
     });
 
     it("should be registered", function() {

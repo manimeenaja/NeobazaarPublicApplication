@@ -1,6 +1,11 @@
 {
-  "name": "yeoman",
-  "version": "0.0.0",
+  "name": "neobazaar-public-application",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kaiohken1982/NeobazaarPublicApplication"
+  },
+  "homepage": "https://github.com/kaiohken1982/NeobazaarPublicApplication",
   "dependencies": {},
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -28,7 +33,12 @@
     "jshint-stylish": "~0.1.3",
     "load-grunt-tasks": "~0.2.0",
     "time-grunt": "~0.2.1",
-    "grunt-karma": "~0.6.2"
+    "grunt-karma": "~0.6.2",
+    "grunt-open": "~0.2.2",
+    "istanbul": "~0.2.1",
+    "karma-coverage": "~0.1.4",
+    "karma-ng-scenario": "~0.1.0",
+    "heroku": "~0.1.2"
   },
   "engines": {
     "node": ">=0.8.0"

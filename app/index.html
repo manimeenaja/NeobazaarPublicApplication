@@ -4,39 +4,32 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" ng-app="Neobazaar"> <!--<![endif]-->
   <head>
-    <meta name="charset" content="utf8">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Neobazaar annunci gratuiti</title>
     <meta name="description" content="Neobazaar annunci gratuiti">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/blueimp-file-upload/css/jquery.fileupload.css" />
-    <link rel="stylesheet" href="bower_components/blueimp-file-upload/css/jquery.fileupload-ui.css" />
-    <link rel="stylesheet" href="bower_components/blueimp-file-upload/css/jquery.fileupload-noscript.css" />
-    <link rel="stylesheet" href="bower_components/blueimp-file-upload/css/jquery.fileupload-ui-noscript.css" />
     <link rel="stylesheet" href="bower_components/angular-mobile-nav/mobile-nav.css" />
     <!-- endbower -->
     <!-- endbuild -->
+    
+	<!-- Place here all those scripts that cannot be added with bower-install -->
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="bower_components/blueimp-file-upload/css/jquery.fileupload.css">
     <link rel="stylesheet" href="bower_components/blueimp-file-upload/css/jquery.fileupload-ui.css">
     <!-- endbuild -->
-
-	<script type="text/javascript">
-    //<!--
-    function ready() {};
-    //-->
-	</script>
+    
   </head>
   <body>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    
     	<div ng-hide="checkedLogged">
 	    	<div class="container">
     			Attendi un istante...
@@ -100,9 +93,23 @@
 				</div>
 			</div>
 		</div>
-		
-		
 
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-10089650-1', 'auto');
+       ga('send', 'pageview');
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="bower_components/es5-shim/es5-shim.js"></script>
+    <script src="bower_components/json3/lib/json3.min.js"></script>
+    <![endif]-->
+    
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/jquery.js"></script>
@@ -119,18 +126,15 @@
     <script src="bower_components/blueimp-load-image/js/load-image-exif.js"></script>
     <script src="bower_components/blueimp-load-image/js/load-image-exif-map.js"></script>
     <script src="bower_components/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
-    <script src="bower_components/blueimp-file-upload/js/cors/jquery.postmessage-transport.js"></script>
-    <script src="bower_components/blueimp-file-upload/js/cors/jquery.xdr-transport.js"></script>
     <script src="bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
-    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload.js"></script>
-    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
-    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-validate.js"></script>
-    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
-    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-audio.js"></script>
-    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-video.js"></script>
-    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-ui.js"></script>
-    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-jquery-ui.js"></script>
     <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-angular.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-audio.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-ui.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-validate.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-video.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload.js"></script>
     <script src="bower_components/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
     <script src="bower_components/angular-mobile-nav/mobile-nav.js"></script>
     <script src="bower_components/angular-cordova/src/angular-cordova.js"></script>
@@ -142,7 +146,8 @@
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
-
+    
+	<!-- Place here all those scripts that cannot be added with bower-install -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script type="text/javascript" src="scripts/app.js"></script>
     
@@ -217,19 +222,6 @@
     <script type="text/javascript" src="scripts/controllers/infoController.js"></script>
     <script type="text/javascript" src="scripts/controllers/passwordRecoveryController.js"></script>
     <script type="text/javascript" src="scripts/controllers/passwordRecoveredController.js"></script>
-
     <!-- endbuild -->
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-       })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-10089650-1', 'auto');
-       ga('send', 'pageview');
-    </script>
-
   </body>
 </html>
