@@ -11,7 +11,7 @@ module.exports = function (grunt) {
 
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
-  
+
   grunt.loadNpmTasks('grunt-karma');
 
   // Time how long tasks take. Can help when optimizing build times
@@ -62,6 +62,7 @@ module.exports = function (grunt) {
     // The actual grunt server settings
     connect: {
       options: {
+        // base: 'app/',
         port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost',
@@ -76,9 +77,9 @@ module.exports = function (grunt) {
           ]
         }
       },
-      test: {
+      testserver: {
         options: {
-          port: 9001,
+          port: 9999,
           base: [
             '.tmp',
             'test',
@@ -86,9 +87,25 @@ module.exports = function (grunt) {
           ]
         }
       },
-      dist: {
+      devserver: {
         options: {
+          port: 8888,
           base: '<%= yeoman.dist %>'
+        }
+      },
+      webserver: {
+        options: {
+          port: 8888,
+          keepalive: true,
+          base: '<%= yeoman.dist %>'
+        }
+      },
+      coverage: {
+        options: {
+          base: 'coverage/',
+          port: 5555,
+          keepalive: true,
+          open: true,
         }
       }
     },
@@ -123,7 +140,8 @@ module.exports = function (grunt) {
           ]
         }]
       },
-      server: '.tmp'
+      server: '.tmp',
+      coverage: 'coverage'
     },
 
     // Add vendor prefixed styles
@@ -332,9 +350,20 @@ module.exports = function (grunt) {
     // Test settings
     karma: {
       unit: {
-        configFile: 'karma.conf.js',
+        configFile: './test/karma-unit.conf.js',
+        autoWatch: false,
         singleRun: true
-      }
+      },
+      midway: {
+        configFile: './test/karma-midway.conf.js',
+        autoWatch: false,
+        singleRun: true
+      },
+      e2e: {
+        configFile: './test/karma-e2e.conf.js',
+        autoWatch: false,
+        singleRun: true
+      },
     }
   });
 
@@ -361,10 +390,37 @@ module.exports = function (grunt) {
 
   grunt.registerTask('test', [
     'clean:server',
+    'clean:coverage',
     'concurrent:test',
     'autoprefixer',
-    'connect:test',
-    'karma'
+    'connect:testserver',
+    'karma:unit',
+    'karma:midway',
+    'karma:e2e'
+  ]);
+  grunt.registerTask('test:unit', [
+    'clean:server',
+    'clean:coverage',
+    'concurrent:test',
+    'autoprefixer',
+    'connect:testserver',
+    'karma:unit'
+  ]);
+  grunt.registerTask('test:midway', [
+    'clean:server',
+    'clean:coverage',
+    'concurrent:test',
+    'autoprefixer',
+    'connect:testserver',
+    'karma:midway'
+  ]);
+  grunt.registerTask('test:e2e', [
+    'clean:server',
+    'clean:coverage',
+    'concurrent:test',
+    'autoprefixer',
+    'connect:testserver',
+    'karma:e2e'
   ]);
 
   grunt.registerTask('build', [
@@ -389,4 +445,41 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+  
+  
+  // WARNING: here below some try jut to understand some generated tasks
+  // <%= yeoman.app %> and <%= yeoman.dist %> are configured in the yeoman block!
+  
+  // this will empty and remove .tmp directory
+  grunt.registerTask('taskCleanServer', ['clean:server']);
+  
+  // this will empty and delete .tmp and empty dist. The .git inside dist will be mantained!!
+  grunt.registerTask('taskCleanDist', ['clean:dist']);
+  
+  // This will copy files from app/styles/ to .tmp/styles, check concurrent and copy blocks
+  grunt.registerTask('taskConcurrentServer', ['concurrent:server']);
+  
+  // this will parse CSS and replace properties like 'fullscreen' with vendor specified properties 
+  // for example :-webkit-full-screen, :-moz-full-screen etc..
+  // see here https://github.com/ai/autoprefixer
+  grunt.registerTask('taskAutoprefixer', ['autoprefixer']);
+  
+  // this will connect to test server that will serve 'app' directory on port 9999.
+  // Server is shutdown after connection.
+  grunt.registerTask('connectTestServer', ['connect:testserver']);
+  
+  // this will connect to test server that will serve 'dist' directory on port 8888.  
+  // Connection is kept alive.
+  grunt.registerTask('connectWebServer', ['connect:webserver']);
+  
+  grunt.registerTask('connectCoverage', ['connect:coverage']);
+  
+  // reads from app/index.html inside usemin blocks and save into memory config for:
+  // - concat
+  // - uglyfy
+  // - cssmin
+  grunt.registerTask('taskUsemin', ['useminPrepare']);
+  
+  // Inject dependencies in the index.html file
+  grunt.registerTask('taskBowerInstall', ['bower-install']);
 };
