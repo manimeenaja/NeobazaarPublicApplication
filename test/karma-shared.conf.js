@@ -40,8 +40,12 @@ module.exports = function(config) {
       //3rd Party Code
       'app/bower_components/angular/angular.js',
       'app/bower_components/jquery/jquery.js',
-      'app/bower_components/angular-resource/angular-resource.js',
+      'app/bower_components/angular-route/angular-route.js',
+      'app/bower_components/angular-cookies/angular-cookies.js',
       'app/bower_components/angular-sanitize/angular-sanitize.js',
+      'app/bower_components/angular-resource/angular-resource.js',
+      'app/bower_components/angular-ui/build/angular-ui.js',
+      'app/bower_components/angular-local-storage/angular-local-storage.js',
       'app/bower_components/bootstrap/dist/js/bootstrap.min.js',
       'app/bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js',
       'app/bower_components/blueimp-file-upload/js/jquery.iframe-transport.js',

@@ -13,15 +13,21 @@
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/angular-mobile-nav/mobile-nav.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap-sass/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/blueimp-file-upload/css/jquery.fileupload.css" />
+    <link rel="stylesheet" href="bower_components/blueimp-file-upload/css/jquery.fileupload-ui.css" />
+    <link rel="stylesheet" href="bower_components/blueimp-file-upload/css/jquery.fileupload-noscript.css" />
+    <link rel="stylesheet" href="bower_components/blueimp-file-upload/css/jquery.fileupload-ui-noscript.css" />
     <!-- endbower -->
     <!-- endbuild -->
     
 	<!-- Place here all those scripts that cannot be added with bower-install -->
     <!-- build:css({.tmp,app}) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="bower_components/jquery-ui/themes/base/minified/jquery-ui.min.css">
+    <link rel="stylesheet" href="bower_components/angular-ui/build/angular-ui.css">
     <link rel="stylesheet" href="bower_components/blueimp-file-upload/css/jquery.fileupload.css">
     <link rel="stylesheet" href="bower_components/blueimp-file-upload/css/jquery.fileupload-ui.css">
+    <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     
   </head>
@@ -115,8 +121,11 @@
     <script src="bower_components/jquery/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/bootstrap-sass/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/jquery-ui/ui/jquery-ui.js"></script>
     <script src="bower_components/blueimp-tmpl/js/tmpl.js"></script>
     <script src="bower_components/blueimp-load-image/js/load-image.js"></script>
@@ -126,18 +135,20 @@
     <script src="bower_components/blueimp-load-image/js/load-image-exif.js"></script>
     <script src="bower_components/blueimp-load-image/js/load-image-exif-map.js"></script>
     <script src="bower_components/blueimp-canvas-to-blob/js/canvas-to-blob.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/cors/jquery.postmessage-transport.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/cors/jquery.xdr-transport.js"></script>
     <script src="bower_components/blueimp-file-upload/js/vendor/jquery.ui.widget.js"></script>
-    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-angular.js"></script>
-    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-audio.js"></script>
-    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
-    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
-    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-ui.js"></script>
-    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-validate.js"></script>
-    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-video.js"></script>
     <script src="bower_components/blueimp-file-upload/js/jquery.fileupload.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-process.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-validate.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-image.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-audio.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-video.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-ui.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-jquery-ui.js"></script>
+    <script src="bower_components/blueimp-file-upload/js/jquery.fileupload-angular.js"></script>
     <script src="bower_components/blueimp-file-upload/js/jquery.iframe-transport.js"></script>
-    <script src="bower_components/angular-mobile-nav/mobile-nav.js"></script>
-    <script src="bower_components/angular-cordova/src/angular-cordova.js"></script>
+    <script src="bower_components/angular-local-storage/angular-local-storage.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     
@@ -149,6 +160,8 @@
     
 	<!-- Place here all those scripts that cannot be added with bower-install -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
+	<script src="bower_components/jquery-ui/ui/minified/jquery-ui.min.js"></script>
+    <script src="bower_components/angular-ui/build/angular-ui.js"></script>
     <script type="text/javascript" src="scripts/app.js"></script>
     
     <script type="text/javascript" src="scripts/directives/directive.js"></script>

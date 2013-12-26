@@ -1,11 +1,20 @@
 'use strict';
 
-var app = angular.module('Neobazaar', [ 'Neobazaar.directives',
-    'Neobazaar.services', 'blueimp.fileupload' ]);
+var app = angular.module('Neobazaar', [
+  'ngCookies',
+  'ngResource',
+  'ngSanitize',
+  'ngRoute',
+  'ui',
+  'LocalStorageModule',
+  'Neobazaar.directives',
+  'Neobazaar.services',
+  'blueimp.fileupload'
+]);
 
-app.config([ '$routeProvider', function($routeProvider) {
+app.config(function($routeProvider) {
   $routeProvider.when('/', {
-    templateUrl : '/views/index.html',
+    templateUrl : 'views/index.html',
     controller : 'IndexController'
   }).when('/annunci-:location/:purpose/:category/:page', {
     templateUrl : '/views/serp.html',
@@ -106,7 +115,7 @@ app.config([ '$routeProvider', function($routeProvider) {
     templateUrl : '/views/index.html',
     controller : 'IndexController'
   });
-} ]).run(
+}).run(
     [
   '$rootScope',
   'LoggedInLoader',
