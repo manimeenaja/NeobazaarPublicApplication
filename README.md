@@ -8,6 +8,15 @@ Neobazaar Frontend Application
 
 This module contains the AngularJS application of Neobazaar.
 
+### Build the application for deploy
+
+Please note you must be in the module root using the console.
+
+```
+npm install
+grunt build
+```
+
 ### Run unit test
  
 Please note you must be in the module root using the console.
@@ -25,3 +34,16 @@ grunt test:e2e
 // run all tests
 grunt test
 ```
+
+### Build, test and run all the task
+
+Please note you must be in the module root using the console.
+
+```
+npm install
+grunt build
+```
+
+### Note
+
+Testing need to have ports 8080 and 9999 free, you'll get "Error listen EACCES" error if they are not.
