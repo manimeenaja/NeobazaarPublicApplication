@@ -281,7 +281,7 @@ module.exports = function (grunt) {
             'fonts/*',
             'captcha/*',
             'ups/*',
-            'img/*'
+            'img/{,*/}*'
           ]
         }, {
           expand: true,
