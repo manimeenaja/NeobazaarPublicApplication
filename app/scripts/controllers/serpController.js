@@ -7,13 +7,18 @@ angular.module('Neobazaar')
 		$scope.filter.private = 'Privati';
 		$scope.filter.company = 'Aziende';
 		
-		$scope.resource = new ClassifiedsLoader($routeParams);
-		$scope.pagination = $scope.resource.paginationData;
-		
-//		$http.get($location.url()).success(function(data, status, headers, config) {
-//			$scope.items = data.data;
-//			$scope.pagination = data.paginationData;
-//			$scope.loading = false;
-//			$scope.paginationtag = false;
-//		});
+  var loader = new ClassifiedsLoader($routeParams);
+  $scope.resource = loader.then(function(data) {
+    $scope.resource = data;
+    
+    $scope.paginationNext = [{
+      label: $scope.resource.paginationData.next.label,
+      action: $scope.resource.paginationData.next.onclick
+    }];
+    
+    $scope.paginationPrev = [{
+      label: $scope.resource.paginationData.previous.label,
+      action: $scope.resource.paginationData.previous.onclick
+    }];
   });
+ });
