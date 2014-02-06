@@ -1,11 +1,22 @@
 {
     "name": "neobazaar/public-application",
     "description": "Frontend Application for Neobazaar",
-    "license": "",
+    "license": "MIT",
     "keywords": [
-        "neobazaar"
+        "neobazaar", "free", "classifieds", "user"
     ],
     "homepage": "http://www.neobazaar.com/",
+    "authors": [
+        {
+            "name": "Sergio Rinaudo",
+            "email": "kaiohken1982@hotmail.com",
+            "homepage": "http://www.sergiorinaudo.com/"
+        }
+    ],
     "require": {
+    },
+    "require-dev": {
+    },
+    "suggest": {
     }
 }
