@@ -14,7 +14,7 @@ It is composed by the following modules:
 - [Neobazaar Skeleton Application](https://github.com/kaiohken1982/NeobazaarSkeletonApplication)
 - [Neobazaar Main Module](https://github.com/kaiohken1982/Neobazaar)
 - [Neobazaar Document Module](https://github.com/kaiohken1982/NeobazaarDocumentModule)
-- {Neobazaar User Module](https://github.com/kaiohken1982/NeobazaarUserModule)
+- [Neobazaar User Module](https://github.com/kaiohken1982/NeobazaarUserModule)
 - [Neobazaar Mailer Module](https://github.com/kaiohken1982/NeobazaarMailerModule) 
 - **Neobazaar Public Application** (this module)
 
