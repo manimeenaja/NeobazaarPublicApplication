@@ -8,13 +8,13 @@ app.configure(function(){
   // We set the token only if we're using the Prerender.io service
   app.use(require('prerender-node'));
   //.set('prerenderToken', 'YOUR-TOKEN-HERE'));
-  app.use(express.static("public"));
+  app.use(express.static("app"));
   app.use(app.router);
 });
 
 // This will ensure that all routing is handed over to AngularJS
 app.get('*', function(req, res){
-        res.sendfile('./dist/index.html');
+        res.sendfile('./app/index.html');
 });
 
 app.listen(8081);
