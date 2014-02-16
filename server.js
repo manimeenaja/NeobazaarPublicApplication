@@ -14,7 +14,7 @@ app.configure(function(){
 
 // This will ensure that all routing is handed over to AngularJS
 app.get('*', function(req, res){
-        res.sendfile('./public/index.html');
+        res.sendfile('./dist/index.html');
 });
 
 app.listen(8081);

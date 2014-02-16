@@ -12,7 +12,7 @@ var app = angular.module('Neobazaar', [
   'blueimp.fileupload'
 ]);
 
-app.config(function($routeProvider) {
+app.config(function($routeProvider, $locationProvider) {
   $routeProvider.when('/', {
     templateUrl : 'views/index.html',
     controller : 'IndexController'
@@ -115,6 +115,9 @@ app.config(function($routeProvider) {
     templateUrl : '/views/index.html',
     controller : 'IndexController'
   });
+  
+  $locationProvider.html5Mode(true);
+  $locationProvider.hashPrefix('!');
 }).run(
     [
   '$rootScope',
