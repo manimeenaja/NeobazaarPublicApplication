@@ -28,6 +28,7 @@ Please note you must be in the module root using the console.
 
 ```
 npm install
+bower install
 grunt build
 ```
 
