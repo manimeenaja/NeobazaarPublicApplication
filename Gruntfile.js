@@ -280,6 +280,7 @@ module.exports = function (grunt) {
             'images/{,*/}*.{webp}',
             'fonts/*',
             'captcha/*',
+            'snapshots/*',
             'ups/*',
             'img/{,*/}*'
           ]
