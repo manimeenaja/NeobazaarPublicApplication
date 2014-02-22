@@ -11,16 +11,14 @@ angular.module('Neobazaar')
   $scope.resource = loader.then(function(data) {
     $scope.resource = data;
     
-    console.log($scope.resource);
+    $scope.paginationNext = [{
+      label: $scope.resource.paginationData.next.label,
+      action: $scope.resource.paginationData.next.onclick
+    }];
     
-//    $scope.paginationNext = [{
-//      label: $scope.resource.paginationData.next.label,
-//      action: $scope.resource.paginationData.next.onclick
-//    }];
-//    
-//    $scope.paginationPrev = [{
-//      label: $scope.resource.paginationData.previous.label,
-//      action: $scope.resource.paginationData.previous.onclick
-//    }];
+    $scope.paginationPrev = [{
+      label: $scope.resource.paginationData.previous.label,
+      action: $scope.resource.paginationData.previous.onclick
+    }];
   });
  });
