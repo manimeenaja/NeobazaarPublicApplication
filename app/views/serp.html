@@ -69,26 +69,3 @@
 		<banner></banner>
 	</div>
 </div>
-
-<ul class="pagination pagination-lg" ng-show="resource.data">
-	<li><span>{{resource.paginationData.message}}</span></li>
-	<li class="{{resource.paginationData.previous.class}}">
-		<a 
-			ng-href="{{resource.paginationData.previous.link}}" 
-			ng-click="{{resource.paginationData.previous.onclick}}">
-			{{resource.paginationData.previous.label}}
-		</a>
-	</li>
-	
-	<li class="{{page.class}}" ng-repeat='page in resource.paginationData.pages'>
-		<a ng-href="{{page.link}}">{{page.label}}</a>
-	</li>
-	
-	<li class="{{resource.paginationData.next.class}}">
-		<a 
-			ng-href="{{resource.paginationData.next.link}}" 
-			ng-click="{{resource.paginationData.next.onclick}}">
-			{{resource.paginationData.next.label}}
-		</a>
-	</li>
-</ul>
