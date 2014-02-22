@@ -7,6 +7,11 @@ define('REQUEST_MICROTIME', microtime(true));
  */
 chdir(dirname(__DIR__));
 
+if (!@include("init_autoloader.php")) {
+    chdir(dirname(dirname(__DIR__)));
+    require("init_autoloader.php");
+}
+
 // Setup autoloading
 require 'init_autoloader.php';
 
