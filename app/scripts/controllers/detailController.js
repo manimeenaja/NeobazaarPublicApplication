@@ -7,7 +7,7 @@ angular.module('Neobazaar').controller(
 
       $scope.path = $location.path();
       
-      var loader = new ClassifiedsLoader();
+      var loader = new ClassifiedLoader();
       $scope.resource = loader.then(function(data) {
         $scope.resource = data;
         
