@@ -41,13 +41,13 @@ app.config(function($routeProvider, $locationProvider) {
   // return ClassifiedLoader();
   // }
   // },
-  }).when('/add-classified', {
+  }).when('/add-classified.html', {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'AddClassifiedController'
-  }).when('/register', {
+  }).when('/register.html', {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'RegisterController'
-  }).when('/login', {
+  }).when('/login.html', {
     template : '<div ng-include="getTemplateUrl()"></div>',
     // templateUrl: '/views/login.html',
     controller : 'LoginController'
@@ -60,7 +60,7 @@ app.config(function($routeProvider, $locationProvider) {
   }).when('/account/:page', {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'AccountController'
-  }).when('/logout', {
+  }).when('/logout.html', {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'LogoutController'
   }).when('/edit-classified/:id', {
@@ -69,10 +69,10 @@ app.config(function($routeProvider, $locationProvider) {
   }).when('/activation/:id', {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'ActivateClassifiedController'
-  }).when('/profile', {
+  }).when('/profile.html', {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'ProfileController'
-  }).when('/support', {
+  }).when('/support.html', {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'SupportController'
   }).when('/admin/classified', {
@@ -99,10 +99,10 @@ app.config(function($routeProvider, $locationProvider) {
   }).when('/user/activation/:id', {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'UserActivationController'
-  }).when('/privacy', {
+  }).when('/privacy.html', {
     templateUrl : '/views/info.html',
     controller : 'InfoController'
-  }).when('/conditions', {
+  }).when('/conditions.html', {
     templateUrl : '/views/info.html',
     controller : 'InfoController'
   }).when('/user/password-recovery', {

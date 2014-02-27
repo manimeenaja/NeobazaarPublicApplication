@@ -11,10 +11,10 @@ angular.module('Neobazaar').controller(
       $scope.resource = loader.then(function(data) {
         $scope.resource = data;
         
-        console.log($scope.resource);
+        console.log(data);
         
 
-        $window.document.title = response.data.title + ' - ' +
+        $window.document.title = data.title + ' - ' +
             ' Neobazaar annunci gratuiti';
         $rootScope.fb = {
           title : $window.document.title,
