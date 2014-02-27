@@ -33,7 +33,7 @@ app.config(function($routeProvider, $locationProvider) {
   // return ClassifiedsLoader();
   // }
   // },
-  }).when('/ads/:category/:slug/:id.html', {
+  }).when('/:category/:slug/:id.html', {
     templateUrl : '/views/detail.html',
     controller : 'DetailController',
   // resolve: {
