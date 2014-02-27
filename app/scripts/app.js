@@ -126,7 +126,7 @@ app.config(function($routeProvider, $locationProvider) {
   'LocationsLoader',
   '$timeout',
   function($rootScope, LoggedInLoader, CategoriesLoader, LocationsLoader,
-            $timeout) {
+            $timeout, $window) {
           // All GLOBAL here
           $rootScope.fb = {
             title : 'Neobazaar annunci gratuiti',
@@ -198,6 +198,13 @@ app.config(function($routeProvider, $locationProvider) {
           $timeout(function() {
             $rootScope.loadLocations();
           }, 1500);
+
+          
+
+          $window.prerenderReady = false;
+          $timeout(function() {
+            $window.prerenderReady = true;
+          }, 5000);
 
           // Meta select
           $rootScope.contracttypes = [ {
