@@ -116,7 +116,7 @@ app.config(function($routeProvider, $locationProvider) {
     controller : 'IndexController'
   });
   
-  //$locationProvider.html5Mode(true);
+  $locationProvider.html5Mode(true);
   $locationProvider.hashPrefix('!');
 }).run(
     [
