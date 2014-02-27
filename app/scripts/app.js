@@ -199,13 +199,6 @@ app.config(function($routeProvider, $locationProvider) {
             $rootScope.loadLocations();
           }, 1500);
 
-          
-
-          window.prerenderReady = false;
-          $timeout(function() {
-            window.prerenderReady = true;
-          }, 5000);
-
           // Meta select
           $rootScope.contracttypes = [ {
             value : 'vendita',
