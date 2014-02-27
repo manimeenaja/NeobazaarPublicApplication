@@ -129,10 +129,15 @@ app.config(function($routeProvider, $locationProvider) {
             $timeout) {
           // All GLOBAL here
           $rootScope.fb = {
-            title : 'neo test title',
-            sitename : 'neoooo',
-            description : 'descccc'
+            title : 'Neobazaar annunci gratuiti',
+            type : 'article',
+            url : 'http://www.neobazaar.eu',
+            description : 'Neobazaar - Annunci gratuiti Case, Auto usate, Moto, Offerte lavoro e annunci Usato',
+            site_name : 'Neobazaar annunci gratuiti',
+            image : 'http://www.neobazaar.eu/img/logo3.gif',
           };
+          
+          
           $rootScope.redirectionDelay = 2500;
           $rootScope.checkedLogged = false;
           $rootScope.logged = false;

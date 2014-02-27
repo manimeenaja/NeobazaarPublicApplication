@@ -11,13 +11,12 @@ angular.module('Neobazaar').controller(
       $scope.resource = loader.then(function(data) {
         $scope.resource = data;
         
+        console.log(data.data);
 
         $window.document.title = data.data.title + ' - ' +
             ' Neobazaar annunci gratuiti';
         $rootScope.fb = {
-          title : $window.document.title,
-          sitename : 'Neobazaar',
-          description : 'Neobazaar free classifieds'
+          title : $window.document.title
         };
         
       });
