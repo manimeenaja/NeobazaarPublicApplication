@@ -51,7 +51,7 @@ app.config(function($routeProvider, $locationProvider) {
     template : '<div ng-include="getTemplateUrl()"></div>',
     // templateUrl: '/views/login.html',
     controller : 'LoginController'
-  }).when('/account', {
+  }).when('/account.html', {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'AccountController'
   }).when('/account-deleted', {
