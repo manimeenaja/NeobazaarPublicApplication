@@ -11,7 +11,7 @@ angular.module('Neobazaar').controller(
       $scope.resource = loader.then(function(data) {
         $scope.resource = data;
         
-        console.log(data);
+        console.log(data.data);
         
 
 //        $window.document.title = data.title + ' - ' +
