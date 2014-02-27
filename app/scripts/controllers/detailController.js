@@ -14,13 +14,13 @@ angular.module('Neobazaar').controller(
         console.log(data);
         
 
-        $window.document.title = data.title + ' - ' +
-            ' Neobazaar annunci gratuiti';
-        $rootScope.fb = {
-          title : $window.document.title,
-          sitename : 'Neobazaar',
-          description : 'Neobazaar free classifieds'
-        };
+//        $window.document.title = data.title + ' - ' +
+//            ' Neobazaar annunci gratuiti';
+//        $rootScope.fb = {
+//          title : $window.document.title,
+//          sitename : 'Neobazaar',
+//          description : 'Neobazaar free classifieds'
+//        };
         
       });
       
