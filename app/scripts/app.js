@@ -96,7 +96,7 @@ app.config(function($routeProvider, $locationProvider) {
   }).when('/admin/edit-user/:id', {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'ProfileController'
-  }).when('/user/activation/:id', {
+  }).when('/account/activation/:id', {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'UserActivationController'
   }).when('/privacy.html', {
@@ -105,10 +105,10 @@ app.config(function($routeProvider, $locationProvider) {
   }).when('/conditions.html', {
     templateUrl : '/views/info.html',
     controller : 'InfoController'
-  }).when('/user/password-recovery', {
+  }).when('/account/password-recovery', {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'PasswordRecoveryController'
-  }).when('/user/password-recovered/:id', {
+  }).when('/account/password-recovered/:id', {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'PasswordRecoveredController'
   }).when('/', {
