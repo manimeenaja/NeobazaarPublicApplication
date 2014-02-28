@@ -19,6 +19,7 @@ angular.module('Neobazaar').controller(
         $rootScope.fb.image = data.data.image.src;
         $rootScope.fb.url = $location.absUrl();
         $rootScope.fb.description = data.data.content;
+        $rootScope.fb.sitename = 'Neobazaar annunci gratuiti';
        
         
       });
