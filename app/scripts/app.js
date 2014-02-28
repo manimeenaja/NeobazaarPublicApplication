@@ -133,7 +133,7 @@ app.config(function($routeProvider, $locationProvider) {
             type : 'object',
             url : 'http://www.neobazaar.eu',
             description : 'Neobazaar - Annunci gratuiti Case, Auto usate, Moto, Offerte lavoro e annunci Usato',
-            site_name : 'Neobazaar annunci gratuiti',
+            sitename : 'Neobazaar annunci gratuiti',
             image : 'http://www.neobazaar.eu/img/logo3.gif',
           };
           
