@@ -10,6 +10,8 @@ angular.module('Neobazaar').controller(
       var loader = new ClassifiedLoader();
       $scope.resource = loader.then(function(data) {
         $scope.resource = data;
+        
+        console.log(data.data);
 
         $window.document.title = data.data.title + ' - ' +
             ' Neobazaar annunci gratuiti';
