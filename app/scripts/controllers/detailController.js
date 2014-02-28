@@ -10,8 +10,6 @@ angular.module('Neobazaar').controller(
       var loader = new ClassifiedLoader();
       $scope.resource = loader.then(function(data) {
         $scope.resource = data;
-        
-        console.log($location.absUrl());
 
         $window.document.title = data.data.title + ' - ' +
             ' Neobazaar annunci gratuiti';
@@ -19,7 +17,7 @@ angular.module('Neobazaar').controller(
         $rootScope.fb.image = data.data.image.src;
         $rootScope.fb.url = $location.absUrl();
         $rootScope.fb.description = data.data.content;
-        };
+       
         
       });
       
