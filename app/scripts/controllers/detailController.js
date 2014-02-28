@@ -15,10 +15,10 @@ angular.module('Neobazaar').controller(
 
         $window.document.title = data.data.title + ' - ' +
             ' Neobazaar annunci gratuiti';
-        $rootScope.fb = {
-          title : $window.document.title,
-          image: data.data.image.src,
-          url : $location.absUrl(),
+        $rootScope.fb.title = $window.document.title;
+        $rootScope.fb.image = data.data.image.src;
+        $rootScope.fb.url = $location.absUrl();
+        $rootScope.fb.description = data.data.content;
         };
         
       });

@@ -130,7 +130,7 @@ app.config(function($routeProvider, $locationProvider) {
           // All GLOBAL here
           $rootScope.fb = {
             title : 'Neobazaar annunci gratuiti',
-            type : 'article',
+            type : 'object',
             url : 'http://www.neobazaar.eu',
             description : 'Neobazaar - Annunci gratuiti Case, Auto usate, Moto, Offerte lavoro e annunci Usato',
             site_name : 'Neobazaar annunci gratuiti',
