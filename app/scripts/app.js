@@ -131,14 +131,14 @@ app.config(function($routeProvider, $locationProvider) {
           $rootScope.fb = {
             title : 'Neobazaar annunci gratuiti',
             type : 'object',
-            url : 'http://www.neo.local',
+            url : 'http://www.neobazaar.eu',
             description : 'Neobazaar - Annunci gratuiti Case, Auto usate, Moto, Offerte lavoro e annunci Usato',
             sitename : 'Neobazaar annunci gratuiti',
             image : 'http://www.neo.local/img/logo3.gif',
           };
           
           $rootScope.siteConfigs = {
-              siteurl : 'http://www.neo.local'
+              siteurl : 'www.neobazaar.eu'
           }
           
           
