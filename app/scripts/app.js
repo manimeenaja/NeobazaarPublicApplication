@@ -131,11 +131,15 @@ app.config(function($routeProvider, $locationProvider) {
           $rootScope.fb = {
             title : 'Neobazaar annunci gratuiti',
             type : 'object',
-            url : 'http://www.neobazaar.eu',
+            url : 'http://www.neo.local',
             description : 'Neobazaar - Annunci gratuiti Case, Auto usate, Moto, Offerte lavoro e annunci Usato',
             sitename : 'Neobazaar annunci gratuiti',
-            image : 'http://www.neobazaar.eu/img/logo3.gif',
+            image : 'http://www.neo.local/img/logo3.gif',
           };
+          
+          $rootScope.siteConfigs = {
+              siteurl : 'http://www.neo.local'
+          }
           
           
           $rootScope.redirectionDelay = 2500;
