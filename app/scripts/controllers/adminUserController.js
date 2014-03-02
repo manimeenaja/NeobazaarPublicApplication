@@ -3,7 +3,7 @@
 angular.module('Neobazaar')
   .controller('AdminUserController', function ($scope, $routeParams, $route, $rootScope, $location, $timeout, User, UsersLoader) {
 	  if(!$rootScope.logged) {
-		  $location.path('/login');
+		  $location.path('/login.html');
 		  return;
 	  }
 	  

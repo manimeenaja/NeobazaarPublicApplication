@@ -10,7 +10,7 @@ angular.module('Neobazaar')
               return '/views/loggedin/login.html';
             };
             $timeout(function() {
-              $location.path('account');
+              $location.path('account.html');
             }, $rootScope.redirectionDelay);
             return;
           }
@@ -22,7 +22,7 @@ angular.module('Neobazaar')
                 return '/views/loggedin/login.html';
               };
               $timeout(function() {
-                $location.path('account');
+                $location.path('account.html');
               }, $rootScope.redirectionDelay);
               return;
             }
@@ -34,7 +34,7 @@ angular.module('Neobazaar')
               return '/views/sent/login.html';
             };
             $timeout(function() {
-              $location.path('account');
+              $location.path('account.html');
             }, $rootScope.redirectionDelay);
           };
 

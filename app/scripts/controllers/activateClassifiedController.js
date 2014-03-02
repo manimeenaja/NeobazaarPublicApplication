@@ -3,7 +3,7 @@
 angular.module('Neobazaar').controller('ActivateClassifiedController',
     function($scope, $routeParams, $rootScope, $location, $http, Classified) {
       if ($rootScope.logged) {
-        $location.path('account');
+        $location.path('account.html');
         return;
       }
 

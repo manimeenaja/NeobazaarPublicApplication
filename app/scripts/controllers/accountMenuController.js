@@ -7,24 +7,24 @@ angular
         function($scope, $location, $rootScope, $route, User) {
 
           $scope.menu = [ {
-            'href' : '/#/account',
+            'href' : '/account.html',
             'label' : 'I miei annunci'
           }, {
-            'href' : '/#/profile',
+            'href' : '/profile.html',
             'label' : 'Dati anagrafici'
           }, {
-            'href' : '/#/support',
+            'href' : '/support.html',
             'label' : 'Supporto'
           } ];
 
           switch ($location.path()) {
-          case '/account':
+          case '/account.html':
             $scope.menu[0].class = 'active';
             break;
-          case '/profile':
+          case '/profile.html':
             $scope.menu[1].class = 'active';
             break;
-          case '/support':
+          case '/support.html':
             $scope.menu[2].class = 'active';
             break;
           }
@@ -40,7 +40,7 @@ angular
               'id' : $rootScope.userData.hashId
             }, function() {
               $rootScope.userData = null;
-              $location.path('account-deleted');
+              $location.path('account-deleted.html');
             }, function() {
               $route.reload();
             });

@@ -4,7 +4,7 @@ angular.module('Neobazaar').controller(
     'PasswordRecoveryController',
     function($scope, $rootScope, $routeParams, $location, CsrfLoader) {
       if ($rootScope.logged) {
-        $location.path('/account');
+        $location.path('/account.html');
       }
 
       $scope.response = false;

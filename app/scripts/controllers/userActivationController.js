@@ -5,7 +5,7 @@ angular.module('Neobazaar').controller(
     function($scope, $routeParams, $route, $rootScope, $location, $timeout,
         User) {
       if ($rootScope.logged) {
-        $location.path('/login');
+        $location.path('/login.html');
         return;
       }
 

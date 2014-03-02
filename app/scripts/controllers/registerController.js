@@ -10,7 +10,7 @@ angular.module('Neobazaar')
               return '/views/loggedin/register.html';
             };
             $timeout(function() {
-              $location.path('account');
+              $location.path('account.html');
             }, $rootScope.redirectionDelay);
             return;
           }

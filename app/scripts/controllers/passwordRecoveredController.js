@@ -3,7 +3,7 @@
 angular.module('Neobazaar').controller('PasswordRecoveredController',
     function($scope, $rootScope, $routeParams, $location, User) {
       if ($rootScope.logged) {
-        $location.path('/account');
+        $location.path('/account.htmll');
         return;
       }
 

@@ -18,19 +18,19 @@ angular.module('Neobazaar').controller(
             : locationFormatted;
         var voiceTwo = null !== query ? query + ' in ' + category : category;
 
-        var voiceTwoUrl = null !== query ? '#/annunci-' + location + '/' +
-            purpose + '/' + page + '?query=' + query : '#/annunci-' +
+        var voiceTwoUrl = null !== query ? '/annunci-' + location + '/' +
+            purpose + '/' + page + '?query=' + query : '/annunci-' +
             location + '/' + purpose + '/' + page;
 
         return [ {
           label : 'Home',
-          link : '#/'
+          link : '/'
         }, {
           label : 'Tutti gli annunci',
-          link : '#/annunci-italia'
+          link : '/annunci-italia'
         }, {
           label : voiceOne,
-          link : '#/annunci-' + location + '/' + purpose
+          link : '/annunci-' + location + '/' + purpose
         }, {
           label : voiceTwo,
           link : voiceTwoUrl

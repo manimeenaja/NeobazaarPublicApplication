@@ -9,7 +9,7 @@ angular.module('Neobazaar').controller(
           return '/views/loggedout/account.html';
         };
         $timeout(function() {
-          $location.path('/login');
+          $location.path('/login.html');
         }, $rootScope.redirectionDelay);
         return;
       }

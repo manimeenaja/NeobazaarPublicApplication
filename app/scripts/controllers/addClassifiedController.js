@@ -52,7 +52,7 @@ angular
                 return '/views/loggedout/account.html';
               };
               $timeout(function() {
-                $location.path('/login');
+                $location.path('/login.html');
               }, $rootScope.redirectionDelay);
               return;
             }
@@ -73,7 +73,7 @@ angular
               // not owner
               if (data.userId !== $rootScope.userData.hashId &&
                   false === $rootScope.userData.isAdmin) {
-                $location.path('/account');
+                $location.path('/account.html');
               }
 
               $scope.classified.id = data.hashId;
