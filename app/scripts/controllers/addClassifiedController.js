@@ -7,6 +7,12 @@ angular
     .module('Neobazaar')
     .config(['$httpProvider', 'fileUploadProvider',
       function($httpProvider, fileUploadProvider) {
+      
+      
+      
+      
+            /*
+      
               delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
               fileUploadProvider.defaults.handleResponse = function(e, data) {
@@ -36,12 +42,36 @@ angular
                 maxFileSize : 5000000,
                 acceptFileTypes : /(\.|\/)(gif|jpe?g|png)$/i
               });
-            } ])
+            
+    
+    */
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    } ])
     .controller(
         'ImageUploadController',
         function($scope, $rootScope, $routeParams, $parse, $timeout, $location,
             ClassifiedLoader) {
 
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          /*
+          
+          
           $rootScope.isEdit = false;
           $rootScope.waiting = true;
 
@@ -120,10 +150,29 @@ angular
           } else {
             $rootScope.waiting = false;
           }
+          
+          */
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
         })
     .controller(
         'AddClassifiedController',
         function($scope, $rootScope, $routeParams, Classified) {
+          
+          
+          /*
+          
+          
           $scope.options = {
             url : url
           };
@@ -890,6 +939,9 @@ angular
             }
             return '/views/add-classified.html';
           };
+          
+          
+          */
 
           //	  $scope.uploadFinished = function(e, data) {
           //		  console.log('We just finished uploading this baby...');

@@ -15,7 +15,7 @@
     "angular-ui": "~0.4.0",
     "jquery-ui": "~1.10.3",
     "blockui": "*",
-    "blueimp-file-upload": "9.5.2",
+    "blueimp-file-upload": "9.5.6",
     "angular-local-storage": "*"
   },
   "devDependencies": {

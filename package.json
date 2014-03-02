@@ -38,9 +38,7 @@
     "grunt-open": "~0.2.2",
     "istanbul": "~0.2.1",
     "karma-coverage": "~0.1.4",
-    "karma-ng-scenario": "~0.1.0",
-	"express": "latest",
-    "prerender-node": "latest"
+    "karma-ng-scenario": "~0.1.0"
   },
   "engines": {
     "node": ">=0.8.0"
