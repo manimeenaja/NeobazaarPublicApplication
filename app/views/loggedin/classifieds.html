@@ -6,11 +6,11 @@
 		  	<div class="panel-heading">
 				<ul class="breadcrumb">
 				    <li>
-				        <a href="#/">Home</a>
+				        <a href="/">Home</a>
 				        <span class="divider"></span>
 				    </li>
 				    <li>
-				        <a href="#/account">I miei annunci</a>
+				        <a href="/account.html">I miei annunci</a>
 				        <span class="divider"></span>
 				    </li>
 				</ul>
@@ -48,9 +48,9 @@
 						<span>Titolo: <a ng-href='{{item.editaddress}}'>{{item.title}}</a></span><br />
 						<span>Visite: {{item.visited}}</span><br />
 						<span>State: <span class="text-{{item.stateClass}}">{{item.stateFormatted}}</span></span><br />
-						<span>Edit user: <a ng-href="#/admin/edit-user/{{item.userId}}">Click here</a></span> <br />
-						<span>UserEmail: <a ng-href="#/admin/user/1/{{item.email}}">{{item.email}}</a></span> <br />
-						<span>Totale annunci utente: <a ng-href="/#/admin/classified/1?full=1&user={{item.userIdNoHash}}">{{item.count}}</a></span> <br />
+						<span>Edit user: <a ng-href="/admin/edit-user/{{item.userId}}">Click here</a></span> <br />
+						<span>UserEmail: <a ng-href="/admin/user/1/{{item.email}}">{{item.email}}</a></span> <br />
+						<span>Totale annunci utente: <a ng-href="/admin/classified/1?full=1&user={{item.userIdNoHash}}">{{item.count}}</a></span> <br />
 						<span>Date: {{item.date}}</span>
 					</div>
 					

@@ -6,11 +6,11 @@
 		  	<div class="panel-heading">
 				<ul class="breadcrumb">
 				    <li>
-				        <a href="#/">Home</a>
+				        <a href="/">Home</a>
 				        <span class="divider"></span>
 				    </li>
 				    <li>
-				        <a href="#/account">I miei annunci</a>
+				        <a href="/account.html">I miei annunci</a>
 				        <span class="divider"></span>
 				    </li>
 				</ul>
@@ -33,7 +33,7 @@
 					<div class="col-lg-5">
 						<strong>{{item.fullname}}</strong><br />
 						<span>{{item.email}}</span><br />
-						<span>Totale annunci utente: <a ng-href="/#/admin/classified/1?full=1&user={{item.hashId}}">{{item.count}}</a></span>
+						<span>Totale annunci utente: <a ng-href="/admin/classified/1?full=1&user={{item.hashId}}">{{item.count}}</a></span>
 					</div>
 					
 					<div class="col-lg-2">
@@ -46,7 +46,7 @@
 					
 					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5">
 						<div class="btn-group btn-group-justified ng-scope">
-							<a ng-href="#/admin/edit-user/{{item.hashId}}" class="btn btn-success" title="Modifica utente">
+							<a ng-href="/admin/edit-user/{{item.hashId}}" class="btn btn-success" title="Modifica utente">
 								<span class="glyphicon glyphicon-edit"></span>
 							</a>
 							<a ng-click="disableEnable(item)" class="btn btn-warning" title="L'utente è attivo, clicca per disattivare" ng-show="item.isActive">
@@ -78,7 +78,7 @@
 							  <span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu" role="menu">
-								<li><a ng-href="#/admin/edit-user/{{item.userid}}">Annunci utente</a></li>
+								<li><a ng-href="/admin/edit-user/{{item.userid}}">Annunci utente</a></li>
 							</ul>
 						</div>
 					</div>
