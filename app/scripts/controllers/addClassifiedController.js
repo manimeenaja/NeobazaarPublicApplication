@@ -11,7 +11,7 @@ angular
       
       
       
-            /*
+            
       
               delete $httpProvider.defaults.headers.common['X-Requested-With'];
 
@@ -44,7 +44,7 @@ angular
               });
             
     
-    */
+    
     
     
     
@@ -66,10 +66,6 @@ angular
           
           
           
-          
-          
-          
-          /*
           
           
           $rootScope.isEdit = false;
@@ -151,7 +147,7 @@ angular
             $rootScope.waiting = false;
           }
           
-          */
+          
           
           
           
@@ -170,7 +166,8 @@ angular
         function($scope, $rootScope, $routeParams, Classified) {
           
           
-          /*
+
+          
           
           
           $scope.options = {
@@ -919,11 +916,14 @@ angular
             };
           };
 
-          //	  $scope.doSubmit = function() {
-          //		  var params = $scope.prepareRequestParams()
-          //		  var classified = new Classified(params);
-          //		  classified.$save();
-          //	  }
+          //   $scope.doSubmit = function() {
+          //    var params = $scope.prepareRequestParams()
+          //    var classified = new Classified(params);
+          //    classified.$save();
+          //   }
+          
+          
+          
 
           // @todo se è loggato non cambiare il template, aggiungere loading di attesa salvataggio
           $scope.getTemplateUrl = function() {
@@ -941,11 +941,10 @@ angular
           };
           
           
-          */
 
-          //	  $scope.uploadFinished = function(e, data) {
-          //		  console.log('We just finished uploading this baby...');
-          //		  }; 
+          //   $scope.uploadFinished = function(e, data) {
+          //    console.log('We just finished uploading this baby...');
+          //    }; 
         }).controller('FileDestroyController',
         [ '$scope', '$http', function($scope, $http) {
           var file = $scope.file, state;
