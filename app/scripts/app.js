@@ -128,18 +128,19 @@ app.config(function($routeProvider, $locationProvider) {
   function($rootScope, LoggedInLoader, CategoriesLoader, LocationsLoader,
             $timeout) {
           // All GLOBAL here
+    
+          $rootScope.siteConfigs = {
+              siteurl : 'http://www.neobazaar.eu'
+          }
+    
           $rootScope.fb = {
             title : 'Neobazaar annunci gratuiti',
             type : 'object',
-            url : 'http://www.neobazaar.eu',
+            url : $rootScope.siteConfigs.siteurl,
             description : 'Neobazaar - Annunci gratuiti Case, Auto usate, Moto, Offerte lavoro e annunci Usato',
             sitename : 'Neobazaar annunci gratuiti',
-            image : 'http://www.neo.local/img/logo3.gif',
+            image : $rootScope.siteConfigs.siteurl + '/img/logo3.gif',
           };
-          
-          $rootScope.siteConfigs = {
-              siteurl : 'www.neobazaar.eu'
-          }
           
           
           $rootScope.redirectionDelay = 2500;
