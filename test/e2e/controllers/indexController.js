@@ -7,10 +7,11 @@ describe("E2E: Testing Index Controller", function() {
   });
   
   it('should have a ', function() {
-    browser().navigateTo('#/this-page-does-not-exists');
-    expect(browser().location().path()).toBe('/this-page-does-not-exists');
-    browser().navigateTo('#/');
+    //browser().navigateTo('/this-page-does-not-exists');
+    //expect(browser().location().path()).toBe('/');
+    //browser().navigateTo('/');
     expect(element('h4:first').html()).toContain('»  Compra');
+    expect(element('.adm1 li:first a').html()).toContain('Tutta Italia');
   });
   
 });
