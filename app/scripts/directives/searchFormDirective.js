@@ -11,7 +11,7 @@ directives.directive('neoSearchForm', function() {
     restrict : 'E',
     priority : 1000,
     scope : true,
-    templateUrl : 'views/searchform.html',
+    templateUrl : '/views/searchform.html',
     //template: '<div ng-include="getFormTemplateUrl()"></div>',
     controller : 'SearchFormController'
   };

@@ -44,6 +44,9 @@ app.config(function($routeProvider, $locationProvider) {
   }).when('/add-classified.html', {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'AddClassifiedController'
+  }).when('/pubblica-annuncio.html', {
+    template : '<div ng-include="getTemplateUrl()"></div>',
+    controller : 'AddClassifiedController'
   }).when('/register.html', {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'RegisterController'
