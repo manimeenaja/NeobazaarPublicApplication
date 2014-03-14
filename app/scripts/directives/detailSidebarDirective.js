@@ -7,7 +7,7 @@ directives.directive('detailSidebar', function() {
     restrict : 'E',
     priority : 1000,
     scope : true,
-    templateUrl : 'views/detail-sidebar.html',
+    templateUrl : '/views/detail-sidebar.html',
     controller : 'DetailSidebarController'
   };
   return directiveDefinitionObject;
