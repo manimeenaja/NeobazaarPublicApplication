@@ -7,7 +7,7 @@ directives.directive('neoBreadcrumbs', function() {
     restrict : 'E',
     priority : 1000,
     scope : true,
-    templateUrl : 'views/breadcrumbs.html',
+    templateUrl : '/views/breadcrumbs.html',
     controller : 'BreadcrumbsController'
   };
   return directiveDefinitionObject;
