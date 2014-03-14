@@ -79,7 +79,7 @@ module.exports = function (grunt) {
       },
       testserver: {
         options: {
-          port: 9999,
+          port: 9000,
           base: [
             '.tmp',
             'test',
@@ -370,6 +370,22 @@ module.exports = function (grunt) {
         autoWatch: false,
         singleRun: true
       },
+    },
+    
+    protractor: {
+      options: {
+        keepAlive: false,
+        configFile: "./test/protractor.conf.js",
+        noColor: true, // If true, protractor will not use colors in its output.
+
+        args: {
+            seleniumServerJar: './node_modules/protractor/selenium/selenium-server-standalone-2.39.0.jar',
+            chromeDriver: './node_modules/protractor/selenium/chromedriver.exe'
+        }
+      },
+      run: {
+        a: 'b'
+      }
     }
   });
 
@@ -428,6 +444,16 @@ module.exports = function (grunt) {
     'connect:testserver',
     'karma:e2e'
   ]);
+  
+  grunt.registerTask('test:e2e2', [
+    'clean:server',
+    'clean:coverage',
+    'concurrent:test',
+    'autoprefixer',
+    'connect:testserver',
+    'protractor:run'
+  ]);
+  
 
   grunt.registerTask('build', [
     'clean:dist',
