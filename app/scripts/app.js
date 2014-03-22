@@ -99,7 +99,7 @@ app.config(function($routeProvider, $locationProvider) {
   }).when('/admin/edit-user/:id', {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'ProfileController'
-  }).when('/account/activation/:id', {
+  }).when('/user-activation/:id.html', {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'UserActivationController'
   }).when('/privacy.html', {
