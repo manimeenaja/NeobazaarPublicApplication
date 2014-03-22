@@ -111,7 +111,7 @@ app.config(function($routeProvider, $locationProvider) {
   }).when('/password-recovery.html', {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'PasswordRecoveryController'
-  }).when('/account/password-recovered/:id.html', {
+  }).when('/password-recovery/:id.html', {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'PasswordRecoveredController'
   }).when('/', {
