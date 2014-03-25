@@ -69,7 +69,7 @@ app.config(function($routeProvider, $locationProvider) {
   }).when('/edit-classified/:id', {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'AddClassifiedController'
-  }).when('/activation/:id', {
+  }).when('/classified-activation/:id.html', {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'ActivateClassifiedController'
   }).when('/profile.html', {
