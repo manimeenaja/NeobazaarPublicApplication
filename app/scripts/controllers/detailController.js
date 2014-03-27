@@ -2,12 +2,13 @@
 
 angular.module('Neobazaar').controller(
     'DetailController',
-    function($scope, $rootScope, $http, $location, $window, ClassifiedLoader) {
+    function($scope, $rootScope, $http, $location, $window, $sce, ClassifiedLoader) {
       $scope.path = $location.path();
       
       var loader = new ClassifiedLoader();
       $scope.resource = loader.then(function(data) {
         $scope.resource = data;
+        $scope.htmlSafeContent = $sce.trustAsHtml(data.data.nl2brContent);
 
         $window.document.title = data.data.title + ' - Neobazaar annunci gratuiti';
         $rootScope.fb.title = $window.document.title;
