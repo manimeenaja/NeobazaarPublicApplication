@@ -133,7 +133,8 @@ app.config(function($routeProvider, $locationProvider) {
           // All GLOBAL here
     
           $rootScope.siteConfigs = {
-              siteurl : 'http://www.neobazaar.eu'
+              siteurl: 'http://www.neobazaar.eu', 
+              sitename: 'Neobazaar annunci gratuiti'
           }
     
           $rootScope.fb = {
@@ -141,7 +142,7 @@ app.config(function($routeProvider, $locationProvider) {
             type : 'object',
             url : $rootScope.siteConfigs.siteurl,
             description : 'Neobazaar - Annunci gratuiti Case, Auto usate, Moto, Offerte lavoro e annunci Usato',
-            sitename : 'Neobazaar annunci gratuiti',
+            sitename : $rootScope.siteConfigs.sitename,
             image : $rootScope.siteConfigs.siteurl + '/img/logo3.gif',
           };
           

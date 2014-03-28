@@ -10,7 +10,7 @@ angular.module('Neobazaar').controller(
         $scope.resource = data;
         $scope.htmlSafeContent = $sce.trustAsHtml(data.data.nl2brContent);
 
-        $window.document.title = data.data.title + ' - Neobazaar annunci gratuiti';
+        $window.document.title = data.data.title + ' - ' - $scope.siteConfigs.sitename;
         $rootScope.fb.title = $window.document.title;
         $rootScope.fb.type = 'object';
         $rootScope.fb.image = data.data.image.src;

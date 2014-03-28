@@ -5,6 +5,8 @@ angular.module('Neobazaar').controller(
     function($scope) {
 
       $scope.cdn = '/';
+      
+      $window.document.title = $scope.siteConfigs.sitename;
 
       $scope.changeImage = function(idRegione, showRegion) {
         var objMappa = document.getElementById('mapReg');
