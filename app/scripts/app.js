@@ -133,7 +133,7 @@ app.config(function($routeProvider, $locationProvider) {
           // All GLOBAL here
     
           $rootScope.siteConfigs = {
-              siteurl: 'http://www.neobazaar.eu', 
+              siteurl: 'https://www.neobazaar.eu', 
               sitename: 'Neobazaar annunci gratuiti'
           }
     
