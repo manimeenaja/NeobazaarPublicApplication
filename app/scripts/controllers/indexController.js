@@ -2,7 +2,7 @@
 
 angular.module('Neobazaar').controller(
     'IndexController',
-    function($scope) {
+    function($scope, $window) {
 
       $scope.cdn = '/';
       
