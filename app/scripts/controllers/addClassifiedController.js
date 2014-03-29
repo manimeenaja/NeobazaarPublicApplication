@@ -66,12 +66,10 @@ angular
           
           
           
-          
-          
           $rootScope.isEdit = false;
           $rootScope.waiting = true;
 
-          if ('id' in $routeParams && 40 === ($routeParams.id).length) {
+          if ('id' in $routeParams && 6 === ($routeParams.id).length) {
             // not connected
             if (!$rootScope.logged) {
               $scope.getTemplateUrl = function() {

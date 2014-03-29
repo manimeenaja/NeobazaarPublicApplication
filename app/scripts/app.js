@@ -66,7 +66,7 @@ app.config(function($routeProvider, $locationProvider) {
   }).when('/logout.html', {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'LogoutController'
-  }).when('/edit-classified/:id', {
+  }).when('/edit-classified/:id.html', {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'AddClassifiedController'
   }).when('/classified-activation/:id.html', {
@@ -133,7 +133,7 @@ app.config(function($routeProvider, $locationProvider) {
           // All GLOBAL here
     
           $rootScope.siteConfigs = {
-              siteurl: 'https://www.neobazaar.eu', 
+              siteurl: 'http://www.neobazaar.com', 
               sitename: 'Neobazaar annunci gratuiti'
           }
     
