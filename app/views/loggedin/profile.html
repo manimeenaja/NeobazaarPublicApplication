@@ -30,7 +30,7 @@
 					</div>
 				</div>
 				
-				<form name="userprofile" action="/user/rest/{{params.hashId}}" id="user" ng-show="user" 
+				<form name="userprofile" action="{{'/user/rest/' + params.hashId}}" id="user" ng-show="user" 
 					validation data-validationsuccess='successfull' data-validationerror='successfull'
 					data-validationmodel="params" data-validationmodelinit="reset" 
 					data-validationmethod="PUT" data-validationrequestadata="prepareRequestParams" >

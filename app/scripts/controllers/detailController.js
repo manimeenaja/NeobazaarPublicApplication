@@ -9,6 +9,7 @@ angular.module('Neobazaar').controller(
       $scope.resource = loader.then(function(data) {
         $scope.resource = data;
         $scope.htmlSafeContent = $sce.trustAsHtml(data.data.nl2brContent);
+        $scope.htmlSafeBreadcrumbs = $sce.trustAsHtml(data.data.breadcrumbs);
 
         $window.document.title = data.data.title + ' - ' + $scope.siteConfigs.sitename;
         $rootScope.fb.title = $window.document.title;

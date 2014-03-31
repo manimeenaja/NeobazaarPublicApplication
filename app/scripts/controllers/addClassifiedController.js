@@ -107,7 +107,7 @@ angular
               $scope.classified.user.email = 'dummy@user.com'; // non viene
                                                                 // preso in
                                                                 // considerazione
-              $scope.classified.user.id = data.userid;
+              $scope.classified.user.id = data.userId;
               $scope.classified.title = data.title;
               $scope.classified.location = $rootScope.getCurrentElement(
                   $rootScope.locations, 'value', data.location);
