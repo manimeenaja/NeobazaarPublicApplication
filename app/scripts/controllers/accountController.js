@@ -36,11 +36,6 @@ angular.module('Neobazaar')
 	  $scope.resource = loader.then(function(data) {
 	    $scope.resource = data;
 	    
-	    for(var i in $scope.resource.data) {
-	      console.log($scope.resource.data[1]);
-	      break;
-	    }
-	    
 	    $scope.paginationNext = [{
 	      label: $scope.resource.paginationData.next.label,
 	      action: $scope.resource.paginationData.next.onclick
