@@ -104,7 +104,7 @@
 	<li class="{{resource.paginationData.previous.class}}">
 		<a 
 			ng-href="{{resource.paginationData.previous.link}}" 
-			ng-click="{{resource.paginationData.previous.onclick}}">
+			ng-click="$scope.paginationPrev.action()">
 			{{resource.paginationData.previous.label}}
 		</a>
 	</li>
@@ -116,7 +116,7 @@
 	<li class="{{resource.paginationData.next.class}}">
 		<a 
 			ng-href="{{resource.paginationData.next.link}}" 
-			ng-click="{{resource.paginationData.next.onclick}}">
+			ng-click="$scope.paginationNext.action()">
 			{{resource.paginationData.next.label}}
 		</a>
 	</li>
