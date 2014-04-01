@@ -97,7 +97,7 @@
 				<legend>Inserisci qui i dati del tuo annuncio</legend>
 				<div class="row" ng-hide="isEdit">
 					<div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
-			          	<label for="location" class="hidden-xs">Seleziona la provincia dove si trova il bene o il servizio *</label>	
+			          	<label for="location" class="pull-right hidden-xs">Seleziona la provincia dove si trova il bene o il servizio *</label>	
 			          	<label for="location" class="pull-left hidden-lg hidden-md hidden-sm">Seleziona la provincia dove si trova il bene o il servizio *</label>	
 					</div>
 					<div class="form-group col-lg-9 col-md-9 col-sm-9 col-xs-12">          	
@@ -114,10 +114,11 @@
 				</div>
 				
 				<div class="row">
-					<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-2">
-			          	<label for="title" class="pull-right">Titolo annuncio *</label>	
+					<div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+			          	<label for="title" class="pull-right hidden-xs">Titolo annuncio *</label>	
+			          	<label for="title" class="pull-left hidden-lg hidden-md hidden-sm">Titolo annuncio *</label>	
 					</div>
-					<div class="form-group col-lg-9 col-md-9 col-sd-9 col-xs-9">  	            	
+					<div class="form-group col-lg-9 col-md-9 col-sm-9 col-xs-12">	            	
 			          	<input type="text" placeholder="Riassumi in max 10 parole il titolo dell'annuncio"
 			          			class="form-control" ng-model="classified.title" name="document[title]" ng-minlength="2" ng-maxlength="90" required>
 						<div class="text-warning" 
@@ -127,17 +128,18 @@
 							</p>
 						</div>
 					</div>
-					<div class="form-group col-lg-1 col-md-1 col-sd-1 col-xs-1">
+					<div class="form-group col-lg-1 col-md-1 col-sm-1 hidden-xs">
 						<span class="btn btn-success ok" ng-show="classifiedadd['document[title]'].$dirty && classifiedadd['document[title]'].$valid">☑</span>
  						<span class="btn btn-danger ko" ng-show="classifiedadd['document[title]'].$dirty && classifiedadd['document[title]'].$invalid">☒</span>
 					</div>
 				</div>
 				
 				<div class="row">
-					<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-2">
-			          	<label for="content">Testo dell'annuncio *</label>	
+					<div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+			          	<label for="content" class="pull-right hidden-xs">Testo dell'annuncio *</label>	
+			          	<label for="content" class="pull-left hidden-lg hidden-md hidden-sm">Testo dell'annuncio *</label>	
 					</div>
-					<div class="form-group col-lg-9 col-md-9 col-sd-9 col-xs-9"> 	            	
+					<div class="form-group col-lg-9 col-md-9 col-sm-9 col-xs-12">	            	
 			          	<textarea ng-minlength="10" ng-maxlength="2400" 
 			          		placeholder="Inserisci una descrizione chiara di quello che offri, utilizzando le parole con cui vorresti che il tuo annuncio sia trovato, usa sinonimi, cerca di non ripetere spesso la stessa parola"  
 			          		class="form-control" name="document[content]" ng-model="classified.content" 
@@ -149,7 +151,7 @@
 							</p>
 						</div>
 					</div>
-					<div class="form-group col-lg-1 col-md-1 col-sd-1 col-xs-1">
+					<div class="form-group col-lg-1 col-md-1 col-sm-1 hidden-xs">
 						<span class="btn btn-success ok" ng-show="classifiedadd['document[content]'].$dirty && classifiedadd['document[content]'].$valid">☑</span>
  						<span class="btn btn-danger ko" ng-show="classifiedadd['document[content]'].$dirty && classifiedadd['document[content]'].$invalid">☒</span>
 					</div>
