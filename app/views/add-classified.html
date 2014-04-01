@@ -160,11 +160,11 @@
 			
 			<fieldset id="taxonomy" ng-disabled="locationNotReady()" ng-hide="isEdit">
 				<div class="row">
-					<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-2">
-			          	<label for="category">
-			          	Seleziona la categoria (attiva solo dopo aver selezionato una provincia) *</label>	
+					<div class="form-group col-lg-9 col-md-9 col-sm-9 col-xs-12">
+			          	<label for="category" class="pull-right hidden-xs">Seleziona la categoria (attiva solo dopo aver selezionato una provincia) *</label>
+			          	<label for="category" class="pull-left hidden-lg hidden-md hidden-sm">Seleziona la categoria (attiva solo dopo aver selezionato una provincia) *</label>	
 					</div>
-					<div class="form-group col-lg-9 col-md-9 col-sd-9 col-xs-9">   
+					<div class="form-group col-lg-9 col-md-9 col-sm-9 col-xs-12">  
 						<select name="document[termTaxonomy][0][termTaxonomyId]" class="form-control" 
 							ng-options="c.label group by c.group for c in categories" 
 						   	ng-model="classified.category" required>
@@ -177,7 +177,7 @@
 							</p>
 						</div>
 					</div>
-					<div class="form-group col-lg-1 col-md-1 col-sd-1 col-xs-1">
+					<div class="form-group col-lg-1 col-md-1 col-sm-1 hidden-xs">
 						<span class="btn btn-success ok" ng-show="classifiedadd['document[termTaxonomy][0][termTaxonomyId]'].$dirty && classifiedadd['document[termTaxonomy][0][termTaxonomyId]'].$valid">☑</span>
  						<span class="btn btn-danger ko" ng-show="classifiedadd['document[termTaxonomy][0][termTaxonomyId]'].$dirty && classifiedadd['document[termTaxonomy][0][termTaxonomyId]'].$invalid">☒</span>
 					</div>
@@ -189,10 +189,11 @@
 			<fieldset id="metadata">
 				<legend>Inserisci il tuo numero di telefono e specifica se offri o se stai cercando</legend>
 				<div class="row">
-					<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-2">
-			          	<label for="mobile">Numero di telefono</label>	
+					<div class="form-group col-lg-9 col-md-9 col-sm-9 col-xs-12">
+			          	<label for="mobile" class="pull-right hidden-xs">Numero di telefono</label>	
+			          	<label for="mobile" class="pull-left hidden-lg hidden-md hidden-sm">Numero di telefono</label>	
 					</div>
-					<div class="form-group col-lg-9 col-md-9 col-sd-9 col-xs-9">  	            	
+					<div class="form-group col-lg-9 col-md-9 col-sm-9 col-xs-12">  	            	
 			          	<input type="text" placeholder="Il tuo numero di telefono" ng-minlength="3" ng-maxlength="20" ng-pattern="/[0-9\.\+ ]+$/" 
 			          		class="form-control" name="document[metadata][0][value]" ng-model="classified.mobile" />
 						<div class="text-warning" 
@@ -210,7 +211,7 @@
 							</label>
 						</div>
 					</div>
-					<div class="form-group col-lg-1 col-md-1 col-sd-1 col-xs-1">
+					<div class="form-group col-lg-1 col-md-1 col-sm-1 hidden-xs">
 						<span class="btn btn-success ok" ng-show="classifiedadd['document[metadata][0][value]'].$dirty && classifiedadd['document[metadata][0][value]'].$valid">☑</span>
  						<span class="btn btn-danger ko" ng-show="classifiedadd['document[metadata][0][value]'].$dirty && classifiedadd['document[metadata][0][value]'].$invalid">☒</span>
 					</div>
