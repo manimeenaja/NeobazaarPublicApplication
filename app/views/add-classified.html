@@ -47,7 +47,8 @@
 				<legend>Inserisci qui il tuo nome e la tua email</legend>
 				<div class="row">
 					<div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
-			          	<label for="name" class="pull-right">Il tuo nome *</label>	
+			          	<label for="name" class="pull-right hidden-xs">Il tuo nome *</label>	
+			          	<label for="name" class="pull-left hidden-lg hidden-md hidden-sm">Il tuo nome *</label>	
 					</div>
 					<div class="form-group col-lg-9 col-md-9 col-sm-9 col-xs-12">  	            	
 			          	<input type="text" placeholder="Inserisci qui il tuo nome" 
@@ -95,18 +96,18 @@
 			<fieldset id="document">
 				<legend>Inserisci qui i dati del tuo annuncio</legend>
 				<div class="row" ng-hide="isEdit">
-					<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-2">
-			          	<label for="location">
-			          	Seleziona la provincia dove si trova il bene o il servizio *</label>	
+					<div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
+			          	<label for="location hidden-xs">Seleziona la provincia dove si trova il bene o il servizio *</label>	
+			          	<label for="location pull-left hidden-lg hidden-md hidden-sm">Seleziona la provincia dove si trova il bene o il servizio *</label>	
 					</div>
-					<div class="form-group col-lg-9 col-md-9 col-sd-9 col-xs-9">           	
+					<div class="form-group col-lg-9 col-md-9 col-sm-9 col-xs-12">          	
 			          	<select name="document[location]" class="form-control" 
 							ng-options="c.label group by c.group for c in locations" 
 						   	ng-model="classified.location" required>
 						   	<option value="">Seleziona una provincia</option>
 							</select>
 					</div>
-					<div class="form-group col-lg-1 col-md-1 col-sd-1 col-xs-1">
+					<div class="form-group col-lg-1 col-md-1 col-sm-1 hidden-xs">
 						<span class="btn btn-success ok" ng-show="classifiedadd['document[location]'].$dirty && classifiedadd['document[location]'].$valid">☑</span>
  						<span class="btn btn-danger ko" ng-show="classifiedadd['document[location]'].$dirty && classifiedadd['document[location]'].$invalid">☒</span>
 					</div>
