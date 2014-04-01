@@ -46,10 +46,10 @@
 			<fieldset class="form-group" id="user" ng-hide="isEdit || logged">
 				<legend>Inserisci qui il tuo nome e la tua email</legend>
 				<div class="row">
-					<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-2">
+					<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-4">
 			          	<label for="name" class="pull-right">Il tuo nome *</label>	
 					</div>
-					<div class="form-group col-lg-9 col-md-9 col-sd-9 col-xs-9">  	            	
+					<div class="form-group col-lg-9 col-md-9 col-sd-9 col-xs-8">  	            	
 			          	<input type="text" placeholder="Inserisci qui il tuo nome" 
 							class="form-control" name="user[name]" ng-model="classified.user.name" 
 							required ng-pattern="/^[a-zA-Z ']{4,30}$/" />
@@ -60,7 +60,11 @@
 							</p>
 						</div>
 					</div>
-					<div class="form-group col-lg-1 col-md-1 col-sd-1 col-xs-1">
+					<div class="form-group col-lg-1 col-md-1 col-sd-1 col-xs-0">
+						<span class="btn btn-success ok" ng-show="classifiedadd['user[name]'].$dirty && classifiedadd['user[name]'].$valid">☑</span>
+ 						<span class="btn btn-danger ko" ng-show="classifiedadd['user[name]'].$dirty && classifiedadd['user[name]'].$invalid">☒</span>
+					</div>
+					<div class="form-group col-lg-0 col-md-0 col-sd-0 col-xs-12">
 						<span class="btn btn-success ok" ng-show="classifiedadd['user[name]'].$dirty && classifiedadd['user[name]'].$valid">☑</span>
  						<span class="btn btn-danger ko" ng-show="classifiedadd['user[name]'].$dirty && classifiedadd['user[name]'].$invalid">☒</span>
 					</div>
