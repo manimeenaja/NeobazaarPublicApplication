@@ -46,10 +46,10 @@
 			<fieldset class="form-group" id="user" ng-hide="isEdit || logged">
 				<legend>Inserisci qui il tuo nome e la tua email</legend>
 				<div class="row">
-					<div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-4">
+					<div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
 			          	<label for="name" class="pull-right">Il tuo nome *</label>	
 					</div>
-					<div class="form-group col-lg-9 col-md-9 col-sm-9 col-xs-8">  	            	
+					<div class="form-group col-lg-9 col-md-9 col-sm-9 col-xs-12">  	            	
 			          	<input type="text" placeholder="Inserisci qui il tuo nome" 
 							class="form-control" name="user[name]" ng-model="classified.user.name" 
 							required ng-pattern="/^[a-zA-Z ']{4,30}$/" />
@@ -67,10 +67,10 @@
 				</div>
 				
 				<div class="row">
-					<div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-4">
+					<div class="form-group col-lg-2 col-md-2 col-sm-2 col-xs-12">
 			          	<label for="email" class="pull-right">La tua email *</label>	
 					</div>
-					<div class="form-group col-lg-9 col-md-9 col-sm-9 col-xs-8"> 	            	
+					<div class="form-group col-lg-9 col-md-9 col-sm-9 col-xs-12"> 	            	
 			          	<input type="text" placeholder="Usa un indirizzo valido, riceverai il link di attivazione. Le email usa e getta non sono valide." 
 			          		class="form-control" name="user[email]" ng-model="classified.user.email"
 			          		required />
