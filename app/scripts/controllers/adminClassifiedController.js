@@ -45,7 +45,7 @@ angular.module('Neobazaar')
      }
      
      if(ids.length > 1) {
-       Classified.bulkRemove({'ids': ids}, {, function() {
+       Classified.bulkRemove({'ids': ids}, {}, function() {
         $route.reload();
        }, function() {
        });
