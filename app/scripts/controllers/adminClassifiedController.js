@@ -36,13 +36,20 @@ angular.module('Neobazaar')
 			  angular.element('.full-check:checked').each(function(i, v) {
 				  ids.push(angular.element(v).attr('id'));
 			  });
-			  
-			  if(ids.length) {
-				  Classified.remove({'id': 'bulk'}, {'ids':ids}, function() {
-					  $route.reload();
-				  }, function() {
-				  });
-			  }
+
+     if(ids.length == 1) {
+      Classified.remove({'id': 'bulk'}, {'ids':ids}, function() {
+       $route.reload();
+      }, function() {
+      });
+     }
+     
+     if(ids.length > 1) {
+       Classified.bulkRemove({'id': 'bulk'}, {'ids':ids}, function() {
+        $route.reload();
+       }, function() {
+       });
+      }
 
 			  return false;
 		  }

@@ -29,9 +29,10 @@ services.factory('Classified', [ '$resource',
           isArray : false
         },
         bulkRemove : {
-          method : 'PUT',
+          method : 'DELETE',
           params : {
-            'action' : 'bulkDelete'
+            'action' : 'bulk',
+            'ids': '@id'
           },
           isArray : true
         }
