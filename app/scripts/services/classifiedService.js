@@ -31,10 +31,9 @@ services.factory('Classified', [ '$resource',
         bulkRemove : {
           method : 'DELETE',
           params : {
-            'action' : 'bulk',
-            'ids': '@id'
+            'action' : 'bulk'
           },
-          isArray : false
+          isArray : true
         }
       });
     } ]);
