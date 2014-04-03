@@ -30,7 +30,7 @@ services.factory('Classified', [ '$resource',
         },
         bulkRemove : {
           method : 'DELETE',
-          isArray : true
+          isArray : false
         }
       });
     } ]);
