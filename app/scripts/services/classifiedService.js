@@ -34,7 +34,7 @@ services.factory('Classified', [ '$resource',
             'action' : 'bulk',
             'ids': '@id'
           },
-          isArray : true
+          isArray : false
         }
       });
     } ]);
