@@ -3,7 +3,7 @@
 /*global $:false */
 angular.module('Neobazaar').controller(
     'SupportController',
-    function($scope, $rootScope, $timeout, $http, $location, CaptchaLoader) {
+    function($scope, $rootScope, $timeout, $http, $location, $window, CaptchaLoader) {
       if (!$rootScope.logged) {
         $scope.getTemplateUrl = function() {
           return '/views/loggedout/account.html';

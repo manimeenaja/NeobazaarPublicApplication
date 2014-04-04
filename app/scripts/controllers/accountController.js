@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('Neobazaar')
-  .controller('AccountController', function ($scope, $routeParams, $route, $rootScope, $location, $timeout, Classified, ClassifiedsLoader) {
+  .controller('AccountController', function ($scope, $routeParams, $route, $rootScope, $location, $timeout, $window, Classified, ClassifiedsLoader) {
 	  if(!$rootScope.logged) {
 		  $location.path('/login.html');
 		  return;

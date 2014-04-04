@@ -2,7 +2,7 @@
 
 angular.module('Neobazaar').controller(
     'ProfileController',
-    function($scope, $rootScope, $routeParams, $timeout, $http, $location,
+    function($scope, $rootScope, $routeParams, $timeout, $http, $window, $location,
         UserLoader) {
       if (!$rootScope.logged) {
         $scope.getTemplateUrl = function() {

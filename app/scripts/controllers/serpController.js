@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('Neobazaar')
-  .controller('SerpController', function ($scope, $http, $location, $routeParams, ClassifiedsLoader) {
+  .controller('SerpController', function ($scope, $http, $location, $routeParams, $window, ClassifiedsLoader) {
 		$scope.filter = {};
 		$scope.filter.all = 'Tutti';
 		$scope.filter.private = 'Privati';
