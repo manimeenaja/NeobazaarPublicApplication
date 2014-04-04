@@ -27,40 +27,44 @@
 				<h2>{{resource.data.title}}</h2>
 				<hr />
 				
-				<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-					<p>E' un tuo annuncio?
-						<a ng-href="/edit-classified/{{resource.data.hashId}}.html" 
-							class="btn btn-default btn-xs">
-							<span class="glyphicon glyphicon-wrench"></span>
-							&nbsp;Modificalo
-						</a>
-						<a href="/login.html" 
-							class="btn btn-default btn-xs">
-							<span class="glyphicon glyphicon-pause"></span>
-							&nbsp;Sospendilo</a>
-						<a href="/login.html" 
-							class="btn btn-default btn-xs">
-							<span class="glyphicon glyphicon-remove-sign"></span>
-							&nbsp;Eliminalo</a></p>
-				</div>
-				<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-					<div class="btn-group" ng-show="userData.isAdmin && resource.data.email">
-						<button type="button" class="btn btn-danger btn-xs">Admin Zone</button>
-						<button type="button" class="btn btn-danger btn-xs dropdown-toggle" data-toggle="dropdown">
-						  <span class="caret"></span>
-						</button>
-						<ul class="dropdown-menu" role="menu">
-							<li><a ng-href="/admin/classified/1?full=1&user={{resource.data.userId}}">Annunci utente</a></li>
-							<li><a ng-href="/admin/user/1/{{resource.data.email}}">Trova utente</a></li>
-							<li><a ng-href="/admin/edit-user/{{resource.data.userId}}">Visualizza utente</a></li>
-						</ul>
+  				<div class="row">
+					<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+						<p>E' un tuo annuncio?
+							<a ng-href="/edit-classified/{{resource.data.hashId}}.html" 
+								class="btn btn-default btn-xs">
+								<span class="glyphicon glyphicon-wrench"></span>
+								&nbsp;Modificalo
+							</a>
+							<a href="/login.html" 
+								class="btn btn-default btn-xs">
+								<span class="glyphicon glyphicon-pause"></span>
+								&nbsp;Sospendilo</a>
+							<a href="/login.html" 
+								class="btn btn-default btn-xs">
+								<span class="glyphicon glyphicon-remove-sign"></span>
+								&nbsp;Eliminalo</a></p>
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+						<div class="btn-group" ng-show="userData.isAdmin && resource.data.email">
+							<button type="button" class="btn btn-danger btn-xs">Admin Zone</button>
+							<button type="button" class="btn btn-danger btn-xs dropdown-toggle" data-toggle="dropdown">
+							  <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" role="menu">
+								<li><a ng-href="/admin/classified/1?full=1&user={{resource.data.userId}}">Annunci utente</a></li>
+								<li><a ng-href="/admin/user/1/{{resource.data.email}}">Trova utente</a></li>
+								<li><a ng-href="/admin/edit-user/{{resource.data.userId}}">Visualizza utente</a></li>
+							</ul>
+						</div>
 					</div>
 				</div>
 					
 				<hr />
 				
-				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-					<p>Inserito {{resource.data.insert}}, <strong>{{resource.data.visited}}</strong> visite</p>
+  				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<p>Inserito {{resource.data.insert}}, <strong>{{resource.data.visited}}</strong> visite</p>
+					</div>
 				</div>
 				
 				<hr />
