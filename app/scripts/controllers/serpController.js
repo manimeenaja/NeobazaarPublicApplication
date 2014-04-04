@@ -6,6 +6,8 @@ angular.module('Neobazaar')
 		$scope.filter.all = 'Tutti';
 		$scope.filter.private = 'Privati';
 		$scope.filter.company = 'Aziende';
+
+  $window.document.title = 'Annunci - ' + $scope.siteConfigs.sitename;
 		
   var loader = new ClassifiedsLoader($routeParams);
   $scope.resource = loader.then(function(data) {

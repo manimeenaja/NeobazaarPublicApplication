@@ -14,6 +14,8 @@ angular.module('Neobazaar').controller(
         return;
       }
 
+      $window.document.title = 'Il tuoi dati - ' + $scope.siteConfigs.sitename;
+
       var id = $routeParams && 'id' in $routeParams ? $routeParams.id
           : 'current';
       $scope.response = false;

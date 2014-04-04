@@ -14,6 +14,8 @@ angular.module('Neobazaar').controller(
         return;
       }
 
+      $window.document.title = 'Contattaci - ' + $scope.siteConfigs.sitename;
+
       $scope.sent = false;
       $scope.dafaultCaptcha = 'loading';
       $scope.resource = new CaptchaLoader({});
