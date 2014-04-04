@@ -25,40 +25,25 @@
 	</div>
 	
 	<div class="hidden-lg hidden-md hidden-sm col-xs-12">
-		<ul class="adm1">
-			<li><a id="italy" title="annunci gratuiti italia" href="/annunci-italia/compravendita/usato" ng-mouseout="changeAllImages(false,'')" ng-mouseover="changeAllImages(true,'')">Tutta Italia</a></li>
-		</ul>
-		
-		<ul class="adm1">
-			<li><a title="annunci gratuiti Abruzzo" href="/annunci-abruzzo/compravendita/usato" name="myReg_1" ng-mouseout="changeImage( 1, false )" ng-mouseover="changeImage( 1, true )">Abruzzo </a></li>
-			<li><a title="annunci gratuiti Basilicata" href="/annunci-basilicata/compravendita/usato" name="myReg_6" ng-mouseout="changeImage( 6, false )" ng-mouseover="changeImage( 6, true )">Basilicata </a></li>
-			<li><a title="annunci gratuiti Calabria" href="/annunci-calabria/compravendita/usato" name="myReg_11" ng-mouseout="changeImage( 11, false )" ng-mouseover="changeImage( 11, true )">Calabria </a></li>
-			<li><a title="annunci gratuiti Campania" href="/annunci-campania/compravendita/usato" name="myReg_16" ng-mouseout="changeImage( 16, false )" ng-mouseover="changeImage( 16, true )">Campania </a></li>
-		</ul>
-		<ul class="adm1">
-			<li><a title="annunci gratuiti Emilia Romagna" href="/annunci-emilia-romagna/compravendita/usato" name="myReg_2" ng-mouseout="changeImage( 2, false )" ng-mouseover="changeImage( 2, true )">Emilia Romagna </a></li>
-			<li><a title="annunci gratuiti Friuli Venezia Giulia" href="/annunci-friuli-venezia-giulia/compravendita/usato" name="myReg_7" ng-mouseout="changeImage( 7, false )" ng-mouseover="changeImage( 7, true )">Friuli Venezia Giulia </a></li>
-			<li><a title="annunci gratuiti Lazio" href="/annunci-lazio/compravendita/usato" name="myReg_12" ng-mouseout="changeImage( 12, false )" ng-mouseover="changeImage( 12, true )">Lazio </a></li>
-			<li><a title="annunci gratuiti Liguria" href="/annunci-liguria/compravendita/usato" name="myReg_17" ng-mouseout="changeImage( 17, false )" ng-mouseover="changeImage( 17, true )">Liguria </a></li>
-		</ul>
-		<ul class="adm1">
-			<li><a title="annunci gratuiti Lombardia" href="/annunci-lombardia/compravendita/usato" name="myReg_3" ng-mouseout="changeImage( 3, false )" ng-mouseover="changeImage( 3, true )">Lombardia </a></li>
-			<li><a title="annunci gratuiti Marche" href="/annunci-marche/compravendita/usato" name="myReg_8" ng-mouseout="changeImage( 8, false )" ng-mouseover="changeImage( 8, true )">Marche </a></li>
-			<li><a title="annunci gratuiti Molise" href="/annunci-molise/compravendita/usato" name="myReg_13" ng-mouseout="changeImage( 13, false )" ng-mouseover="changeImage( 13, true )">Molise </a></li>
-			<li><a title="annunci gratuiti Piemonte" href="/annunci-piemonte/compravendita/usato" name="myReg_18" ng-mouseout="changeImage( 18, false )" ng-mouseover="changeImage( 18, true )">Piemonte </a></li>
-		</ul>
-		<ul class="adm1">
-			<li><a title="annunci gratuiti Puglia" href="/annunci-puglia/compravendita/usato" name="myReg_4" ng-mouseout="changeImage( 4, false )" ng-mouseover="changeImage( 4, true )">Puglia </a></li>
-			<li><a title="annunci gratuiti Sardegna" href="/annunci-sardegna/compravendita/usato" name="myReg_9" ng-mouseout="changeImage( 9, false )" ng-mouseover="changeImage( 9, true )">Sardegna </a></li>
-			<li><a title="annunci gratuiti Sicilia" href="/annunci-sicilia/compravendita/usato" name="myReg_14" ng-mouseout="changeImage( 14, false )" ng-mouseover="changeImage( 14, true )">Sicilia </a></li>
-			<li><a title="annunci gratuiti Toscana" href="/annunci-toscana/compravendita/usato" name="myReg_19" ng-mouseout="changeImage( 19, false )" ng-mouseover="changeImage( 19, true )">Toscana </a></li>
-		</ul>
-		<ul class="adm1">
-			<li><a title="annunci gratuiti Trentino Alto Adige" href="/annunci-trentino-alto-adige/compravendita/usato" name="myReg_5" ng-mouseout="changeImage( 5, false )" ng-mouseover="changeImage( 5, true )">Trentino Alto Adige </a></li>
-			<li><a title="annunci gratuiti Umbria" href="/annunci-umbria/compravendita/usato" name="myReg_10" ng-mouseout="changeImage( 10, false )" ng-mouseover="changeImage( 10, true )">Umbria </a></li>
-			<li><a title="annunci gratuiti Valle D'aosta" href="/annunci-valle-daosta/compravendita/usato" name="myReg_15" ng-mouseout="changeImage( 15, false )" ng-mouseover="changeImage( 15, true )">Valle D'aosta </a></li>
-			<li><a title="annunci gratuiti Veneto" href="/annunci-veneto/compravendita/usato" name="myReg_20" ng-mouseout="changeImage( 20, false )" ng-mouseover="changeImage( 20, true )">Veneto </a></li>
-		</ul>
+		<div class="row">
+			<div class="hidden-lg hidden-md hidden-sm col-xs-3">
+				<a title="annunci gratuiti Abruzzo" href="/annunci-abruzzo/compravendita/usato" 
+					class="btn btn-default btn-xs"
+					name="myReg_1" ng-mouseout="changeImage( 1, false )" 
+					ng-mouseover="changeImage( 1, true )">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+					Abruzzo </a>
+			</div>
+				
+			<div class="hidden-lg hidden-md hidden-sm col-xs-3">
+				<a title="annunci gratuiti Basilicata" href="/annunci-basilicata/compravendita/usato" 
+					class="btn btn-default btn-xs"
+					name="myReg_6" ng-mouseout="changeImage( 6, false )" 
+					ng-mouseover="changeImage( 6, true )">
+					<span class="glyphicon glyphicon-chevron-right"></span>
+					Basilicata </a>
+			</div>
+		</div>
 	</div>
 
 	<div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-5 col-xs-12">
