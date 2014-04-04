@@ -2,7 +2,7 @@
 
 angular.module('Neobazaar').controller(
     'BreadcrumbsController',
-    function($scope, $routeParams) {
+    function($scope, $routeParams, $window) {
 
       $scope.getBreadcrumbs = function(params) {
         var category = 'category' in params ? params.category : null;
@@ -21,6 +21,12 @@ angular.module('Neobazaar').controller(
         var voiceTwoUrl = null !== query ? '/annunci-' + location + '/' +
             purpose + '/' + page + '?query=' + query : '/annunci-' +
             location + '/' + purpose + '/' + page;
+        
+
+        $window.document.title = 'Annunci ' + locationFormatted +  ' ' + 
+          voiceOne + ' ' + 
+          voiceTwo + ' - ' + 
+          $scope.siteConfigs.sitename;
 
         return [ {
           label : 'Home',
