@@ -43,15 +43,15 @@
 						<h4 class="media-heading">&nbsp;<a ng-href='{{item.address}}'>{{item.title}}</a></h4>
 					</div>
 					
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
 						<a ng-href='{{item.editaddress}}' class="thumbnail"><img 
-							class="{{item.image.class}}" 
+							class="{{item.image.class}} img-responsive" 
 							alt="{{item.image.alt}}" 
 							ng-src="{{item.image.thumbnailUrl}}" 
 							/></a>
 					</div>
 					
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+					<div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
 		  				{{item.date}}
 		  				<p class="visible-xs">{{item.visited}} visite</p>
 					</div>
