@@ -26,21 +26,24 @@
   			<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
 				<h2>{{resource.data.title}}</h2>
 				<hr />
-				<p>E' un tuo annuncio?
-					<a ng-href="/edit-classified/{{resource.data.hashId}}.html" 
-						class="btn btn-default btn-xs">
-						<span class="glyphicon glyphicon-wrench"></span>
-						&nbsp;Modificalo
-					</a>
-					<a href="/login.html" 
-						class="btn btn-default btn-xs">
-						<span class="glyphicon glyphicon-pause"></span>
-						&nbsp;Sospendilo</a>
-					<a href="/login.html" 
-						class="btn btn-default btn-xs">
-						<span class="glyphicon glyphicon-remove-sign"></span>
-						&nbsp;Eliminalo</a></p>
-						
+				
+				<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+					<p>E' un tuo annuncio?
+						<a ng-href="/edit-classified/{{resource.data.hashId}}.html" 
+							class="btn btn-default btn-xs">
+							<span class="glyphicon glyphicon-wrench"></span>
+							&nbsp;Modificalo
+						</a>
+						<a href="/login.html" 
+							class="btn btn-default btn-xs">
+							<span class="glyphicon glyphicon-pause"></span>
+							&nbsp;Sospendilo</a>
+						<a href="/login.html" 
+							class="btn btn-default btn-xs">
+							<span class="glyphicon glyphicon-remove-sign"></span>
+							&nbsp;Eliminalo</a></p>
+				</div>
+				<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 					<div class="btn-group" ng-show="userData.isAdmin && resource.data.email">
 						<button type="button" class="btn btn-danger btn-xs">Admin Zone</button>
 						<button type="button" class="btn btn-danger btn-xs dropdown-toggle" data-toggle="dropdown">
@@ -52,6 +55,7 @@
 							<li><a ng-href="/admin/edit-user/{{resource.data.userId}}">Visualizza utente</a></li>
 						</ul>
 					</div>
+				</div>
 					
 				<hr />
 				
