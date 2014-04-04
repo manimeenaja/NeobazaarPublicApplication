@@ -36,6 +36,8 @@
 						Non hai nessun annuncio.
 					</div>
 		  		</div>
+		  		
+		  		<p class="hidden-lg hidden-md hidden-sm">&nbsp;</p>
 				
 				<div class="row {{item.cssClass}}" ng-repeat='item in resource.data'>
 					<!-- visible  xs here -->
@@ -43,7 +45,7 @@
 						<h4 class="media-heading">&nbsp;<a ng-href='{{item.address}}'>{{item.title}}</a></h4>
 					</div>
 					
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
 						<a ng-href='{{item.editaddress}}' class="thumbnail"><img 
 							class="{{item.image.class}} img-responsive" 
 							alt="{{item.image.alt}}" 
@@ -51,7 +53,7 @@
 							/></a>
 					</div>
 					
-					<div class="col-lg-2 col-md-2 col-sm-2 hidden-xs">
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
 		  				{{item.date}}
 		  				<p class="visible-xs">{{item.visited}} visite</p>
 					</div>
@@ -67,7 +69,7 @@
 					</div>
 					
 					
-					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5">
+					<div class="col-lg-3 col-md-3 col-sm-3 hidden-xs">
 						<div class="btn-group btn-group-justified ng-scope">
 							<a ng-click="touch(item)" class="btn btn-primary" title="Riporta l'annuncio in cima!">
 								<span class="glyphicon glyphicon-arrow-up"></span>
