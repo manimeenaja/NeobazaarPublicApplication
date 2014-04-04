@@ -43,69 +43,68 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     
-    	<div ng-hide="checkedLogged">
-	    	<div class="container">
-    			Attendi un istante...
-		    </div>
-    	</div>
-    	<div ng-show="checkedLogged">
-    		<neo-header></neo-header>
+	<div ng-hide="checkedLogged">
+		<div class="container">Attendi un istante...</div>
+	</div>
+
+	<div style="border: 2px solid red" ng-show="checkedLogged">
+		<neo-header></neo-header>
     	
-    		<neo-search-panel></neo-search-panel>
+		<neo-search-panel></neo-search-panel>
     		
-	    	<div class="container">
-				<div ng-view ></div>
-		    </div>
+    	<div class="container">
+			<div ng-view ></div>
+	    </div>
             
-	    	<div class="container" id="footer" ng-show="checkedLogged">
-				<div class="row">
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="footer_top">
-						<ul class="nav nav-pills">
-							<!-- <li><a href="/#/about">Chi siamo</a></li>  -->
-							<li><a href="/privacy.html">Privacy</a></li>
-							<!-- <li><a href="/#/advices">Consigli</a></li>  -->
-							<li><a href="/conditions.html">Condizioni</a></li>
-							<!-- <li><a href="/#/howitworks">Come Funziona</a></li>
-							<li><a target="_blank" href="http://www.facebook.com/pages/Neobazaar-annunci-gratuiti/143541933889">Pagina Facebook</a></li>
-							<li><a rel="nofollow" target="_blank" href="http://apps.facebook.com/annunci-gratuiti/">Applicazione Facebook</a></li>
-							<li><a rel="nofollow" class="hide" id="hp_bookmark" onclick="return Neobazaar.Utils.bookmark('http://www.neobazaar.com', 'Neobazaar.com - Vendi e compra di tutto in Italia');" href="#">Preferiti</a></li>
-							<li><a href="/#/credits">Credits</a></li>  -->
-							<li><a href="mailto:info@neobazaar.com">Contattaci</a></li>
-						</ul>
-					</div>
+		<div class="container" id="footer">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="footer_top">
+					<ul class="nav nav-pills">
+						<!-- <li><a href="/#/about">Chi siamo</a></li>  -->
+						<li><a href="/privacy.html">Privacy</a></li>
+						<!-- <li><a href="/#/advices">Consigli</a></li>  -->
+						<li><a href="/conditions.html">Condizioni</a></li>
+						<!-- <li><a href="/#/howitworks">Come Funziona</a></li>
+						<li><a target="_blank" href="http://www.facebook.com/pages/Neobazaar-annunci-gratuiti/143541933889">Pagina Facebook</a></li>
+						<li><a rel="nofollow" target="_blank" href="http://apps.facebook.com/annunci-gratuiti/">Applicazione Facebook</a></li>
+						<li><a rel="nofollow" class="hide" id="hp_bookmark" onclick="return Neobazaar.Utils.bookmark('http://www.neobazaar.com', 'Neobazaar.com - Vendi e compra di tutto in Italia');" href="#">Preferiti</a></li>
+						<li><a href="/#/credits">Credits</a></li>  -->
+						<li><a href="mailto:info@neobazaar.com">Contattaci</a></li>
+					</ul>
 				</div>
+			</div>
 				
-				<div class="row">
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="footer_main">
-						<ul class="nav nav-pills">
-							<li><a href="/annunci-milano/compravendita/usato">Annunci
-									Milano</a></li>
-							<li><a href="/annunci-roma/compravendita/usato">Annunci
-									Roma</a></li>
-							<li><a href="/annunci-torino/compravendita/usato">Annunci
-									Torino</a></li>
-							<li><a href="/annunci-napoli/compravendita/usato">Annunci
-									Napoli</a></li>
-							<li><a href="/annunci-bologna/compravendita/usato">Annunci
-									Bologna</a></li>
-							<!-- <li><a href="#/provincie.html">Altre Province</a>
-							</li> -->
-						</ul>
-					</div>
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="footer_main">
+					<ul class="nav nav-pills">
+						<li><a href="/annunci-milano/compravendita/usato">Annunci
+								Milano</a></li>
+						<li><a href="/annunci-roma/compravendita/usato">Annunci
+								Roma</a></li>
+						<li><a href="/annunci-torino/compravendita/usato">Annunci
+								Torino</a></li>
+						<li><a href="/annunci-napoli/compravendita/usato">Annunci
+								Napoli</a></li>
+						<li><a href="/annunci-bologna/compravendita/usato">Annunci
+								Bologna</a></li>
+						<!-- <li><a href="#/provincie.html">Altre Province</a>
+						</li> -->
+					</ul>
 				</div>
+			</div>
 				
-				<div class="row">
-					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="footer_bottom">
-						Il sito di annunci gratuiti in Tutta Italia di case, auto, offerte di
-						lavoro e tantissimo altro ancora. Consulta gli annunci gratuiti di
-						Neobazaar.com, potrai scegliere tra diverse categorie e trovare
-						annunci sempre nuovi di vendita o affitto case, annunci auto e moto
-						usate, offerte lavoro e anche annunci per il tuo tempo libero e lo
-						sport.
-					</div>
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="footer_bottom">
+					Il sito di annunci gratuiti in Tutta Italia di case, auto, offerte di
+					lavoro e tantissimo altro ancora. Consulta gli annunci gratuiti di
+					Neobazaar.com, potrai scegliere tra diverse categorie e trovare
+					annunci sempre nuovi di vendita o affitto case, annunci auto e moto
+					usate, offerte lavoro e anche annunci per il tuo tempo libero e lo
+					sport.
 				</div>
 			</div>
 		</div>
+	</div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
