@@ -37,17 +37,27 @@
 	<meta property="og:site_name" content="{{fb.sitename}}" />
 	<meta property="og:image" content="{{fb.image}}" />
     
+	<style media="screen" type="text/css">
+		[ng\:cloak],[ng-cloak],.ng-cloak{display:none !important}
+	</style>
+    
   </head>
   <body>
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     
-	<div ng-hide="checkedLogged">
-		<div class="container">Attendi un istante...</div>
+	<div ng-hide="checkedLogged" class="container">		
+		<p>&nbsp;</p>
+		<p>Neobazaar sta caricando, attenti un istante.</p>		
+		<div class="progress progress-striped active">
+			<div class="progress-bar"  role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+				<span class="sr-only">Loading please wait</span>
+			</div>
+		</div>
 	</div>
 
-	<div style="border: 2px solid red" ng-show="checkedLogged">
+	<div ng-show="checkedLogged" ng-cloak>
 		<neo-header></neo-header>
     	
 		<neo-search-panel></neo-search-panel>
