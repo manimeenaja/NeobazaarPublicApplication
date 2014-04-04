@@ -23,8 +23,7 @@ angular.module('Neobazaar').controller(
             location + '/' + purpose + '/' + page;
         
 
-        $window.document.title = 'Annunci ' + locationFormatted +  ' ' + 
-          voiceOne + ' ' + 
+        $window.document.title = 'Annunci ' + voiceOne + ' ' + 
           voiceTwo + ' - ' + 
           $scope.siteConfigs.sitename;
 
