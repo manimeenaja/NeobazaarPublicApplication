@@ -41,15 +41,15 @@
 						<span class="glyphicon glyphicon-remove-sign"></span>
 						&nbsp;Eliminalo</a></p>
 						
-					<div class="btn-group" ng-show="userData.isAdmin && resource.email">
+					<div class="btn-group" ng-show="userData.isAdmin && resource.data.email">
 						<button type="button" class="btn btn-danger btn-xs">Admin Zone</button>
 						<button type="button" class="btn btn-danger btn-xs dropdown-toggle" data-toggle="dropdown">
 						  <span class="caret"></span>
 						</button>
 						<ul class="dropdown-menu" role="menu">
-							<li><a ng-href="/admin/classified/1?full=1&user={{resource.userId}}">Annunci utente</a></li>
-							<li><a ng-href="/admin/user/1/{{resource.email}}">Trova utente</a></li>
-							<li><a ng-href="/admin/edit-user/{{resource.userId}}">Visualizza utente</a></li>
+							<li><a ng-href="/admin/classified/1?full=1&user={{resource.data.userId}}">Annunci utente</a></li>
+							<li><a ng-href="/admin/user/1/{{resource.data.email}}">Trova utente</a></li>
+							<li><a ng-href="/admin/edit-user/{{resource.data.userId}}">Visualizza utente</a></li>
 						</ul>
 					</div>
 					
