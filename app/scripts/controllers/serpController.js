@@ -1,13 +1,11 @@
 'use strict';
 
 angular.module('Neobazaar')
-  .controller('SerpController', function ($scope, $http, $location, $routeParams, $window, ClassifiedsLoader) {
+  .controller('SerpController', function ($scope, $http, $location, $routeParams, ClassifiedsLoader) {
 		$scope.filter = {};
 		$scope.filter.all = 'Tutti';
 		$scope.filter.private = 'Privati';
 		$scope.filter.company = 'Aziende';
-
-  $window.document.title = 'Annunci - ' + $scope.siteConfigs.sitename;
 		
   var loader = new ClassifiedsLoader($routeParams);
   $scope.resource = loader.then(function(data) {
