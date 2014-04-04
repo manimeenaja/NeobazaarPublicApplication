@@ -38,7 +38,7 @@
 					<fieldset>
 						<div class="row">
 							<div class="form-group col-lg-12">
-					          	<p>Sei registrato con il seguente indirizzo email: {{user.data.email}}</p>
+					          	<p>Sei registrato con il seguente indirizzo email: {{params.email}}</p>
 								<div class="alert alert-{{response.status}}" ng-show="response && response.message">
 									<p>{{response.message}}</p>
 								</div>
