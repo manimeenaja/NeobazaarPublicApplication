@@ -32,15 +32,15 @@
 						<h4 class="media-heading">&nbsp;<a ng-href='{{item.address}}'>{{item.title}}</a></h4>
 					</div>
 					
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-8">
 						<a ng-href='{{item.address}}' class="thumbnail"><img 
-							class="{{item.image.class}}" 
+							class="{{item.image.class}} img-responsive" 
 							alt="{{item.image.alt}}" 
 							ng-src="{{item.image.thumbnailUrl}}" 
 							/></a>
 					</div>
 					
-					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
+					<div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
 		  				{{item.date}}
 					</div>
 					
@@ -51,12 +51,12 @@
 					</div>
 					
 					
-					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-5">
+					<div class="col-lg-3 col-md-3 col-sm-3 col-xs-8">
 						<p>{{item.locationFormatted}}</p>
 						{{item.categories}}
 					</div>
 					
-					<div class="col-xs-2 visible-xs">
+					<div class="col-xs-4 visible-xs">
 						{{item.price}}
 					</div>
 				</div>
