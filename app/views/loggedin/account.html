@@ -88,6 +88,34 @@
 							</a>
 						</div>
 					</div>
+					
+					<div class="hidden-lg hidden-md hidden-sm col-xs-12">
+						<div class="btn-group btn-group-justified">
+							<a ng-click="touch(item)" class="btn btn-primary" title="Riporta l'annuncio in cima!">
+								<span class="glyphicon glyphicon-arrow-up"></span>
+							</a>
+						</div>
+						<div class="btn-group btn-group-justified">
+							<a ng-href="{{item.editaddress}}" class="btn btn-success" title="Modifica">
+								<span class="glyphicon glyphicon-edit"></span>
+							</a>
+						</div>
+						<div class="btn-group btn-group-justified" ng-show="item.isActive">
+							<a ng-click="disableEnable(item)" class="btn btn-warning" title="L'annuncio è attivo, clicca per disattivare">
+								<span class="glyphicon glyphicon-pause"></span>
+							</a>
+						</div>
+						<div class="btn-group btn-group-justified" ng-show="item.isDeactive">
+							<a ng-click="disableEnable(item)" class="btn btn-primary" title="L'annuncio è disattivo, clicca per attivare">
+								<span class="glyphicon glyphicon-play"></span>
+							</a>
+						</div>
+						<div class="btn-group btn-group-justified">
+							<a ng-click="delete(item)" class="btn btn-danger delete-classified" title="Elimina">
+								<span class="glyphicon glyphicon-remove-sign"></span>
+							</a>
+						</div>
+					</div>
 				</div>
 				
 			</div>
