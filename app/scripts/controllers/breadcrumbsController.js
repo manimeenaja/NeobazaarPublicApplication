@@ -16,6 +16,7 @@ angular.module('Neobazaar').controller(
             location.substr(1) : '';
         var voiceOne = null !== purpose ? locationFormatted + ', ' + purpose
             : locationFormatted;
+        voiceOne = voiceOne.replace("-", " ");
         var voiceTwo = null !== query ? query + ' in ' + category : category;
 
         var voiceTwoUrl = null !== query ? '/annunci-' + location + '/' +
