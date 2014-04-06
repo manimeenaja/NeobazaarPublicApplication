@@ -400,8 +400,8 @@
 							 ng-click="reset()"/>
 			        </div>
 					<div class="form-group col-lg-2 col-md-2 col-sd-2 col-xs-4"> 
-						<input type="hidden" name="classifiedid" ng-model="classified.id" />
-						<input type="hidden" name="userid" ng-model="classified.user.id" />
+						<input type="text" name="classifiedid" ng-model="classified.id" style="display:none;" />
+						<input type="text" name="userid" ng-model="classified.user.id" style="display:none;" />
 						<input type="submit" name="submit" value="Invia" class="btn btn-primary btn-block" /> 
 							<!-- ng-disabled="classifiedadd.$invalid || isUnchanged(classified) || isInvalidCategory()" -->
 			        </div>
