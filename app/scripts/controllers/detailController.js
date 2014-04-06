@@ -23,4 +23,4 @@ angular.module('Neobazaar').controller(
       $scope.back = function() {
         $window.history.back();
       };
-});
+    });

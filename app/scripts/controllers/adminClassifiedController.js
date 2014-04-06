@@ -37,12 +37,12 @@ angular.module('Neobazaar')
 				  ids.push(angular.element(v).attr('id'));
 			  });
 
-     if(ids.length) {
-      Classified.bulkRemove({'id':'bulk', 'ids': ids.join(",")}, function() {
-       $route.reload();
-      }, function() {
-      });
-     }
+        if(ids.length) {
+          Classified.bulkRemove({'id':'bulk', 'ids': ids.join(',')}, function() {
+            $route.reload();
+          }, function() {
+          });
+        }
 
 			  return false;
 		  }
@@ -53,20 +53,20 @@ angular.module('Neobazaar')
 	  };
 		
 	  $routeParams.full = 1;
-   var loader = new ClassifiedsLoader($routeParams);
-   $scope.resource = loader.then(function(data) {
-     $scope.resource = data;
+    var loader = new ClassifiedsLoader($routeParams);
+    $scope.resource = loader.then(function(data) {
+      $scope.resource = data;
      
-     $scope.paginationNext = [{
-       label: $scope.resource.paginationData.next.label,
-       action: $scope.resource.paginationData.next.onclick
-     }];
+      $scope.paginationNext = [{
+        label: $scope.resource.paginationData.next.label,
+        action: $scope.resource.paginationData.next.onclick
+      }];
      
-     $scope.paginationPrev = [{
-       label: $scope.resource.paginationData.previous.label,
-       action: $scope.resource.paginationData.previous.onclick
-     }];
-   });
+      $scope.paginationPrev = [{
+        label: $scope.resource.paginationData.previous.label,
+        action: $scope.resource.paginationData.previous.onclick
+      }];
+    });
 	  
 	  $scope.getTemplateUrl =  function() {
 		  return '/views/loggedin/classifieds.html';

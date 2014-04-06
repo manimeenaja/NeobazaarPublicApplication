@@ -31,20 +31,20 @@ angular.module('Neobazaar')
 		  }
 	  };
 		
-   var loader = new UsersLoader($routeParams);
-   $scope.resource = loader.then(function(data) {
-     $scope.resource = data;
+    var loader = new UsersLoader($routeParams);
+    $scope.resource = loader.then(function(data) {
+      $scope.resource = data;
      
-     $scope.paginationNext = [{
-       label: $scope.resource.paginationData.next.label,
-       action: $scope.resource.paginationData.next.onclick
-     }];
+      $scope.paginationNext = [{
+        label: $scope.resource.paginationData.next.label,
+        action: $scope.resource.paginationData.next.onclick
+      }];
      
-     $scope.paginationPrev = [{
-       label: $scope.resource.paginationData.previous.label,
-       action: $scope.resource.paginationData.previous.onclick
-     }];
-   });
+      $scope.paginationPrev = [{
+        label: $scope.resource.paginationData.previous.label,
+        action: $scope.resource.paginationData.previous.onclick
+      }];
+    });
 
 	  $scope.getTemplateUrl =  function() {
 		  return '/views/loggedin/user.html';

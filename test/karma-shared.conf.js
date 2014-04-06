@@ -38,7 +38,7 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files : [
       //3rd Party Code
-      "app/bower_components/jquery/jquery.js",
+      "app/bower_components/jquery/dist/jquery.js",
       "app/bower_components/angular/angular.js",
       "app/bower_components/angular-resource/angular-resource.js",
       "app/bower_components/angular-cookies/angular-cookies.js",

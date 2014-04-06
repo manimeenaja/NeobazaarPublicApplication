@@ -7,7 +7,7 @@ angular.module('Neobazaar')
 		  return;
 	  }
 
-   $window.document.title = 'Il tuoi annunci - ' + $scope.siteConfigs.sitename;
+    $window.document.title = 'Il tuoi annunci - ' + $scope.siteConfigs.sitename;
 	  
 	  $scope.disableEnable = function(item) {
 		  Classified.disableEnable({'id':item.hashId}, function() {

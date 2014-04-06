@@ -54,7 +54,7 @@ angular
     
     
     
-    } ])
+            } ])
     .controller(
         'ImageUploadController',
         function($scope, $rootScope, $routeParams, $parse, $timeout, $location,
