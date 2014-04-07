@@ -8,7 +8,7 @@ angular.module('Neobazaar').controller(
         var category = 'category' in params ? params.category : null;
         var purpose = 'purpose' in params ? params.purpose : null;
         var location = 'location' in params ? params.location : null;
-        var query = 'query' in params ? params.query.replace('+', ' ') : null;
+        var query = 'query' in params ? params.query.replace(/\+/g, ' ') : null;
         var page = 'page' in params ? params.page : 1;
 
         var locationFormatted = null !== location ? location.charAt(0)
