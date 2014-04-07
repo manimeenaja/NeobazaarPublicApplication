@@ -2,7 +2,7 @@
 
 angular.module('Neobazaar').controller(
     'BreadcrumbsController',
-    function($scope, $routeParams, $window) {
+    function($scope, $routeParams, $window, $rootScope) {
 
       $scope.getBreadcrumbs = function(params) {
         var category = 'category' in params ? params.category : null;
@@ -18,6 +18,7 @@ angular.module('Neobazaar').controller(
             : locationFormatted;
         voiceOne = voiceOne.replace('-', ' ');
         var voiceTwo = null !== query ? query + ' in ' + category : category;
+        voiceTwo = voiceTwo === null ? '' : voiceTwo;
 
         var voiceTwoUrl = null !== query ? '/annunci-' + location + '/' +
             purpose + '/' + page + '?query=' + query : '/annunci-' +
@@ -27,6 +28,13 @@ angular.module('Neobazaar').controller(
         $window.document.title = 'Annunci ' + voiceOne + ' ' +
           voiceTwo + ' - ' +
           $scope.siteConfigs.sitename;
+        
+        $rootScope.fb.title = $window.document.title;
+        $rootScope.fb.type = 'object';
+        $rootScope.fb.image = $rootScope.siteConfigs.siteurl + 'img/logo.png';
+        $rootScope.fb.url = $location.absUrl();
+        $rootScope.fb.description = 'La tua ricerca su ' + $rootScope.siteConfigs.sitename;
+        $rootScope.fb.sitename = $rootScope.siteConfigs.sitename;
 
         return [ {
           label : 'Home',
