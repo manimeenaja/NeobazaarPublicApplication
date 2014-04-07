@@ -8,7 +8,7 @@ angular.module('Neobazaar').controller(
         var category = 'category' in params ? params.category : null;
         var purpose = 'purpose' in params ? params.purpose : null;
         var location = 'location' in params ? params.location : null;
-        var query = 'query' in params ? params.query : null;
+        var query = 'query' in params ? params.query.replace('+', '') : null;
         var page = 'page' in params ? params.page : 1;
 
         var locationFormatted = null !== location ? location.charAt(0)
@@ -29,11 +29,14 @@ angular.module('Neobazaar').controller(
           voiceTwo + ' - ' +
           $scope.siteConfigs.sitename;
         
+        var description = 
+        
         $rootScope.fb.title = $window.document.title;
         $rootScope.fb.type = 'object';
         $rootScope.fb.image = $rootScope.siteConfigs.siteurl + 'img/logo.png';
         $rootScope.fb.url = $location.absUrl();
-        $rootScope.fb.description = 'La tua ricerca su ' + $rootScope.siteConfigs.sitename;
+        $rootScope.fb.description = 'Trova ' + query + ' in ' + locationFormatted + ' ' +
+          'su ' + $rootScope.siteConfigs.sitename;
         $rootScope.fb.sitename = $rootScope.siteConfigs.sitename;
 
         return [ {
