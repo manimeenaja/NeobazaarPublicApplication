@@ -2,7 +2,7 @@
 
 angular.module('Neobazaar').controller(
     'BreadcrumbsController',
-    function($scope, $routeParams, $window, $rootScope) {
+    function($scope, $routeParams, $window, $rootScope, $location) {
 
       $scope.getBreadcrumbs = function(params) {
         var category = 'category' in params ? params.category : null;
