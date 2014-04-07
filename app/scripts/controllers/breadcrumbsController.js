@@ -36,8 +36,8 @@ angular.module('Neobazaar').controller(
         $rootScope.fb.image = $rootScope.siteConfigs.siteurl + 'img/logo.png';
         $rootScope.fb.url = $location.absUrl();
         
-        var cosa = null !== query && 'null' != query ? '"' + query + '"' : 'annunci';
-        $rootScope.fb.description = 'Trova ' + query + ' in ' + locationFormatted + ' ' +
+        var cosa = null !== query ? '"' + query + '"' : 'annunci';
+        $rootScope.fb.description = 'Trova ' + cosa + ' in ' + locationFormatted + ' ' +
           'su ' + $rootScope.siteConfigs.sitename;
         $rootScope.fb.sitename = $rootScope.siteConfigs.sitename;
 
