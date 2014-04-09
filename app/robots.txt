@@ -1,3 +1,4 @@
 # robotstxt.org
 
 User-agent: *
+Disallow: /sospendi-annuncio-*.html‎$
