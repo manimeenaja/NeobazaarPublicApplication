@@ -15,7 +15,7 @@ angular.module('Neobazaar').controller(
         
         var metas = $window.document.getElementsByTagName["meta"];
         var mLen = metas.length;
-        for (var i=0; mLeni<; i++) {  
+        for (var i=0; mLen<i; i++) {  
           if (metas[i].getAttribute("itemprop") && metas[i].getAttribute("itemprop")=="description") {
             metas[i].setAttribute("content", $window.document.title);
           }
