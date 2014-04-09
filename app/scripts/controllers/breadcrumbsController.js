@@ -29,8 +29,6 @@ angular.module('Neobazaar').controller(
           voiceTwo + ' - ' +
           $scope.siteConfigs.sitename;
         
-        var description = 
-        
         $rootScope.fb.title = $window.document.title;
         $rootScope.fb.type = 'object';
         $rootScope.fb.image = $rootScope.siteConfigs.siteurl + 'img/logo.png';
