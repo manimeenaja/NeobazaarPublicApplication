@@ -114,6 +114,9 @@ app.config(function($routeProvider, $locationProvider) {
   }).when('/password-recovery/:id.html', {
     template : '<div ng-include="getTemplateUrl()"></div>',
     controller : 'PasswordRecoveredController'
+  }).when('/chat', {
+    template : '<div ng-include="getTemplateUrl()"></div>',
+    controller : 'ChatController'
   }).when('/', {
     templateUrl : '/views/index.html',
     controller : 'IndexController'
