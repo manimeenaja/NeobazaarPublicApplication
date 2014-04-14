@@ -14,12 +14,12 @@ angular.module('Neobazaar')
         console.log(e.data);
     };
     
-    $scope.msg = '';
+    $scope.themessage = '';
     $scope.send = function() {
-      alert('sending... ' + $scope.msg);
+      alert('sending... ' + $scope.themessage);
       console.log('send');
-      conn.send($scope.msg);
-      $scope.msg = '';
+      conn.send($scope.themessage);
+      $scope.themessage = '';
     };
     
     
