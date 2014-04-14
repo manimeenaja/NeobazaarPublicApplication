@@ -16,6 +16,8 @@ angular.module('Neobazaar')
     
     $scope.msg = '';
     $scope.send = function(e) {
+
+      console.log('send');
       conn.send($scope.msg);
       $scope.msg = '';
     }
