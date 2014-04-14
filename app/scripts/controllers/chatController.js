@@ -9,10 +9,16 @@ angular.module('Neobazaar')
     };
 
     conn.onmessage = function(e) {
+        var el = angular.element($('.well'));
+        el.append('<p>' + e.data + '</p>');
         console.log(e.data);
     };
     
-    conn.send('Hello World!');
+    $scope.msg = '';
+    $scope.send = function(e) {
+      conn.send($scope.msg);
+      $scope.msg = '';
+    }
     
     
 	  $scope.getTemplateUrl = function() {
