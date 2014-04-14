@@ -12,6 +12,8 @@ angular.module('Neobazaar')
         console.log(e.data);
     };
     
+    conn.send('Hello World!');
+    
     
 	  $scope.getTemplateUrl = function() {
 		  return '/views/chat.html';
