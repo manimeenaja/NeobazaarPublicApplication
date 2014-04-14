@@ -15,12 +15,12 @@ angular.module('Neobazaar')
     };
     
     $scope.msg = '';
-    $scope.send = function(e) {
-
+    $scope.send = function() {
+      alert('sending...');
       console.log('send');
       conn.send($scope.msg);
       $scope.msg = '';
-    }
+    };
     
     
 	  $scope.getTemplateUrl = function() {
