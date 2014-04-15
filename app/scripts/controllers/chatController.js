@@ -3,11 +3,12 @@
 angular.module('Neobazaar')
   .controller('ChatController', function ($scope, $rootScope) {
     
-    var wall = angular.element($('.well'));
+    var wall;
     var username = $rootScope.userData.nicename;
 
     var conn = new WebSocket('ws://www.neobazaar.com:8080');
     conn.onopen = function(e) {
+      wall = angular.element($('.well'));
         console.log("Connection established!");
     };
 
