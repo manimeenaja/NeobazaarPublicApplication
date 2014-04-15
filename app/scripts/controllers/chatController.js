@@ -9,7 +9,6 @@ angular.module('Neobazaar')
     var conn = new WebSocket('ws://www.neobazaar.com:8080');
     conn.onopen = function(e) {
       wall = angular.element($('.well'));
-        console.log("Connection established!");
     };
 
     conn.onmessage = function(e) {
