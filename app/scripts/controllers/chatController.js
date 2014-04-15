@@ -10,14 +10,12 @@ angular.module('Neobazaar')
 
     conn.onmessage = function(e) {
         var el = angular.element($('.well'));
-        el.append('<p>' + e.data + '</p>');
+        el.append('<p><strong>' + $rootScope.userData.nicename + '</strong>: ' + e.data + '</p>');
         console.log(e.data);
     };
     
     $scope.data = [];
     $scope.send = function() {
-      alert('sending... ' + $scope.data.msg);
-      console.log('send');
       conn.send($scope.data.msg);
       $scope.data.msg = '';
     };
