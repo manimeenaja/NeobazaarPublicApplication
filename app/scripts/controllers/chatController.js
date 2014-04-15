@@ -5,8 +5,11 @@ angular.module('Neobazaar')
     
     var wall;
     var username = $rootScope.userData.nicename;
-
-    var conn = new WebSocket('ws://www.neobazaar.com:8080');
+    
+    try {
+      var conn = new WebSocket('ws://www.neobazaar.com:8080');
+    } catch(e) { alert('no websocket'); }
+    
     conn.onopen = function(e) {
       wall = angular.element($('.well'));
     };
