@@ -19,7 +19,7 @@ angular.module('Neobazaar')
       alert('sending... ' + $scope.data.msg);
       console.log('send');
       conn.send($scope.data.msg);
-      $scope.themessage = '';
+      $scope.data.msg = '';
     };
     
     
