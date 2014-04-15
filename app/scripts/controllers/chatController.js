@@ -2,6 +2,9 @@
 
 angular.module('Neobazaar')
   .controller('ChatController', function ($scope, $rootScope) {
+    
+    var wall = angular.element($('.well'));
+    var username = $rootScope.userData.nicename;
 
     var conn = new WebSocket('ws://www.neobazaar.com:8080');
     conn.onopen = function(e) {
@@ -9,13 +12,13 @@ angular.module('Neobazaar')
     };
 
     conn.onmessage = function(e) {
-        var el = angular.element($('.well'));
-        el.append('<p><strong>' + $rootScope.userData.nicename + '</strong>: ' + e.data + '</p>');
+      wall.append('<p><strong>' + username + '</strong>: ' + e.data + '</p>');
         console.log(e.data);
     };
     
     $scope.data = [];
     $scope.send = function() {
+      wall.append('<p><strong>' + username + '</strong>: ' + $scope.data.msg + '</p>');
       conn.send($scope.data.msg);
       $scope.data.msg = '';
     };
