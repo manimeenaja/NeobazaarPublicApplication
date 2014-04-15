@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('Neobazaar')
-  .controller('ChatController', function ($scope) {
+  .controller('ChatController', function ($scope, $rootScope) {
 
     var conn = new WebSocket('ws://www.neobazaar.com:8080');
     conn.onopen = function(e) {
