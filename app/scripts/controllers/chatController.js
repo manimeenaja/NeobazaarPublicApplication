@@ -7,7 +7,7 @@ angular.module('Neobazaar')
     var username = $rootScope.userData.nicename;
     
     try {
-      var conn = new WebSocket('ws://www.neobazaar.com:8080');
+      var conn = new WebSocket('wss://www.neobazaar.com/websocket');
     } catch(e) { alert('no websocket'); }
     
     conn.onopen = function(e) {
