@@ -168,6 +168,11 @@ app.config(function($routeProvider, $locationProvider) {
            conn.onmessage = function(e) {
                console.log(e.data);
            };
+           
+           
+           conn.onclose = function(e) {
+             console.log('connection closed');
+           };
           } catch(e) { alert('no websocket'); }
           
           
