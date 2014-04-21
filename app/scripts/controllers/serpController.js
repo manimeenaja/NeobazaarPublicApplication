@@ -21,4 +21,20 @@ angular.module('Neobazaar')
         action: $scope.resource.paginationData.previous.onclick
       }];
     });
+    
+    var conn = new ab.Session(
+        'ws://www.neobazaar.com:8080', 
+        function() {            
+          conn.subscribe('allCategories', function(topic, data) {
+            console.log('New article published to category "' + topic + '" : ' + data.title);
+          });
+        }, 
+        function() {            
+          console.warn('WebSocket connection closed');
+        }, 
+        { // Additional parameters, we're ignoring the WAMP sub-protocol for older browsers
+          'skipSubprotocolCheck': true
+        }
+    );
+    
   });
