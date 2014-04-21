@@ -150,6 +150,35 @@ app.config(function($routeProvider, $locationProvider) {
           };
           
           
+
+          
+          
+          
+
+
+          
+          
+          try {
+            var conn = new WebSocket('wss://www.neobazaar.com/websocket');
+          
+           conn.onopen = function(e) {
+             console.log('connection open');
+           };
+     
+           conn.onmessage = function(e) {
+               console.log(e.data);
+           };
+          } catch(e) { alert('no websocket'); }
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
           $rootScope.redirectionDelay = 2500;
           $rootScope.checkedLogged = false;
           $rootScope.logged = false;
