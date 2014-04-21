@@ -25,7 +25,9 @@ angular.module('Neobazaar')
     try {
       var conn = new ab.Session(
           'wss://www.neobazaar.com/websocket', 
-          function() {            
+          function() {    
+            console.log("Connection OK, start subscribing to channels");
+            
             conn.subscribe('allCategories', function(topic, data) {
               console.log('New article published to category "' + topic + '" : ' + data.title);
             });
