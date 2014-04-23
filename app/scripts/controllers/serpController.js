@@ -22,6 +22,7 @@ angular.module('Neobazaar')
       }];
     });
     
+    /*
     try {
       var conn = new ab.Session(
           'wss://www.neobazaar.com/websocket', 
@@ -41,6 +42,6 @@ angular.module('Neobazaar')
       );
     } catch(e) {
         console.log(e);
-    }
+    }*/
     
   });

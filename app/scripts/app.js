@@ -157,7 +157,7 @@ app.config(function($routeProvider, $locationProvider) {
 
 
           
-          
+          /*
           try {
             var conn = new WebSocket('wss://www.neobazaar.com/websocket');
           
@@ -166,14 +166,14 @@ app.config(function($routeProvider, $locationProvider) {
            };
      
            conn.onmessage = function(e) {
-               console.log(e.data);
+               console.log("message: " + e.data);
            };
            
            
            conn.onclose = function(e) {
              console.log('connection closed');
            };
-          } catch(e) { alert('no websocket'); }
+          } catch(e) { alert('no websocket'); }*/
           
           
           
