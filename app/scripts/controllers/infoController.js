@@ -76,7 +76,7 @@ angular
 
             $scope.data.path = page;
             $scope.data.title = 'Informativa sulla privacy';
-            $scope.data.htmlSafeContent = $sce.trustAsHtml(content);
+            $scope.htmlSafeContent = $sce.trustAsHtml(content);
             break;
           case 'conditions':
             var content = '' +
@@ -269,7 +269,7 @@ angular
 
             $scope.data.path = page;
             $scope.data.title = 'Condizioni d\'uso';
-            $scope.data.htmlSafeContent = $sce.trustAsHtml(content);
+            $scope.htmlSafeContent = $sce.trustAsHtml(content);
             break;
           }
         });
