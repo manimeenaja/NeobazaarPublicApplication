@@ -10,7 +10,7 @@ angular
           $scope.data = {};
 
           switch (page) {
-          case 'privacy':
+          case 'privacy.html':
             var content = '' +
                   '<p>(Decreto Legislativo n. 196 del 30 giugno 2003)</p>' +
 
@@ -78,7 +78,7 @@ angular
             $scope.data.title = 'Informativa sulla privacy';
             $scope.htmlSafeContent = $sce.trustAsHtml(content);
             break;
-          case 'conditions':
+          case 'conditions.html':
             var content = '' +
                   '<p>Benvenuto su www.neobazaar.com, di seguito \'Neobazaar\'. ' +
                   'Nelle presenti Condizioni di uso sono indicate le norme che regolano i servizi offerti ' +
