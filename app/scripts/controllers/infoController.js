@@ -74,6 +74,7 @@ angular
                   '<p>Se vuole consultare il testo completo del Codice in materia di protezione dei dati ' +
                   'personali, visiti il sito ufficiale dell\'Autorità Garante www.garanteprivacy.it</p>';
 
+            $scope.data.path = page;
             $scope.data.title = 'Informativa sulla privacy';
             $scope.data.htmlSafeContent = $sce.trustAsHtml(content);
             break;
@@ -266,6 +267,7 @@ angular
                   'inoltre di ricevere comunicazioni di marketing da noi a meno che non ci sia comunicato ' +
                   'che non si desidera ricevere tali comunicazioni.</p>';
 
+            $scope.data.path = page;
             $scope.data.title = 'Condizioni d\'uso';
             $scope.data.htmlSafeContent = $sce.trustAsHtml(content);
             break;
