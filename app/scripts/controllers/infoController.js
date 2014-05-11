@@ -7,9 +7,7 @@ angular
         function($scope, $sce, $location) {
 
           var page = ($location.path()).substring(1).toLowerCase();
-          $scope.resource = {};
-          $scope.resource.data = {};
-          $scope.resource.data.path = page;
+          $scope.data = {};
 
           switch (page) {
           case 'privacy':
@@ -76,8 +74,8 @@ angular
                   '<p>Se vuole consultare il testo completo del Codice in materia di protezione dei dati ' +
                   'personali, visiti il sito ufficiale dell\'Autorità Garante www.garanteprivacy.it</p>';
 
-            $scope.title = 'Informativa sulla privacy';
-            $scope.htmlSafeContent = $sce.trustAsHtml(content);
+            $scope.data.title = 'Informativa sulla privacy';
+            $scope.data.htmlSafeContent = $sce.trustAsHtml(content);
             break;
           case 'conditions':
             var content = '' +
@@ -268,8 +266,8 @@ angular
                   'inoltre di ricevere comunicazioni di marketing da noi a meno che non ci sia comunicato ' +
                   'che non si desidera ricevere tali comunicazioni.</p>';
 
-            $scope.title = 'Condizioni d\'uso';
-            $scope.htmlSafeContent = $sce.trustAsHtml(content);
+            $scope.data.title = 'Condizioni d\'uso';
+            $scope.data.htmlSafeContent = $sce.trustAsHtml(content);
             break;
           }
         });

@@ -10,7 +10,7 @@
 				        <span class="divider"></span>
 				    </li>
 				    <li>
-				        <a href="/{{resource.data.path}}">{{resource.data.title}}</a>
+				        <a href="/{{resource.data.path}}">{{data.title}}</a>
 				        <span class="divider"></span>
 				    </li>
 				</ul>
@@ -27,9 +27,9 @@
 				</div>
 				
 		  		<div ng-show="resource.data">
-					<h1>{{title}}</h1>
+					<h1>{{data.title}}</h1>
 					
-					<div ng-bind-html="htmlSafeContent"></div>
+					<div ng-bind-html="data.htmlSafeContent"></div>
 		  		</div>
 			</div>
   		</div>
