@@ -4,7 +4,7 @@ angular
     .module('Neobazaar')
     .controller(
         'InfoController',
-        function($scope, $location) {
+        function($scope, $sce, $location) {
 
           var page = ($location.path()).substring(1).toLowerCase();
           $scope.resource = {};
@@ -13,9 +13,7 @@ angular
 
           switch (page) {
           case 'privacy':
-            $scope.resource.data = {
-              'title' : 'Informativa sulla privacy',
-              'content' : '' +
+            var content = '' +
                   '<p>(Decreto Legislativo n. 196 del 30 giugno 2003)</p>' +
 
                   '<p>Il Decreto Legislativo n. 196 del 30 giugno 2003 ha la finalità di garantire che il ' +
@@ -76,13 +74,13 @@ angular
                   'ed utilizzando l\'apposita sezione per l\'eliminazione automatica del proprio account.</p>' +
 
                   '<p>Se vuole consultare il testo completo del Codice in materia di protezione dei dati ' +
-                  'personali, visiti il sito ufficiale dell\'Autorità Garante www.garanteprivacy.it</p>'
-            };
+                  'personali, visiti il sito ufficiale dell\'Autorità Garante www.garanteprivacy.it</p>';
+
+            $scope.title = 'Informativa sulla privacy';
+            $scope.htmlSafeContent = $sce.trustAsHtml(content);
             break;
           case 'conditions':
-            $scope.resource.data = {
-              'title' : 'Condizioni d\'uso',
-              'content' : '' +
+            var content = '' +
                   '<p>Benvenuto su www.neobazaar.com, di seguito \'Neobazaar\'. ' +
                   'Nelle presenti Condizioni di uso sono indicate le norme che regolano i servizi offerti ' +
                   'da Neobazaar. Queste regole sono aggiornate al 12/11/2013.</p>' +
@@ -268,8 +266,10 @@ angular
                   '<p>Utilizzando Neobazaar, l\'utente accetta la raccolta, il trasferimento, ' +
                   'stoccaggio e utilizzo dei tuoi dati personali da parte di Neobazaar. L\'utente accetta ' +
                   'inoltre di ricevere comunicazioni di marketing da noi a meno che non ci sia comunicato ' +
-                  'che non si desidera ricevere tali comunicazioni.</p>'
-            };
+                  'che non si desidera ricevere tali comunicazioni.</p>';
+
+            $scope.title = 'Condizioni d\'uso';
+            $scope.htmlSafeContent = $sce.trustAsHtml(content);
             break;
           }
         });

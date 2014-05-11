@@ -27,9 +27,9 @@
 				</div>
 				
 		  		<div ng-show="resource.data">
-					<h1>{{resource.data.title}}</h1>
+					<h1>{{title}}</h1>
 					
-					<div ng-bind-html-unsafe="resource.data.content"></div>
+					<div ng-bind-html="htmlSafeContent"></div>
 		  		</div>
 			</div>
   		</div>
